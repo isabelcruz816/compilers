@@ -1,9 +1,58 @@
 /* Lexical Part */
 
-id : 'a'-'z' {'a'-'z'} ;
+<digit> ::= '0'-'9' ;
+
+<digits> ::= <digit>+
+
+id ::= 'a'-'z' {'a'-'z' | 'A'-'Z' | <digit> } ;
+
+number ::= <digits> ["."<digits>]["E"['+' | '-']<digits>]
+
+string ::= '"' {.} '"' ;
+
+cte_i ::= "i" ;
+
+cte_f ::= "f" ;
+
+epsilon : '' ;
 
 !whitespace : ' ' | '\t' | '\n' | '\r' ;
 
 /* Syntax Part */
 
-Hello:  "hello" id;
+PROGRAMA ::= "program" id ";" VARS BLOQUE
+
+VARS ::= "var" VAR1
+VAR1 ::= id VAR2 ":" TIPO ";" VAR3
+VAR2 ::= "," "id" VAR2 | epsilon
+VAR3 ::= epsilon | VAR1
+
+BLOQUE ::= "{" BLOQ1 "}"
+BLOQ1 ::= ESTATUTO BLOQ1 | epsilon
+
+ESTATUTO ::= ASIGNACION | CONDICION | ESCRITURA
+
+ASIGNACION ::= id "=" EXPRESION ";"
+
+CONDICION ::= "if" "(" EXPRESION ")" BLOQUE COND1
+COND1 ::= ";" | "else" BLOQUE COND1
+
+EXPRESION ::= EXP EXPR1
+EXPR1 ::= epsilon | EXPR2 EXP
+EXPR2 ::= "<" | ">" | "<>"
+
+EXP ::= TERMINO EXP1
+EXP1 ::= epsilon | "+" EXP | "-" EXP
+
+TERMINO ::= FACTOR TERM1
+TERM1 ::= ["*" | "/"] TERMINO | epsilon
+
+TIPO ::= "int" | "float"
+
+ESCRITURA ::= "print" "(" PRINT1 ")" ";" 
+PRINT1 ::= EXPRESION PRINT2 | string PRINT2
+PRINT2 ::= "," PRINT1 | epsilon
+
+FACTOR ::= "(" EXPRESIÓN ")" | VAR_CTE | ["*" | "/"] VAR_CTE
+
+VAR_CTE ::= id | cte_i | cte_f
