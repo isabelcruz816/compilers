@@ -1,0 +1,94 @@
+Item sets:
+S0{
+	id : •  'a'-'z' { 'a'-'z'}
+	!whitespace : ' ' | '\t' | '\n' | • '\r'
+	!whitespace : ' ' | '\t' | • '\n' | '\r'
+	!whitespace : ' ' | • '\t' | '\n' | '\r'
+	!whitespace : • ' ' | '\t' | '\n' | '\r'
+	hello : • 'h' 'e' 'l' 'l' 'o'
+}
+Transitions:
+	['\t','\t'] -> S1
+	['\n','\n'] -> S1
+	['\r','\r'] -> S1
+	[' ',' '] -> S1
+	['a','g'] -> S2
+	['h','h'] -> S3
+	['i','z'] -> S2
+Action: nil
+Symbols classes: {['\t','\t'], ['\n','\n'], ['\r','\r'], [' ',' '], ['a','g'], ['h','h'], ['i','z']}
+
+S1{
+	!whitespace : (' ' | '\t' | '\n' | '\r') •
+}
+Transitions:
+Action: Ignore("!whitespace")
+Symbols classes: {}
+
+S2{
+	id :  'a'-'z' { 'a'-'z'} •
+	id :  'a'-'z' {•  'a'-'z'}
+}
+Transitions:
+	['a','z'] -> S2
+Action: Accept("id")
+Symbols classes: {['a','z']}
+
+S3{
+	id :  'a'-'z' { 'a'-'z'} •
+	id :  'a'-'z' {•  'a'-'z'}
+	hello : 'h' • 'e' 'l' 'l' 'o'
+}
+Transitions:
+	['a','d'] -> S2
+	['e','e'] -> S4
+	['f','z'] -> S2
+Action: Accept("id")
+Symbols classes: {['a','d'], ['e','e'], ['f','z']}
+
+S4{
+	id :  'a'-'z' { 'a'-'z'} •
+	id :  'a'-'z' {•  'a'-'z'}
+	hello : 'h' 'e' • 'l' 'l' 'o'
+}
+Transitions:
+	['a','k'] -> S2
+	['l','l'] -> S5
+	['m','z'] -> S2
+Action: Accept("id")
+Symbols classes: {['a','k'], ['l','l'], ['m','z']}
+
+S5{
+	id :  'a'-'z' { 'a'-'z'} •
+	id :  'a'-'z' {•  'a'-'z'}
+	hello : 'h' 'e' 'l' • 'l' 'o'
+}
+Transitions:
+	['a','k'] -> S2
+	['l','l'] -> S6
+	['m','z'] -> S2
+Action: Accept("id")
+Symbols classes: {['a','k'], ['l','l'], ['m','z']}
+
+S6{
+	id :  'a'-'z' { 'a'-'z'} •
+	id :  'a'-'z' {•  'a'-'z'}
+	hello : 'h' 'e' 'l' 'l' • 'o'
+}
+Transitions:
+	['a','n'] -> S2
+	['o','o'] -> S7
+	['p','z'] -> S2
+Action: Accept("id")
+Symbols classes: {['a','n'], ['o','o'], ['p','z']}
+
+S7{
+	id :  'a'-'z' { 'a'-'z'} •
+	id :  'a'-'z' {•  'a'-'z'}
+	hello : 'h' 'e' 'l' 'l' 'o' •
+}
+Transitions:
+	['a','z'] -> S2
+Action: Accept("hello")
+Symbols classes: {['a','z']}
+

@@ -1,0 +1,9 @@
+/* Lexical Part */
+
+id : 'a'-'z' {'a'-'z'} ;
+
+!whitespace : ' ' | '\t' | '\n' | '\r' ;
+
+/* Syntax Part */
+
+Hello:  "hello" id;

@@ -1,0 +1,28 @@
+S0{
+	S' : •Hello «$»
+	Hello : •hello id «$»
+}
+Transitions:
+	Hello -> 1
+	hello -> 2
+
+
+S1{
+	S' : Hello• «$»
+}
+Transitions:
+
+
+S2{
+	Hello : hello •id «$»
+}
+Transitions:
+	id -> 3
+
+
+S3{
+	Hello : hello id• «$»
+}
+Transitions:
+
+
