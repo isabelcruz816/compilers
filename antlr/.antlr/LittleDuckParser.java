@@ -21,7 +21,7 @@ public class LittleDuckParser extends Parser {
 		T__17=18, T__18=19, T__19=20, T__20=21, T__21=22, T__22=23, ID=24, STRING=25, 
 		CTE_I=26, CTE_F=27, WHITESPACE=28;
 	public static final int
-		RULE_program = 0, RULE_vars = 1, RULE_var1 = 2, RULE_var2 = 3, RULE_var3 = 4, 
+		RULE_program = 0, RULE_varsRule = 1, RULE_var1 = 2, RULE_var2 = 3, RULE_var3 = 4, 
 		RULE_bloque = 5, RULE_bloq1 = 6, RULE_estatuto = 7, RULE_asignacion = 8, 
 		RULE_condicion = 9, RULE_cond1 = 10, RULE_expresion = 11, RULE_expr1 = 12, 
 		RULE_expr2 = 13, RULE_exp = 14, RULE_exp1 = 15, RULE_termino = 16, RULE_term1 = 17, 
@@ -29,7 +29,7 @@ public class LittleDuckParser extends Parser {
 		RULE_factor = 22, RULE_var_cte = 23;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"program", "vars", "var1", "var2", "var3", "bloque", "bloq1", "estatuto", 
+			"program", "varsRule", "var1", "var2", "var3", "bloque", "bloq1", "estatuto", 
 			"asignacion", "condicion", "cond1", "expresion", "expr1", "expr2", "exp", 
 			"exp1", "termino", "term1", "tipo", "escritura", "print1", "print2", 
 			"factor", "var_cte"
@@ -105,8 +105,8 @@ public class LittleDuckParser extends Parser {
 
 	public static class ProgramContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(LittleDuckParser.ID, 0); }
-		public VarsContext vars() {
-			return getRuleContext(VarsContext.class,0);
+		public VarsRuleContext varsRule() {
+			return getRuleContext(VarsRuleContext.class,0);
 		}
 		public BloqueContext bloque() {
 			return getRuleContext(BloqueContext.class,0);
@@ -130,7 +130,7 @@ public class LittleDuckParser extends Parser {
 			setState(50);
 			match(T__1);
 			setState(51);
-			vars();
+			varsRule();
 			setState(52);
 			bloque();
 			}
@@ -146,19 +146,19 @@ public class LittleDuckParser extends Parser {
 		return _localctx;
 	}
 
-	public static class VarsContext extends ParserRuleContext {
+	public static class VarsRuleContext extends ParserRuleContext {
 		public Var1Context var1() {
 			return getRuleContext(Var1Context.class,0);
 		}
-		public VarsContext(ParserRuleContext parent, int invokingState) {
+		public VarsRuleContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_vars; }
+		@Override public int getRuleIndex() { return RULE_varsRule; }
 	}
 
-	public final VarsContext vars() throws RecognitionException {
-		VarsContext _localctx = new VarsContext(_ctx, getState());
-		enterRule(_localctx, 2, RULE_vars);
+	public final VarsRuleContext varsRule() throws RecognitionException {
+		VarsRuleContext _localctx = new VarsRuleContext(_ctx, getState());
+		enterRule(_localctx, 2, RULE_varsRule);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{

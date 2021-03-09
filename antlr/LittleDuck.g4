@@ -2,9 +2,9 @@ grammar LittleDuck;
 
 /* Syntax Rules */
 
-program : 'program' ID ';' vars bloque ;
+program : 'program' ID ';' varsRule bloque ;
 
-vars : 'var' var1 ;
+varsRule : 'var' var1 ;
 var1 : ID var2 ':' tipo ';' var3 ;
 var2 : ',' 'ID' var2 | ;
 var3 : | var1 ;

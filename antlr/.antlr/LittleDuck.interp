@@ -62,7 +62,7 @@ WHITESPACE
 
 rule names:
 program
-vars
+varsRule
 var1
 var2
 var3
