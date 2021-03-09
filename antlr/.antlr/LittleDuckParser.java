@@ -22,14 +22,14 @@ public class LittleDuckParser extends Parser {
 		CTE_I=26, CTE_F=27, WHITESPACE=28;
 	public static final int
 		RULE_program = 0, RULE_varsRule = 1, RULE_var1 = 2, RULE_var2 = 3, RULE_var3 = 4, 
-		RULE_bloque = 5, RULE_bloq1 = 6, RULE_estatuto = 7, RULE_asignacion = 8, 
-		RULE_condicion = 9, RULE_cond1 = 10, RULE_expresion = 11, RULE_expr1 = 12, 
-		RULE_expr2 = 13, RULE_exp = 14, RULE_exp1 = 15, RULE_termino = 16, RULE_term1 = 17, 
-		RULE_tipo = 18, RULE_escritura = 19, RULE_print1 = 20, RULE_print2 = 21, 
-		RULE_factor = 22, RULE_var_cte = 23;
+		RULE_bloque = 5, RULE_estatuto = 6, RULE_asignacion = 7, RULE_condicion = 8, 
+		RULE_cond1 = 9, RULE_expresion = 10, RULE_expr1 = 11, RULE_expr2 = 12, 
+		RULE_exp = 13, RULE_exp1 = 14, RULE_termino = 15, RULE_term1 = 16, RULE_tipo = 17, 
+		RULE_escritura = 18, RULE_print1 = 19, RULE_print2 = 20, RULE_factor = 21, 
+		RULE_var_cte = 22;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"program", "varsRule", "var1", "var2", "var3", "bloque", "bloq1", "estatuto", 
+			"program", "varsRule", "var1", "var2", "var3", "bloque", "estatuto", 
 			"asignacion", "condicion", "cond1", "expresion", "expr1", "expr2", "exp", 
 			"exp1", "termino", "term1", "tipo", "escritura", "print1", "print2", 
 			"factor", "var_cte"
@@ -39,7 +39,7 @@ public class LittleDuckParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'program'", "';'", "'var'", "':'", "','", "'ID'", "'{'", "'}'", 
+			null, "'program'", "':'", "'var'", "';'", "','", "'ID'", "'{'", "'}'", 
 			"'='", "'if'", "'('", "')'", "'else'", "'<'", "'>'", "'<>'", "'+'", "'-'", 
 			"'*'", "'/'", "'int'", "'float'", "'print'", null, null, "'i'", "'f'"
 		};
@@ -111,6 +111,7 @@ public class LittleDuckParser extends Parser {
 		public BloqueContext bloque() {
 			return getRuleContext(BloqueContext.class,0);
 		}
+		public TerminalNode EOF() { return getToken(LittleDuckParser.EOF, 0); }
 		public ProgramContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -123,16 +124,18 @@ public class LittleDuckParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(48);
+			setState(46);
 			match(T__0);
-			setState(49);
+			setState(47);
 			match(ID);
-			setState(50);
+			setState(48);
 			match(T__1);
-			setState(51);
+			setState(49);
 			varsRule();
-			setState(52);
+			setState(50);
 			bloque();
+			setState(51);
+			match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -162,9 +165,9 @@ public class LittleDuckParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(54);
+			setState(53);
 			match(T__2);
-			setState(55);
+			setState(54);
 			var1();
 			}
 		}
@@ -202,17 +205,17 @@ public class LittleDuckParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(57);
+			setState(56);
 			match(ID);
-			setState(58);
+			setState(57);
 			var2();
-			setState(59);
-			match(T__3);
-			setState(60);
-			tipo();
-			setState(61);
+			setState(58);
 			match(T__1);
-			setState(62);
+			setState(59);
+			tipo();
+			setState(60);
+			match(T__3);
+			setState(61);
 			var3();
 			}
 		}
@@ -241,21 +244,21 @@ public class LittleDuckParser extends Parser {
 		Var2Context _localctx = new Var2Context(_ctx, getState());
 		enterRule(_localctx, 6, RULE_var2);
 		try {
-			setState(68);
+			setState(67);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__4:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(64);
+				setState(63);
 				match(T__4);
-				setState(65);
+				setState(64);
 				match(T__5);
-				setState(66);
+				setState(65);
 				var2();
 				}
 				break;
-			case T__3:
+			case T__1:
 				enterOuterAlt(_localctx, 2);
 				{
 				}
@@ -289,7 +292,7 @@ public class LittleDuckParser extends Parser {
 		Var3Context _localctx = new Var3Context(_ctx, getState());
 		enterRule(_localctx, 8, RULE_var3);
 		try {
-			setState(72);
+			setState(71);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__6:
@@ -300,7 +303,7 @@ public class LittleDuckParser extends Parser {
 			case ID:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(71);
+				setState(70);
 				var1();
 				}
 				break;
@@ -320,8 +323,11 @@ public class LittleDuckParser extends Parser {
 	}
 
 	public static class BloqueContext extends ParserRuleContext {
-		public Bloq1Context bloq1() {
-			return getRuleContext(Bloq1Context.class,0);
+		public List<EstatutoContext> estatuto() {
+			return getRuleContexts(EstatutoContext.class);
+		}
+		public EstatutoContext estatuto(int i) {
+			return getRuleContext(EstatutoContext.class,i);
 		}
 		public BloqueContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -332,66 +338,28 @@ public class LittleDuckParser extends Parser {
 	public final BloqueContext bloque() throws RecognitionException {
 		BloqueContext _localctx = new BloqueContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_bloque);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(74);
+			setState(73);
 			match(T__6);
-			setState(75);
-			bloq1();
-			setState(76);
-			match(T__7);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class Bloq1Context extends ParserRuleContext {
-		public EstatutoContext estatuto() {
-			return getRuleContext(EstatutoContext.class,0);
-		}
-		public Bloq1Context bloq1() {
-			return getRuleContext(Bloq1Context.class,0);
-		}
-		public Bloq1Context(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_bloq1; }
-	}
-
-	public final Bloq1Context bloq1() throws RecognitionException {
-		Bloq1Context _localctx = new Bloq1Context(_ctx, getState());
-		enterRule(_localctx, 12, RULE_bloq1);
-		try {
-			setState(82);
+			setState(77);
 			_errHandler.sync(this);
-			switch (_input.LA(1)) {
-			case T__9:
-			case T__22:
-			case ID:
-				enterOuterAlt(_localctx, 1);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__9) | (1L << T__22) | (1L << ID))) != 0)) {
 				{
-				setState(78);
+				{
+				setState(74);
 				estatuto();
+				}
+				}
 				setState(79);
-				bloq1();
-				}
-				break;
-			case T__7:
-				enterOuterAlt(_localctx, 2);
-				{
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+				_errHandler.sync(this);
+				_la = _input.LA(1);
+			}
+			setState(80);
+			match(T__7);
 			}
 		}
 		catch (RecognitionException re) {
@@ -423,29 +391,29 @@ public class LittleDuckParser extends Parser {
 
 	public final EstatutoContext estatuto() throws RecognitionException {
 		EstatutoContext _localctx = new EstatutoContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_estatuto);
+		enterRule(_localctx, 12, RULE_estatuto);
 		try {
-			setState(87);
+			setState(85);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(84);
+				setState(82);
 				asignacion();
 				}
 				break;
 			case T__9:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(85);
+				setState(83);
 				condicion();
 				}
 				break;
 			case T__22:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(86);
+				setState(84);
 				escritura();
 				}
 				break;
@@ -477,18 +445,18 @@ public class LittleDuckParser extends Parser {
 
 	public final AsignacionContext asignacion() throws RecognitionException {
 		AsignacionContext _localctx = new AsignacionContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_asignacion);
+		enterRule(_localctx, 14, RULE_asignacion);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(89);
+			setState(87);
 			match(ID);
-			setState(90);
+			setState(88);
 			match(T__8);
-			setState(91);
+			setState(89);
 			expresion();
-			setState(92);
-			match(T__1);
+			setState(90);
+			match(T__3);
 			}
 		}
 		catch (RecognitionException re) {
@@ -520,21 +488,21 @@ public class LittleDuckParser extends Parser {
 
 	public final CondicionContext condicion() throws RecognitionException {
 		CondicionContext _localctx = new CondicionContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_condicion);
+		enterRule(_localctx, 16, RULE_condicion);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(94);
+			setState(92);
 			match(T__9);
-			setState(95);
+			setState(93);
 			match(T__10);
-			setState(96);
+			setState(94);
 			expresion();
-			setState(97);
+			setState(95);
 			match(T__11);
-			setState(98);
+			setState(96);
 			bloque();
-			setState(99);
+			setState(97);
 			cond1();
 			}
 		}
@@ -564,26 +532,26 @@ public class LittleDuckParser extends Parser {
 
 	public final Cond1Context cond1() throws RecognitionException {
 		Cond1Context _localctx = new Cond1Context(_ctx, getState());
-		enterRule(_localctx, 20, RULE_cond1);
+		enterRule(_localctx, 18, RULE_cond1);
 		try {
-			setState(106);
+			setState(104);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__1:
+			case T__3:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(101);
-				match(T__1);
+				setState(99);
+				match(T__3);
 				}
 				break;
 			case T__12:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(102);
+				setState(100);
 				match(T__12);
-				setState(103);
+				setState(101);
 				bloque();
-				setState(104);
+				setState(102);
 				cond1();
 				}
 				break;
@@ -617,13 +585,13 @@ public class LittleDuckParser extends Parser {
 
 	public final ExpresionContext expresion() throws RecognitionException {
 		ExpresionContext _localctx = new ExpresionContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_expresion);
+		enterRule(_localctx, 20, RULE_expresion);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(108);
+			setState(106);
 			exp();
-			setState(109);
+			setState(107);
 			expr1();
 			}
 		}
@@ -653,12 +621,12 @@ public class LittleDuckParser extends Parser {
 
 	public final Expr1Context expr1() throws RecognitionException {
 		Expr1Context _localctx = new Expr1Context(_ctx, getState());
-		enterRule(_localctx, 24, RULE_expr1);
+		enterRule(_localctx, 22, RULE_expr1);
 		try {
-			setState(115);
+			setState(113);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__1:
+			case T__3:
 			case T__4:
 			case T__11:
 				enterOuterAlt(_localctx, 1);
@@ -670,9 +638,9 @@ public class LittleDuckParser extends Parser {
 			case T__15:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(112);
+				setState(110);
 				expr2();
-				setState(113);
+				setState(111);
 				exp();
 				}
 				break;
@@ -700,12 +668,12 @@ public class LittleDuckParser extends Parser {
 
 	public final Expr2Context expr2() throws RecognitionException {
 		Expr2Context _localctx = new Expr2Context(_ctx, getState());
-		enterRule(_localctx, 26, RULE_expr2);
+		enterRule(_localctx, 24, RULE_expr2);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(117);
+			setState(115);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__13) | (1L << T__14) | (1L << T__15))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -743,13 +711,13 @@ public class LittleDuckParser extends Parser {
 
 	public final ExpContext exp() throws RecognitionException {
 		ExpContext _localctx = new ExpContext(_ctx, getState());
-		enterRule(_localctx, 28, RULE_exp);
+		enterRule(_localctx, 26, RULE_exp);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(119);
+			setState(117);
 			termino();
-			setState(120);
+			setState(118);
 			exp1();
 			}
 		}
@@ -776,12 +744,12 @@ public class LittleDuckParser extends Parser {
 
 	public final Exp1Context exp1() throws RecognitionException {
 		Exp1Context _localctx = new Exp1Context(_ctx, getState());
-		enterRule(_localctx, 30, RULE_exp1);
+		enterRule(_localctx, 28, RULE_exp1);
 		try {
-			setState(127);
+			setState(125);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
-			case T__1:
+			case T__3:
 			case T__4:
 			case T__11:
 			case T__13:
@@ -794,18 +762,18 @@ public class LittleDuckParser extends Parser {
 			case T__16:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(123);
+				setState(121);
 				match(T__16);
-				setState(124);
+				setState(122);
 				exp();
 				}
 				break;
 			case T__17:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(125);
+				setState(123);
 				match(T__17);
-				setState(126);
+				setState(124);
 				exp();
 				}
 				break;
@@ -839,13 +807,13 @@ public class LittleDuckParser extends Parser {
 
 	public final TerminoContext termino() throws RecognitionException {
 		TerminoContext _localctx = new TerminoContext(_ctx, getState());
-		enterRule(_localctx, 32, RULE_termino);
+		enterRule(_localctx, 30, RULE_termino);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(129);
+			setState(127);
 			factor();
-			setState(130);
+			setState(128);
 			term1();
 			}
 		}
@@ -872,17 +840,17 @@ public class LittleDuckParser extends Parser {
 
 	public final Term1Context term1() throws RecognitionException {
 		Term1Context _localctx = new Term1Context(_ctx, getState());
-		enterRule(_localctx, 34, RULE_term1);
+		enterRule(_localctx, 32, RULE_term1);
 		int _la;
 		try {
-			setState(135);
+			setState(133);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__18:
 			case T__19:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(132);
+				setState(130);
 				_la = _input.LA(1);
 				if ( !(_la==T__18 || _la==T__19) ) {
 				_errHandler.recoverInline(this);
@@ -892,11 +860,11 @@ public class LittleDuckParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(133);
+				setState(131);
 				termino();
 				}
 				break;
-			case T__1:
+			case T__3:
 			case T__4:
 			case T__11:
 			case T__13:
@@ -932,12 +900,12 @@ public class LittleDuckParser extends Parser {
 
 	public final TipoContext tipo() throws RecognitionException {
 		TipoContext _localctx = new TipoContext(_ctx, getState());
-		enterRule(_localctx, 36, RULE_tipo);
+		enterRule(_localctx, 34, RULE_tipo);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(137);
+			setState(135);
 			_la = _input.LA(1);
 			if ( !(_la==T__20 || _la==T__21) ) {
 			_errHandler.recoverInline(this);
@@ -972,20 +940,20 @@ public class LittleDuckParser extends Parser {
 
 	public final EscrituraContext escritura() throws RecognitionException {
 		EscrituraContext _localctx = new EscrituraContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_escritura);
+		enterRule(_localctx, 36, RULE_escritura);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(139);
+			setState(137);
 			match(T__22);
-			setState(140);
+			setState(138);
 			match(T__10);
-			setState(141);
+			setState(139);
 			print1();
-			setState(142);
+			setState(140);
 			match(T__11);
-			setState(143);
-			match(T__1);
+			setState(141);
+			match(T__3);
 			}
 		}
 		catch (RecognitionException re) {
@@ -1015,9 +983,9 @@ public class LittleDuckParser extends Parser {
 
 	public final Print1Context print1() throws RecognitionException {
 		Print1Context _localctx = new Print1Context(_ctx, getState());
-		enterRule(_localctx, 40, RULE_print1);
+		enterRule(_localctx, 38, RULE_print1);
 		try {
-			setState(150);
+			setState(148);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__10:
@@ -1028,18 +996,18 @@ public class LittleDuckParser extends Parser {
 			case CTE_F:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(145);
+				setState(143);
 				expresion();
-				setState(146);
+				setState(144);
 				print2();
 				}
 				break;
 			case STRING:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(148);
+				setState(146);
 				match(STRING);
-				setState(149);
+				setState(147);
 				print2();
 				}
 				break;
@@ -1070,17 +1038,17 @@ public class LittleDuckParser extends Parser {
 
 	public final Print2Context print2() throws RecognitionException {
 		Print2Context _localctx = new Print2Context(_ctx, getState());
-		enterRule(_localctx, 42, RULE_print2);
+		enterRule(_localctx, 40, RULE_print2);
 		try {
-			setState(155);
+			setState(153);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__4:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(152);
+				setState(150);
 				match(T__4);
-				setState(153);
+				setState(151);
 				print1();
 				}
 				break;
@@ -1119,20 +1087,20 @@ public class LittleDuckParser extends Parser {
 
 	public final FactorContext factor() throws RecognitionException {
 		FactorContext _localctx = new FactorContext(_ctx, getState());
-		enterRule(_localctx, 44, RULE_factor);
+		enterRule(_localctx, 42, RULE_factor);
 		int _la;
 		try {
-			setState(164);
+			setState(162);
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__10:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(157);
+				setState(155);
 				match(T__10);
-				setState(158);
+				setState(156);
 				expresion();
-				setState(159);
+				setState(157);
 				match(T__11);
 				}
 				break;
@@ -1141,7 +1109,7 @@ public class LittleDuckParser extends Parser {
 			case CTE_F:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(161);
+				setState(159);
 				var_cte();
 				}
 				break;
@@ -1149,7 +1117,7 @@ public class LittleDuckParser extends Parser {
 			case T__19:
 				enterOuterAlt(_localctx, 3);
 				{
-				setState(162);
+				setState(160);
 				_la = _input.LA(1);
 				if ( !(_la==T__18 || _la==T__19) ) {
 				_errHandler.recoverInline(this);
@@ -1159,7 +1127,7 @@ public class LittleDuckParser extends Parser {
 					_errHandler.reportMatch(this);
 					consume();
 				}
-				setState(163);
+				setState(161);
 				var_cte();
 				}
 				break;
@@ -1190,12 +1158,12 @@ public class LittleDuckParser extends Parser {
 
 	public final Var_cteContext var_cte() throws RecognitionException {
 		Var_cteContext _localctx = new Var_cteContext(_ctx, getState());
-		enterRule(_localctx, 46, RULE_var_cte);
+		enterRule(_localctx, 44, RULE_var_cte);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(166);
+			setState(164);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << CTE_I) | (1L << CTE_F))) != 0)) ) {
 			_errHandler.recoverInline(this);
@@ -1219,52 +1187,52 @@ public class LittleDuckParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\36\u00ab\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\36\u00a9\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
-		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
-		"\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3"+
-		"\5\3\5\3\5\5\5G\n\5\3\6\3\6\5\6K\n\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\5"+
-		"\bU\n\b\3\t\3\t\3\t\5\tZ\n\t\3\n\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3"+
-		"\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\5\fm\n\f\3\r\3\r\3\r\3\16\3\16\3\16"+
-		"\3\16\5\16v\n\16\3\17\3\17\3\20\3\20\3\20\3\21\3\21\3\21\3\21\3\21\5\21"+
-		"\u0082\n\21\3\22\3\22\3\22\3\23\3\23\3\23\5\23\u008a\n\23\3\24\3\24\3"+
-		"\25\3\25\3\25\3\25\3\25\3\25\3\26\3\26\3\26\3\26\3\26\5\26\u0099\n\26"+
-		"\3\27\3\27\3\27\5\27\u009e\n\27\3\30\3\30\3\30\3\30\3\30\3\30\3\30\5\30"+
-		"\u00a7\n\30\3\31\3\31\3\31\2\2\32\2\4\6\b\n\f\16\20\22\24\26\30\32\34"+
-		"\36 \"$&(*,.\60\2\6\3\2\20\22\3\2\25\26\3\2\27\30\4\2\32\32\34\35\2\u00a0"+
-		"\2\62\3\2\2\2\48\3\2\2\2\6;\3\2\2\2\bF\3\2\2\2\nJ\3\2\2\2\fL\3\2\2\2\16"+
-		"T\3\2\2\2\20Y\3\2\2\2\22[\3\2\2\2\24`\3\2\2\2\26l\3\2\2\2\30n\3\2\2\2"+
-		"\32u\3\2\2\2\34w\3\2\2\2\36y\3\2\2\2 \u0081\3\2\2\2\"\u0083\3\2\2\2$\u0089"+
-		"\3\2\2\2&\u008b\3\2\2\2(\u008d\3\2\2\2*\u0098\3\2\2\2,\u009d\3\2\2\2."+
-		"\u00a6\3\2\2\2\60\u00a8\3\2\2\2\62\63\7\3\2\2\63\64\7\32\2\2\64\65\7\4"+
-		"\2\2\65\66\5\4\3\2\66\67\5\f\7\2\67\3\3\2\2\289\7\5\2\29:\5\6\4\2:\5\3"+
-		"\2\2\2;<\7\32\2\2<=\5\b\5\2=>\7\6\2\2>?\5&\24\2?@\7\4\2\2@A\5\n\6\2A\7"+
-		"\3\2\2\2BC\7\7\2\2CD\7\b\2\2DG\5\b\5\2EG\3\2\2\2FB\3\2\2\2FE\3\2\2\2G"+
-		"\t\3\2\2\2HK\3\2\2\2IK\5\6\4\2JH\3\2\2\2JI\3\2\2\2K\13\3\2\2\2LM\7\t\2"+
-		"\2MN\5\16\b\2NO\7\n\2\2O\r\3\2\2\2PQ\5\20\t\2QR\5\16\b\2RU\3\2\2\2SU\3"+
-		"\2\2\2TP\3\2\2\2TS\3\2\2\2U\17\3\2\2\2VZ\5\22\n\2WZ\5\24\13\2XZ\5(\25"+
-		"\2YV\3\2\2\2YW\3\2\2\2YX\3\2\2\2Z\21\3\2\2\2[\\\7\32\2\2\\]\7\13\2\2]"+
-		"^\5\30\r\2^_\7\4\2\2_\23\3\2\2\2`a\7\f\2\2ab\7\r\2\2bc\5\30\r\2cd\7\16"+
-		"\2\2de\5\f\7\2ef\5\26\f\2f\25\3\2\2\2gm\7\4\2\2hi\7\17\2\2ij\5\f\7\2j"+
-		"k\5\26\f\2km\3\2\2\2lg\3\2\2\2lh\3\2\2\2m\27\3\2\2\2no\5\36\20\2op\5\32"+
-		"\16\2p\31\3\2\2\2qv\3\2\2\2rs\5\34\17\2st\5\36\20\2tv\3\2\2\2uq\3\2\2"+
-		"\2ur\3\2\2\2v\33\3\2\2\2wx\t\2\2\2x\35\3\2\2\2yz\5\"\22\2z{\5 \21\2{\37"+
-		"\3\2\2\2|\u0082\3\2\2\2}~\7\23\2\2~\u0082\5\36\20\2\177\u0080\7\24\2\2"+
-		"\u0080\u0082\5\36\20\2\u0081|\3\2\2\2\u0081}\3\2\2\2\u0081\177\3\2\2\2"+
-		"\u0082!\3\2\2\2\u0083\u0084\5.\30\2\u0084\u0085\5$\23\2\u0085#\3\2\2\2"+
-		"\u0086\u0087\t\3\2\2\u0087\u008a\5\"\22\2\u0088\u008a\3\2\2\2\u0089\u0086"+
-		"\3\2\2\2\u0089\u0088\3\2\2\2\u008a%\3\2\2\2\u008b\u008c\t\4\2\2\u008c"+
-		"\'\3\2\2\2\u008d\u008e\7\31\2\2\u008e\u008f\7\r\2\2\u008f\u0090\5*\26"+
-		"\2\u0090\u0091\7\16\2\2\u0091\u0092\7\4\2\2\u0092)\3\2\2\2\u0093\u0094"+
-		"\5\30\r\2\u0094\u0095\5,\27\2\u0095\u0099\3\2\2\2\u0096\u0097\7\33\2\2"+
-		"\u0097\u0099\5,\27\2\u0098\u0093\3\2\2\2\u0098\u0096\3\2\2\2\u0099+\3"+
-		"\2\2\2\u009a\u009b\7\7\2\2\u009b\u009e\5*\26\2\u009c\u009e\3\2\2\2\u009d"+
-		"\u009a\3\2\2\2\u009d\u009c\3\2\2\2\u009e-\3\2\2\2\u009f\u00a0\7\r\2\2"+
-		"\u00a0\u00a1\5\30\r\2\u00a1\u00a2\7\16\2\2\u00a2\u00a7\3\2\2\2\u00a3\u00a7"+
-		"\5\60\31\2\u00a4\u00a5\t\3\2\2\u00a5\u00a7\5\60\31\2\u00a6\u009f\3\2\2"+
-		"\2\u00a6\u00a3\3\2\2\2\u00a6\u00a4\3\2\2\2\u00a7/\3\2\2\2\u00a8\u00a9"+
-		"\t\5\2\2\u00a9\61\3\2\2\2\rFJTYlu\u0081\u0089\u0098\u009d\u00a6";
+		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\3\2\3\2\3"+
+		"\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5"+
+		"\3\5\5\5F\n\5\3\6\3\6\5\6J\n\6\3\7\3\7\7\7N\n\7\f\7\16\7Q\13\7\3\7\3\7"+
+		"\3\b\3\b\3\b\5\bX\n\b\3\t\3\t\3\t\3\t\3\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n"+
+		"\3\13\3\13\3\13\3\13\3\13\5\13k\n\13\3\f\3\f\3\f\3\r\3\r\3\r\3\r\5\rt"+
+		"\n\r\3\16\3\16\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\5\20\u0080\n\20"+
+		"\3\21\3\21\3\21\3\22\3\22\3\22\5\22\u0088\n\22\3\23\3\23\3\24\3\24\3\24"+
+		"\3\24\3\24\3\24\3\25\3\25\3\25\3\25\3\25\5\25\u0097\n\25\3\26\3\26\3\26"+
+		"\5\26\u009c\n\26\3\27\3\27\3\27\3\27\3\27\3\27\3\27\5\27\u00a5\n\27\3"+
+		"\30\3\30\3\30\2\2\31\2\4\6\b\n\f\16\20\22\24\26\30\32\34\36 \"$&(*,.\2"+
+		"\6\3\2\20\22\3\2\25\26\3\2\27\30\4\2\32\32\34\35\2\u009f\2\60\3\2\2\2"+
+		"\4\67\3\2\2\2\6:\3\2\2\2\bE\3\2\2\2\nI\3\2\2\2\fK\3\2\2\2\16W\3\2\2\2"+
+		"\20Y\3\2\2\2\22^\3\2\2\2\24j\3\2\2\2\26l\3\2\2\2\30s\3\2\2\2\32u\3\2\2"+
+		"\2\34w\3\2\2\2\36\177\3\2\2\2 \u0081\3\2\2\2\"\u0087\3\2\2\2$\u0089\3"+
+		"\2\2\2&\u008b\3\2\2\2(\u0096\3\2\2\2*\u009b\3\2\2\2,\u00a4\3\2\2\2.\u00a6"+
+		"\3\2\2\2\60\61\7\3\2\2\61\62\7\32\2\2\62\63\7\4\2\2\63\64\5\4\3\2\64\65"+
+		"\5\f\7\2\65\66\7\2\2\3\66\3\3\2\2\2\678\7\5\2\289\5\6\4\29\5\3\2\2\2:"+
+		";\7\32\2\2;<\5\b\5\2<=\7\4\2\2=>\5$\23\2>?\7\6\2\2?@\5\n\6\2@\7\3\2\2"+
+		"\2AB\7\7\2\2BC\7\b\2\2CF\5\b\5\2DF\3\2\2\2EA\3\2\2\2ED\3\2\2\2F\t\3\2"+
+		"\2\2GJ\3\2\2\2HJ\5\6\4\2IG\3\2\2\2IH\3\2\2\2J\13\3\2\2\2KO\7\t\2\2LN\5"+
+		"\16\b\2ML\3\2\2\2NQ\3\2\2\2OM\3\2\2\2OP\3\2\2\2PR\3\2\2\2QO\3\2\2\2RS"+
+		"\7\n\2\2S\r\3\2\2\2TX\5\20\t\2UX\5\22\n\2VX\5&\24\2WT\3\2\2\2WU\3\2\2"+
+		"\2WV\3\2\2\2X\17\3\2\2\2YZ\7\32\2\2Z[\7\13\2\2[\\\5\26\f\2\\]\7\6\2\2"+
+		"]\21\3\2\2\2^_\7\f\2\2_`\7\r\2\2`a\5\26\f\2ab\7\16\2\2bc\5\f\7\2cd\5\24"+
+		"\13\2d\23\3\2\2\2ek\7\6\2\2fg\7\17\2\2gh\5\f\7\2hi\5\24\13\2ik\3\2\2\2"+
+		"je\3\2\2\2jf\3\2\2\2k\25\3\2\2\2lm\5\34\17\2mn\5\30\r\2n\27\3\2\2\2ot"+
+		"\3\2\2\2pq\5\32\16\2qr\5\34\17\2rt\3\2\2\2so\3\2\2\2sp\3\2\2\2t\31\3\2"+
+		"\2\2uv\t\2\2\2v\33\3\2\2\2wx\5 \21\2xy\5\36\20\2y\35\3\2\2\2z\u0080\3"+
+		"\2\2\2{|\7\23\2\2|\u0080\5\34\17\2}~\7\24\2\2~\u0080\5\34\17\2\177z\3"+
+		"\2\2\2\177{\3\2\2\2\177}\3\2\2\2\u0080\37\3\2\2\2\u0081\u0082\5,\27\2"+
+		"\u0082\u0083\5\"\22\2\u0083!\3\2\2\2\u0084\u0085\t\3\2\2\u0085\u0088\5"+
+		" \21\2\u0086\u0088\3\2\2\2\u0087\u0084\3\2\2\2\u0087\u0086\3\2\2\2\u0088"+
+		"#\3\2\2\2\u0089\u008a\t\4\2\2\u008a%\3\2\2\2\u008b\u008c\7\31\2\2\u008c"+
+		"\u008d\7\r\2\2\u008d\u008e\5(\25\2\u008e\u008f\7\16\2\2\u008f\u0090\7"+
+		"\6\2\2\u0090\'\3\2\2\2\u0091\u0092\5\26\f\2\u0092\u0093\5*\26\2\u0093"+
+		"\u0097\3\2\2\2\u0094\u0095\7\33\2\2\u0095\u0097\5*\26\2\u0096\u0091\3"+
+		"\2\2\2\u0096\u0094\3\2\2\2\u0097)\3\2\2\2\u0098\u0099\7\7\2\2\u0099\u009c"+
+		"\5(\25\2\u009a\u009c\3\2\2\2\u009b\u0098\3\2\2\2\u009b\u009a\3\2\2\2\u009c"+
+		"+\3\2\2\2\u009d\u009e\7\r\2\2\u009e\u009f\5\26\f\2\u009f\u00a0\7\16\2"+
+		"\2\u00a0\u00a5\3\2\2\2\u00a1\u00a5\5.\30\2\u00a2\u00a3\t\3\2\2\u00a3\u00a5"+
+		"\5.\30\2\u00a4\u009d\3\2\2\2\u00a4\u00a1\3\2\2\2\u00a4\u00a2\3\2\2\2\u00a5"+
+		"-\3\2\2\2\u00a6\u00a7\t\5\2\2\u00a7/\3\2\2\2\rEIOWjs\177\u0087\u0096\u009b"+
+		"\u00a4";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

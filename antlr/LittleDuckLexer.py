@@ -41,8 +41,8 @@ def serializedATN():
         buf.write(u"\2\2/{\3\2\2\2\61\u0081\3\2\2\2\63\u0088\3\2\2\2\65\u0091")
         buf.write(u"\3\2\2\2\67\u0093\3\2\2\29\u0095\3\2\2\2;<\7r\2\2<=\7")
         buf.write(u"t\2\2=>\7q\2\2>?\7i\2\2?@\7t\2\2@A\7c\2\2AB\7o\2\2B\4")
-        buf.write(u"\3\2\2\2CD\7=\2\2D\6\3\2\2\2EF\7x\2\2FG\7c\2\2GH\7t\2")
-        buf.write(u"\2H\b\3\2\2\2IJ\7<\2\2J\n\3\2\2\2KL\7.\2\2L\f\3\2\2\2")
+        buf.write(u"\3\2\2\2CD\7<\2\2D\6\3\2\2\2EF\7x\2\2FG\7c\2\2GH\7t\2")
+        buf.write(u"\2H\b\3\2\2\2IJ\7=\2\2J\n\3\2\2\2KL\7.\2\2L\f\3\2\2\2")
         buf.write(u"MN\7K\2\2NO\7F\2\2O\16\3\2\2\2PQ\7}\2\2Q\20\3\2\2\2R")
         buf.write(u"S\7\177\2\2S\22\3\2\2\2TU\7?\2\2U\24\3\2\2\2VW\7k\2\2")
         buf.write(u"WX\7h\2\2X\26\3\2\2\2YZ\7*\2\2Z\30\3\2\2\2[\\\7+\2\2")
@@ -106,7 +106,7 @@ class LittleDuckLexer(Lexer):
     modeNames = [ u"DEFAULT_MODE" ]
 
     literalNames = [ u"<INVALID>",
-            u"'program'", u"';'", u"'var'", u"':'", u"','", u"'ID'", u"'{'", 
+            u"'program'", u"':'", u"'var'", u"';'", u"','", u"'ID'", u"'{'", 
             u"'}'", u"'='", u"'if'", u"'('", u"')'", u"'else'", u"'<'", 
             u"'>'", u"'<>'", u"'+'", u"'-'", u"'*'", u"'/'", u"'int'", u"'float'", 
             u"'print'", u"'i'", u"'f'" ]
@@ -124,7 +124,7 @@ class LittleDuckLexer(Lexer):
 
     def __init__(self, input=None, output=sys.stdout):
         super(LittleDuckLexer, self).__init__(input, output=output)
-        self.checkVersion("4.7")
+        self.checkVersion("4.9.1")
         self._interp = LexerATNSimulator(self, self.atn, self.decisionsToDFA, PredictionContextCache())
         self._actions = None
         self._predicates = None

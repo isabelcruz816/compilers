@@ -8,66 +8,65 @@ import sys
 def serializedATN():
     with StringIO() as buf:
         buf.write(u"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3")
-        buf.write(u"\36\u00ab\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7")
+        buf.write(u"\36\u00a9\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7")
         buf.write(u"\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t")
         buf.write(u"\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22")
         buf.write(u"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4")
-        buf.write(u"\30\t\30\4\31\t\31\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3")
-        buf.write(u"\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\5\5G\n")
-        buf.write(u"\5\3\6\3\6\5\6K\n\6\3\7\3\7\3\7\3\7\3\b\3\b\3\b\3\b\5")
-        buf.write(u"\bU\n\b\3\t\3\t\3\t\5\tZ\n\t\3\n\3\n\3\n\3\n\3\n\3\13")
-        buf.write(u"\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f\3\f\5")
-        buf.write(u"\fm\n\f\3\r\3\r\3\r\3\16\3\16\3\16\3\16\5\16v\n\16\3")
-        buf.write(u"\17\3\17\3\20\3\20\3\20\3\21\3\21\3\21\3\21\3\21\5\21")
-        buf.write(u"\u0082\n\21\3\22\3\22\3\22\3\23\3\23\3\23\5\23\u008a")
-        buf.write(u"\n\23\3\24\3\24\3\25\3\25\3\25\3\25\3\25\3\25\3\26\3")
-        buf.write(u"\26\3\26\3\26\3\26\5\26\u0099\n\26\3\27\3\27\3\27\5\27")
-        buf.write(u"\u009e\n\27\3\30\3\30\3\30\3\30\3\30\3\30\3\30\5\30\u00a7")
-        buf.write(u"\n\30\3\31\3\31\3\31\2\2\32\2\4\6\b\n\f\16\20\22\24\26")
-        buf.write(u"\30\32\34\36 \"$&(*,.\60\2\6\3\2\20\22\3\2\25\26\3\2")
-        buf.write(u"\27\30\4\2\32\32\34\35\2\u00a0\2\62\3\2\2\2\48\3\2\2")
-        buf.write(u"\2\6;\3\2\2\2\bF\3\2\2\2\nJ\3\2\2\2\fL\3\2\2\2\16T\3")
-        buf.write(u"\2\2\2\20Y\3\2\2\2\22[\3\2\2\2\24`\3\2\2\2\26l\3\2\2")
-        buf.write(u"\2\30n\3\2\2\2\32u\3\2\2\2\34w\3\2\2\2\36y\3\2\2\2 \u0081")
-        buf.write(u"\3\2\2\2\"\u0083\3\2\2\2$\u0089\3\2\2\2&\u008b\3\2\2")
-        buf.write(u"\2(\u008d\3\2\2\2*\u0098\3\2\2\2,\u009d\3\2\2\2.\u00a6")
-        buf.write(u"\3\2\2\2\60\u00a8\3\2\2\2\62\63\7\3\2\2\63\64\7\32\2")
-        buf.write(u"\2\64\65\7\4\2\2\65\66\5\4\3\2\66\67\5\f\7\2\67\3\3\2")
-        buf.write(u"\2\289\7\5\2\29:\5\6\4\2:\5\3\2\2\2;<\7\32\2\2<=\5\b")
-        buf.write(u"\5\2=>\7\6\2\2>?\5&\24\2?@\7\4\2\2@A\5\n\6\2A\7\3\2\2")
-        buf.write(u"\2BC\7\7\2\2CD\7\b\2\2DG\5\b\5\2EG\3\2\2\2FB\3\2\2\2")
-        buf.write(u"FE\3\2\2\2G\t\3\2\2\2HK\3\2\2\2IK\5\6\4\2JH\3\2\2\2J")
-        buf.write(u"I\3\2\2\2K\13\3\2\2\2LM\7\t\2\2MN\5\16\b\2NO\7\n\2\2")
-        buf.write(u"O\r\3\2\2\2PQ\5\20\t\2QR\5\16\b\2RU\3\2\2\2SU\3\2\2\2")
-        buf.write(u"TP\3\2\2\2TS\3\2\2\2U\17\3\2\2\2VZ\5\22\n\2WZ\5\24\13")
-        buf.write(u"\2XZ\5(\25\2YV\3\2\2\2YW\3\2\2\2YX\3\2\2\2Z\21\3\2\2")
-        buf.write(u"\2[\\\7\32\2\2\\]\7\13\2\2]^\5\30\r\2^_\7\4\2\2_\23\3")
-        buf.write(u"\2\2\2`a\7\f\2\2ab\7\r\2\2bc\5\30\r\2cd\7\16\2\2de\5")
-        buf.write(u"\f\7\2ef\5\26\f\2f\25\3\2\2\2gm\7\4\2\2hi\7\17\2\2ij")
-        buf.write(u"\5\f\7\2jk\5\26\f\2km\3\2\2\2lg\3\2\2\2lh\3\2\2\2m\27")
-        buf.write(u"\3\2\2\2no\5\36\20\2op\5\32\16\2p\31\3\2\2\2qv\3\2\2")
-        buf.write(u"\2rs\5\34\17\2st\5\36\20\2tv\3\2\2\2uq\3\2\2\2ur\3\2")
-        buf.write(u"\2\2v\33\3\2\2\2wx\t\2\2\2x\35\3\2\2\2yz\5\"\22\2z{\5")
-        buf.write(u" \21\2{\37\3\2\2\2|\u0082\3\2\2\2}~\7\23\2\2~\u0082\5")
-        buf.write(u"\36\20\2\177\u0080\7\24\2\2\u0080\u0082\5\36\20\2\u0081")
-        buf.write(u"|\3\2\2\2\u0081}\3\2\2\2\u0081\177\3\2\2\2\u0082!\3\2")
-        buf.write(u"\2\2\u0083\u0084\5.\30\2\u0084\u0085\5$\23\2\u0085#\3")
-        buf.write(u"\2\2\2\u0086\u0087\t\3\2\2\u0087\u008a\5\"\22\2\u0088")
-        buf.write(u"\u008a\3\2\2\2\u0089\u0086\3\2\2\2\u0089\u0088\3\2\2")
-        buf.write(u"\2\u008a%\3\2\2\2\u008b\u008c\t\4\2\2\u008c\'\3\2\2\2")
-        buf.write(u"\u008d\u008e\7\31\2\2\u008e\u008f\7\r\2\2\u008f\u0090")
-        buf.write(u"\5*\26\2\u0090\u0091\7\16\2\2\u0091\u0092\7\4\2\2\u0092")
-        buf.write(u")\3\2\2\2\u0093\u0094\5\30\r\2\u0094\u0095\5,\27\2\u0095")
-        buf.write(u"\u0099\3\2\2\2\u0096\u0097\7\33\2\2\u0097\u0099\5,\27")
-        buf.write(u"\2\u0098\u0093\3\2\2\2\u0098\u0096\3\2\2\2\u0099+\3\2")
-        buf.write(u"\2\2\u009a\u009b\7\7\2\2\u009b\u009e\5*\26\2\u009c\u009e")
-        buf.write(u"\3\2\2\2\u009d\u009a\3\2\2\2\u009d\u009c\3\2\2\2\u009e")
-        buf.write(u"-\3\2\2\2\u009f\u00a0\7\r\2\2\u00a0\u00a1\5\30\r\2\u00a1")
-        buf.write(u"\u00a2\7\16\2\2\u00a2\u00a7\3\2\2\2\u00a3\u00a7\5\60")
-        buf.write(u"\31\2\u00a4\u00a5\t\3\2\2\u00a5\u00a7\5\60\31\2\u00a6")
-        buf.write(u"\u009f\3\2\2\2\u00a6\u00a3\3\2\2\2\u00a6\u00a4\3\2\2")
-        buf.write(u"\2\u00a7/\3\2\2\2\u00a8\u00a9\t\5\2\2\u00a9\61\3\2\2")
-        buf.write(u"\2\rFJTYlu\u0081\u0089\u0098\u009d\u00a6")
+        buf.write(u"\30\t\30\3\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\4")
+        buf.write(u"\3\4\3\4\3\4\3\4\3\4\3\4\3\5\3\5\3\5\3\5\5\5F\n\5\3\6")
+        buf.write(u"\3\6\5\6J\n\6\3\7\3\7\7\7N\n\7\f\7\16\7Q\13\7\3\7\3\7")
+        buf.write(u"\3\b\3\b\3\b\5\bX\n\b\3\t\3\t\3\t\3\t\3\t\3\n\3\n\3\n")
+        buf.write(u"\3\n\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\13\5\13k\n\13")
+        buf.write(u"\3\f\3\f\3\f\3\r\3\r\3\r\3\r\5\rt\n\r\3\16\3\16\3\17")
+        buf.write(u"\3\17\3\17\3\20\3\20\3\20\3\20\3\20\5\20\u0080\n\20\3")
+        buf.write(u"\21\3\21\3\21\3\22\3\22\3\22\5\22\u0088\n\22\3\23\3\23")
+        buf.write(u"\3\24\3\24\3\24\3\24\3\24\3\24\3\25\3\25\3\25\3\25\3")
+        buf.write(u"\25\5\25\u0097\n\25\3\26\3\26\3\26\5\26\u009c\n\26\3")
+        buf.write(u"\27\3\27\3\27\3\27\3\27\3\27\3\27\5\27\u00a5\n\27\3\30")
+        buf.write(u"\3\30\3\30\2\2\31\2\4\6\b\n\f\16\20\22\24\26\30\32\34")
+        buf.write(u"\36 \"$&(*,.\2\6\3\2\20\22\3\2\25\26\3\2\27\30\4\2\32")
+        buf.write(u"\32\34\35\2\u009f\2\60\3\2\2\2\4\67\3\2\2\2\6:\3\2\2")
+        buf.write(u"\2\bE\3\2\2\2\nI\3\2\2\2\fK\3\2\2\2\16W\3\2\2\2\20Y\3")
+        buf.write(u"\2\2\2\22^\3\2\2\2\24j\3\2\2\2\26l\3\2\2\2\30s\3\2\2")
+        buf.write(u"\2\32u\3\2\2\2\34w\3\2\2\2\36\177\3\2\2\2 \u0081\3\2")
+        buf.write(u"\2\2\"\u0087\3\2\2\2$\u0089\3\2\2\2&\u008b\3\2\2\2(\u0096")
+        buf.write(u"\3\2\2\2*\u009b\3\2\2\2,\u00a4\3\2\2\2.\u00a6\3\2\2\2")
+        buf.write(u"\60\61\7\3\2\2\61\62\7\32\2\2\62\63\7\4\2\2\63\64\5\4")
+        buf.write(u"\3\2\64\65\5\f\7\2\65\66\7\2\2\3\66\3\3\2\2\2\678\7\5")
+        buf.write(u"\2\289\5\6\4\29\5\3\2\2\2:;\7\32\2\2;<\5\b\5\2<=\7\4")
+        buf.write(u"\2\2=>\5$\23\2>?\7\6\2\2?@\5\n\6\2@\7\3\2\2\2AB\7\7\2")
+        buf.write(u"\2BC\7\b\2\2CF\5\b\5\2DF\3\2\2\2EA\3\2\2\2ED\3\2\2\2")
+        buf.write(u"F\t\3\2\2\2GJ\3\2\2\2HJ\5\6\4\2IG\3\2\2\2IH\3\2\2\2J")
+        buf.write(u"\13\3\2\2\2KO\7\t\2\2LN\5\16\b\2ML\3\2\2\2NQ\3\2\2\2")
+        buf.write(u"OM\3\2\2\2OP\3\2\2\2PR\3\2\2\2QO\3\2\2\2RS\7\n\2\2S\r")
+        buf.write(u"\3\2\2\2TX\5\20\t\2UX\5\22\n\2VX\5&\24\2WT\3\2\2\2WU")
+        buf.write(u"\3\2\2\2WV\3\2\2\2X\17\3\2\2\2YZ\7\32\2\2Z[\7\13\2\2")
+        buf.write(u"[\\\5\26\f\2\\]\7\6\2\2]\21\3\2\2\2^_\7\f\2\2_`\7\r\2")
+        buf.write(u"\2`a\5\26\f\2ab\7\16\2\2bc\5\f\7\2cd\5\24\13\2d\23\3")
+        buf.write(u"\2\2\2ek\7\6\2\2fg\7\17\2\2gh\5\f\7\2hi\5\24\13\2ik\3")
+        buf.write(u"\2\2\2je\3\2\2\2jf\3\2\2\2k\25\3\2\2\2lm\5\34\17\2mn")
+        buf.write(u"\5\30\r\2n\27\3\2\2\2ot\3\2\2\2pq\5\32\16\2qr\5\34\17")
+        buf.write(u"\2rt\3\2\2\2so\3\2\2\2sp\3\2\2\2t\31\3\2\2\2uv\t\2\2")
+        buf.write(u"\2v\33\3\2\2\2wx\5 \21\2xy\5\36\20\2y\35\3\2\2\2z\u0080")
+        buf.write(u"\3\2\2\2{|\7\23\2\2|\u0080\5\34\17\2}~\7\24\2\2~\u0080")
+        buf.write(u"\5\34\17\2\177z\3\2\2\2\177{\3\2\2\2\177}\3\2\2\2\u0080")
+        buf.write(u"\37\3\2\2\2\u0081\u0082\5,\27\2\u0082\u0083\5\"\22\2")
+        buf.write(u"\u0083!\3\2\2\2\u0084\u0085\t\3\2\2\u0085\u0088\5 \21")
+        buf.write(u"\2\u0086\u0088\3\2\2\2\u0087\u0084\3\2\2\2\u0087\u0086")
+        buf.write(u"\3\2\2\2\u0088#\3\2\2\2\u0089\u008a\t\4\2\2\u008a%\3")
+        buf.write(u"\2\2\2\u008b\u008c\7\31\2\2\u008c\u008d\7\r\2\2\u008d")
+        buf.write(u"\u008e\5(\25\2\u008e\u008f\7\16\2\2\u008f\u0090\7\6\2")
+        buf.write(u"\2\u0090\'\3\2\2\2\u0091\u0092\5\26\f\2\u0092\u0093\5")
+        buf.write(u"*\26\2\u0093\u0097\3\2\2\2\u0094\u0095\7\33\2\2\u0095")
+        buf.write(u"\u0097\5*\26\2\u0096\u0091\3\2\2\2\u0096\u0094\3\2\2")
+        buf.write(u"\2\u0097)\3\2\2\2\u0098\u0099\7\7\2\2\u0099\u009c\5(")
+        buf.write(u"\25\2\u009a\u009c\3\2\2\2\u009b\u0098\3\2\2\2\u009b\u009a")
+        buf.write(u"\3\2\2\2\u009c+\3\2\2\2\u009d\u009e\7\r\2\2\u009e\u009f")
+        buf.write(u"\5\26\f\2\u009f\u00a0\7\16\2\2\u00a0\u00a5\3\2\2\2\u00a1")
+        buf.write(u"\u00a5\5.\30\2\u00a2\u00a3\t\3\2\2\u00a3\u00a5\5.\30")
+        buf.write(u"\2\u00a4\u009d\3\2\2\2\u00a4\u00a1\3\2\2\2\u00a4\u00a2")
+        buf.write(u"\3\2\2\2\u00a5-\3\2\2\2\u00a6\u00a7\t\5\2\2\u00a7/\3")
+        buf.write(u"\2\2\2\rEIOWjs\177\u0087\u0096\u009b\u00a4")
         return buf.getvalue()
 
 
@@ -81,7 +80,7 @@ class LittleDuckParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ u"<INVALID>", u"'program'", u"';'", u"'var'", u"':'", 
+    literalNames = [ u"<INVALID>", u"'program'", u"':'", u"'var'", u"';'", 
                      u"','", u"'ID'", u"'{'", u"'}'", u"'='", u"'if'", u"'('", 
                      u"')'", u"'else'", u"'<'", u"'>'", u"'<>'", u"'+'", 
                      u"'-'", u"'*'", u"'/'", u"'int'", u"'float'", u"'print'", 
@@ -101,30 +100,29 @@ class LittleDuckParser ( Parser ):
     RULE_var2 = 3
     RULE_var3 = 4
     RULE_bloque = 5
-    RULE_bloq1 = 6
-    RULE_estatuto = 7
-    RULE_asignacion = 8
-    RULE_condicion = 9
-    RULE_cond1 = 10
-    RULE_expresion = 11
-    RULE_expr1 = 12
-    RULE_expr2 = 13
-    RULE_exp = 14
-    RULE_exp1 = 15
-    RULE_termino = 16
-    RULE_term1 = 17
-    RULE_tipo = 18
-    RULE_escritura = 19
-    RULE_print1 = 20
-    RULE_print2 = 21
-    RULE_factor = 22
-    RULE_var_cte = 23
+    RULE_estatuto = 6
+    RULE_asignacion = 7
+    RULE_condicion = 8
+    RULE_cond1 = 9
+    RULE_expresion = 10
+    RULE_expr1 = 11
+    RULE_expr2 = 12
+    RULE_exp = 13
+    RULE_exp1 = 14
+    RULE_termino = 15
+    RULE_term1 = 16
+    RULE_tipo = 17
+    RULE_escritura = 18
+    RULE_print1 = 19
+    RULE_print2 = 20
+    RULE_factor = 21
+    RULE_var_cte = 22
 
     ruleNames =  [ u"program", u"varsRule", u"var1", u"var2", u"var3", u"bloque", 
-                   u"bloq1", u"estatuto", u"asignacion", u"condicion", u"cond1", 
-                   u"expresion", u"expr1", u"expr2", u"exp", u"exp1", u"termino", 
-                   u"term1", u"tipo", u"escritura", u"print1", u"print2", 
-                   u"factor", u"var_cte" ]
+                   u"estatuto", u"asignacion", u"condicion", u"cond1", u"expresion", 
+                   u"expr1", u"expr2", u"exp", u"exp1", u"termino", u"term1", 
+                   u"tipo", u"escritura", u"print1", u"print2", u"factor", 
+                   u"var_cte" ]
 
     EOF = Token.EOF
     T__0=1
@@ -158,7 +156,7 @@ class LittleDuckParser ( Parser ):
 
     def __init__(self, input, output=sys.stdout):
         super(LittleDuckParser, self).__init__(input, output=output)
-        self.checkVersion("4.7")
+        self.checkVersion("4.9.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -181,6 +179,9 @@ class LittleDuckParser ( Parser ):
             return self.getTypedRuleContext(LittleDuckParser.BloqueContext,0)
 
 
+        def EOF(self):
+            return self.getToken(LittleDuckParser.EOF, 0)
+
         def getRuleIndex(self):
             return LittleDuckParser.RULE_program
 
@@ -201,16 +202,18 @@ class LittleDuckParser ( Parser ):
         self.enterRule(localctx, 0, self.RULE_program)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 48
+            self.state = 46
             self.match(LittleDuckParser.T__0)
-            self.state = 49
+            self.state = 47
             self.match(LittleDuckParser.ID)
-            self.state = 50
+            self.state = 48
             self.match(LittleDuckParser.T__1)
-            self.state = 51
+            self.state = 49
             self.varsRule()
-            self.state = 52
+            self.state = 50
             self.bloque()
+            self.state = 51
+            self.match(LittleDuckParser.EOF)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -249,9 +252,9 @@ class LittleDuckParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_varsRule)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 54
+            self.state = 53
             self.match(LittleDuckParser.T__2)
-            self.state = 55
+            self.state = 54
             self.var1()
         except RecognitionException as re:
             localctx.exception = re
@@ -302,17 +305,17 @@ class LittleDuckParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_var1)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 57
+            self.state = 56
             self.match(LittleDuckParser.ID)
-            self.state = 58
+            self.state = 57
             self.var2()
-            self.state = 59
-            self.match(LittleDuckParser.T__3)
-            self.state = 60
-            self.tipo()
-            self.state = 61
+            self.state = 58
             self.match(LittleDuckParser.T__1)
-            self.state = 62
+            self.state = 59
+            self.tipo()
+            self.state = 60
+            self.match(LittleDuckParser.T__3)
+            self.state = 61
             self.var3()
         except RecognitionException as re:
             localctx.exception = re
@@ -351,19 +354,19 @@ class LittleDuckParser ( Parser ):
         localctx = LittleDuckParser.Var2Context(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_var2)
         try:
-            self.state = 68
+            self.state = 67
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [LittleDuckParser.T__4]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 64
+                self.state = 63
                 self.match(LittleDuckParser.T__4)
-                self.state = 65
+                self.state = 64
                 self.match(LittleDuckParser.T__5)
-                self.state = 66
+                self.state = 65
                 self.var2()
                 pass
-            elif token in [LittleDuckParser.T__3]:
+            elif token in [LittleDuckParser.T__1]:
                 self.enterOuterAlt(localctx, 2)
 
                 pass
@@ -407,7 +410,7 @@ class LittleDuckParser ( Parser ):
         localctx = LittleDuckParser.Var3Context(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_var3)
         try:
-            self.state = 72
+            self.state = 71
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [LittleDuckParser.T__6]:
@@ -416,7 +419,7 @@ class LittleDuckParser ( Parser ):
                 pass
             elif token in [LittleDuckParser.ID]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 71
+                self.state = 70
                 self.var1()
                 pass
             else:
@@ -436,8 +439,11 @@ class LittleDuckParser ( Parser ):
             super(LittleDuckParser.BloqueContext, self).__init__(parent, invokingState)
             self.parser = parser
 
-        def bloq1(self):
-            return self.getTypedRuleContext(LittleDuckParser.Bloq1Context,0)
+        def estatuto(self, i=None):
+            if i is None:
+                return self.getTypedRuleContexts(LittleDuckParser.EstatutoContext)
+            else:
+                return self.getTypedRuleContext(LittleDuckParser.EstatutoContext,i)
 
 
         def getRuleIndex(self):
@@ -458,72 +464,23 @@ class LittleDuckParser ( Parser ):
 
         localctx = LittleDuckParser.BloqueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_bloque)
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 74
+            self.state = 73
             self.match(LittleDuckParser.T__6)
-            self.state = 75
-            self.bloq1()
-            self.state = 76
-            self.match(LittleDuckParser.T__7)
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-    class Bloq1Context(ParserRuleContext):
-
-        def __init__(self, parser, parent=None, invokingState=-1):
-            super(LittleDuckParser.Bloq1Context, self).__init__(parent, invokingState)
-            self.parser = parser
-
-        def estatuto(self):
-            return self.getTypedRuleContext(LittleDuckParser.EstatutoContext,0)
-
-
-        def bloq1(self):
-            return self.getTypedRuleContext(LittleDuckParser.Bloq1Context,0)
-
-
-        def getRuleIndex(self):
-            return LittleDuckParser.RULE_bloq1
-
-        def enterRule(self, listener):
-            if hasattr(listener, "enterBloq1"):
-                listener.enterBloq1(self)
-
-        def exitRule(self, listener):
-            if hasattr(listener, "exitBloq1"):
-                listener.exitBloq1(self)
-
-
-
-
-    def bloq1(self):
-
-        localctx = LittleDuckParser.Bloq1Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_bloq1)
-        try:
-            self.state = 82
+            self.state = 77
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [LittleDuckParser.T__9, LittleDuckParser.T__22, LittleDuckParser.ID]:
-                self.enterOuterAlt(localctx, 1)
-                self.state = 78
+            _la = self._input.LA(1)
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LittleDuckParser.T__9) | (1 << LittleDuckParser.T__22) | (1 << LittleDuckParser.ID))) != 0):
+                self.state = 74
                 self.estatuto()
                 self.state = 79
-                self.bloq1()
-                pass
-            elif token in [LittleDuckParser.T__7]:
-                self.enterOuterAlt(localctx, 2)
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
 
-                pass
-            else:
-                raise NoViableAltException(self)
-
+            self.state = 80
+            self.match(LittleDuckParser.T__7)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -567,24 +524,24 @@ class LittleDuckParser ( Parser ):
     def estatuto(self):
 
         localctx = LittleDuckParser.EstatutoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 14, self.RULE_estatuto)
+        self.enterRule(localctx, 12, self.RULE_estatuto)
         try:
-            self.state = 87
+            self.state = 85
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [LittleDuckParser.ID]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 84
+                self.state = 82
                 self.asignacion()
                 pass
             elif token in [LittleDuckParser.T__9]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 85
+                self.state = 83
                 self.condicion()
                 pass
             elif token in [LittleDuckParser.T__22]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 86
+                self.state = 84
                 self.escritura()
                 pass
             else:
@@ -628,17 +585,17 @@ class LittleDuckParser ( Parser ):
     def asignacion(self):
 
         localctx = LittleDuckParser.AsignacionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_asignacion)
+        self.enterRule(localctx, 14, self.RULE_asignacion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 89
+            self.state = 87
             self.match(LittleDuckParser.ID)
-            self.state = 90
+            self.state = 88
             self.match(LittleDuckParser.T__8)
-            self.state = 91
+            self.state = 89
             self.expresion()
-            self.state = 92
-            self.match(LittleDuckParser.T__1)
+            self.state = 90
+            self.match(LittleDuckParser.T__3)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -682,20 +639,20 @@ class LittleDuckParser ( Parser ):
     def condicion(self):
 
         localctx = LittleDuckParser.CondicionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_condicion)
+        self.enterRule(localctx, 16, self.RULE_condicion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 94
+            self.state = 92
             self.match(LittleDuckParser.T__9)
-            self.state = 95
+            self.state = 93
             self.match(LittleDuckParser.T__10)
-            self.state = 96
+            self.state = 94
             self.expresion()
-            self.state = 97
+            self.state = 95
             self.match(LittleDuckParser.T__11)
-            self.state = 98
+            self.state = 96
             self.bloque()
-            self.state = 99
+            self.state = 97
             self.cond1()
         except RecognitionException as re:
             localctx.exception = re
@@ -736,23 +693,23 @@ class LittleDuckParser ( Parser ):
     def cond1(self):
 
         localctx = LittleDuckParser.Cond1Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_cond1)
+        self.enterRule(localctx, 18, self.RULE_cond1)
         try:
-            self.state = 106
+            self.state = 104
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [LittleDuckParser.T__1]:
+            if token in [LittleDuckParser.T__3]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 101
-                self.match(LittleDuckParser.T__1)
+                self.state = 99
+                self.match(LittleDuckParser.T__3)
                 pass
             elif token in [LittleDuckParser.T__12]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 102
+                self.state = 100
                 self.match(LittleDuckParser.T__12)
-                self.state = 103
+                self.state = 101
                 self.bloque()
-                self.state = 104
+                self.state = 102
                 self.cond1()
                 pass
             else:
@@ -797,12 +754,12 @@ class LittleDuckParser ( Parser ):
     def expresion(self):
 
         localctx = LittleDuckParser.ExpresionContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_expresion)
+        self.enterRule(localctx, 20, self.RULE_expresion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 108
+            self.state = 106
             self.exp()
-            self.state = 109
+            self.state = 107
             self.expr1()
         except RecognitionException as re:
             localctx.exception = re
@@ -843,20 +800,20 @@ class LittleDuckParser ( Parser ):
     def expr1(self):
 
         localctx = LittleDuckParser.Expr1Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 24, self.RULE_expr1)
+        self.enterRule(localctx, 22, self.RULE_expr1)
         try:
-            self.state = 115
+            self.state = 113
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [LittleDuckParser.T__1, LittleDuckParser.T__4, LittleDuckParser.T__11]:
+            if token in [LittleDuckParser.T__3, LittleDuckParser.T__4, LittleDuckParser.T__11]:
                 self.enterOuterAlt(localctx, 1)
 
                 pass
             elif token in [LittleDuckParser.T__13, LittleDuckParser.T__14, LittleDuckParser.T__15]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 112
+                self.state = 110
                 self.expr2()
-                self.state = 113
+                self.state = 111
                 self.exp()
                 pass
             else:
@@ -894,11 +851,11 @@ class LittleDuckParser ( Parser ):
     def expr2(self):
 
         localctx = LittleDuckParser.Expr2Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 26, self.RULE_expr2)
+        self.enterRule(localctx, 24, self.RULE_expr2)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 117
+            self.state = 115
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LittleDuckParser.T__13) | (1 << LittleDuckParser.T__14) | (1 << LittleDuckParser.T__15))) != 0)):
                 self._errHandler.recoverInline(self)
@@ -944,12 +901,12 @@ class LittleDuckParser ( Parser ):
     def exp(self):
 
         localctx = LittleDuckParser.ExpContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 28, self.RULE_exp)
+        self.enterRule(localctx, 26, self.RULE_exp)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 119
+            self.state = 117
             self.termino()
-            self.state = 120
+            self.state = 118
             self.exp1()
         except RecognitionException as re:
             localctx.exception = re
@@ -986,27 +943,27 @@ class LittleDuckParser ( Parser ):
     def exp1(self):
 
         localctx = LittleDuckParser.Exp1Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 30, self.RULE_exp1)
+        self.enterRule(localctx, 28, self.RULE_exp1)
         try:
-            self.state = 127
+            self.state = 125
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [LittleDuckParser.T__1, LittleDuckParser.T__4, LittleDuckParser.T__11, LittleDuckParser.T__13, LittleDuckParser.T__14, LittleDuckParser.T__15]:
+            if token in [LittleDuckParser.T__3, LittleDuckParser.T__4, LittleDuckParser.T__11, LittleDuckParser.T__13, LittleDuckParser.T__14, LittleDuckParser.T__15]:
                 self.enterOuterAlt(localctx, 1)
 
                 pass
             elif token in [LittleDuckParser.T__16]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 123
+                self.state = 121
                 self.match(LittleDuckParser.T__16)
-                self.state = 124
+                self.state = 122
                 self.exp()
                 pass
             elif token in [LittleDuckParser.T__17]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 125
+                self.state = 123
                 self.match(LittleDuckParser.T__17)
-                self.state = 126
+                self.state = 124
                 self.exp()
                 pass
             else:
@@ -1051,12 +1008,12 @@ class LittleDuckParser ( Parser ):
     def termino(self):
 
         localctx = LittleDuckParser.TerminoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 32, self.RULE_termino)
+        self.enterRule(localctx, 30, self.RULE_termino)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 129
+            self.state = 127
             self.factor()
-            self.state = 130
+            self.state = 128
             self.term1()
         except RecognitionException as re:
             localctx.exception = re
@@ -1093,25 +1050,25 @@ class LittleDuckParser ( Parser ):
     def term1(self):
 
         localctx = LittleDuckParser.Term1Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 34, self.RULE_term1)
+        self.enterRule(localctx, 32, self.RULE_term1)
         self._la = 0 # Token type
         try:
-            self.state = 135
+            self.state = 133
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [LittleDuckParser.T__18, LittleDuckParser.T__19]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 132
+                self.state = 130
                 _la = self._input.LA(1)
                 if not(_la==LittleDuckParser.T__18 or _la==LittleDuckParser.T__19):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 133
+                self.state = 131
                 self.termino()
                 pass
-            elif token in [LittleDuckParser.T__1, LittleDuckParser.T__4, LittleDuckParser.T__11, LittleDuckParser.T__13, LittleDuckParser.T__14, LittleDuckParser.T__15, LittleDuckParser.T__16, LittleDuckParser.T__17]:
+            elif token in [LittleDuckParser.T__3, LittleDuckParser.T__4, LittleDuckParser.T__11, LittleDuckParser.T__13, LittleDuckParser.T__14, LittleDuckParser.T__15, LittleDuckParser.T__16, LittleDuckParser.T__17]:
                 self.enterOuterAlt(localctx, 2)
 
                 pass
@@ -1150,11 +1107,11 @@ class LittleDuckParser ( Parser ):
     def tipo(self):
 
         localctx = LittleDuckParser.TipoContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 36, self.RULE_tipo)
+        self.enterRule(localctx, 34, self.RULE_tipo)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 137
+            self.state = 135
             _la = self._input.LA(1)
             if not(_la==LittleDuckParser.T__20 or _la==LittleDuckParser.T__21):
                 self._errHandler.recoverInline(self)
@@ -1196,19 +1153,19 @@ class LittleDuckParser ( Parser ):
     def escritura(self):
 
         localctx = LittleDuckParser.EscrituraContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 38, self.RULE_escritura)
+        self.enterRule(localctx, 36, self.RULE_escritura)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 139
+            self.state = 137
             self.match(LittleDuckParser.T__22)
-            self.state = 140
+            self.state = 138
             self.match(LittleDuckParser.T__10)
-            self.state = 141
+            self.state = 139
             self.print1()
-            self.state = 142
+            self.state = 140
             self.match(LittleDuckParser.T__11)
-            self.state = 143
-            self.match(LittleDuckParser.T__1)
+            self.state = 141
+            self.match(LittleDuckParser.T__3)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1251,23 +1208,23 @@ class LittleDuckParser ( Parser ):
     def print1(self):
 
         localctx = LittleDuckParser.Print1Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 40, self.RULE_print1)
+        self.enterRule(localctx, 38, self.RULE_print1)
         try:
-            self.state = 150
+            self.state = 148
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [LittleDuckParser.T__10, LittleDuckParser.T__18, LittleDuckParser.T__19, LittleDuckParser.ID, LittleDuckParser.CTE_I, LittleDuckParser.CTE_F]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 145
+                self.state = 143
                 self.expresion()
-                self.state = 146
+                self.state = 144
                 self.print2()
                 pass
             elif token in [LittleDuckParser.STRING]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 148
+                self.state = 146
                 self.match(LittleDuckParser.STRING)
-                self.state = 149
+                self.state = 147
                 self.print2()
                 pass
             else:
@@ -1308,16 +1265,16 @@ class LittleDuckParser ( Parser ):
     def print2(self):
 
         localctx = LittleDuckParser.Print2Context(self, self._ctx, self.state)
-        self.enterRule(localctx, 42, self.RULE_print2)
+        self.enterRule(localctx, 40, self.RULE_print2)
         try:
-            self.state = 155
+            self.state = 153
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [LittleDuckParser.T__4]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 152
+                self.state = 150
                 self.match(LittleDuckParser.T__4)
-                self.state = 153
+                self.state = 151
                 self.print1()
                 pass
             elif token in [LittleDuckParser.T__11]:
@@ -1366,36 +1323,36 @@ class LittleDuckParser ( Parser ):
     def factor(self):
 
         localctx = LittleDuckParser.FactorContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 44, self.RULE_factor)
+        self.enterRule(localctx, 42, self.RULE_factor)
         self._la = 0 # Token type
         try:
-            self.state = 164
+            self.state = 162
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [LittleDuckParser.T__10]:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 157
+                self.state = 155
                 self.match(LittleDuckParser.T__10)
-                self.state = 158
+                self.state = 156
                 self.expresion()
-                self.state = 159
+                self.state = 157
                 self.match(LittleDuckParser.T__11)
                 pass
             elif token in [LittleDuckParser.ID, LittleDuckParser.CTE_I, LittleDuckParser.CTE_F]:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 161
+                self.state = 159
                 self.var_cte()
                 pass
             elif token in [LittleDuckParser.T__18, LittleDuckParser.T__19]:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 162
+                self.state = 160
                 _la = self._input.LA(1)
                 if not(_la==LittleDuckParser.T__18 or _la==LittleDuckParser.T__19):
                     self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
                     self.consume()
-                self.state = 163
+                self.state = 161
                 self.var_cte()
                 pass
             else:
@@ -1441,11 +1398,11 @@ class LittleDuckParser ( Parser ):
     def var_cte(self):
 
         localctx = LittleDuckParser.Var_cteContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 46, self.RULE_var_cte)
+        self.enterRule(localctx, 44, self.RULE_var_cte)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 166
+            self.state = 164
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << LittleDuckParser.ID) | (1 << LittleDuckParser.CTE_I) | (1 << LittleDuckParser.CTE_F))) != 0)):
                 self._errHandler.recoverInline(self)

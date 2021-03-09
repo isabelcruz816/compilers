@@ -58,15 +58,6 @@ class LittleDuckListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by LittleDuckParser#bloq1.
-    def enterBloq1(self, ctx):
-        pass
-
-    # Exit a parse tree produced by LittleDuckParser#bloq1.
-    def exitBloq1(self, ctx):
-        pass
-
-
     # Enter a parse tree produced by LittleDuckParser#estatuto.
     def enterEstatuto(self, ctx):
         pass

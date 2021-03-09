@@ -1,16 +1,15 @@
-grammar LittleDuck;
+grammar LittleDuck ;
 
 /* Syntax Rules */
 
-program : 'program' ID ';' varsRule bloque ;
+program : 'program' ID ':' varsRule bloque EOF ;
 
 varsRule : 'var' var1 ;
 var1 : ID var2 ':' tipo ';' var3 ;
 var2 : ',' 'ID' var2 | ;
 var3 : | var1 ;
 
-bloque : '{' bloq1 '}' ;
-bloq1 : estatuto bloq1 | ;
+bloque : '{' estatuto* '}' ;
 
 estatuto : asignacion | condicion | escritura ;
 
