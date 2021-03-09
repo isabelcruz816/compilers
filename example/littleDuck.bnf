@@ -1,58 +1,77 @@
 /* Lexical Part */
 
-<digit> ::= '0'-'9' ;
+_digit : '0'-'9' ;
 
-<digits> ::= <digit>+
+_digits : _digit+
 
-id ::= 'a'-'z' {'a'-'z' | 'A'-'Z' | <digit> } ;
+_id : 'a'-'z' {'a'-'z' | 'A'-'Z' | _digit } ;
 
-number ::= <digits> ["."<digits>]["E"['+' | '-']<digits>]
+_number : _digits ["."_digits]["E"['+' | '-']_digits]
 
-string ::= '"' {.} '"' ;
+_string : '"' {.} '"' ;
 
-cte_i ::= "i" ;
+cte_i : "i" ;
 
-cte_f ::= "f" ;
+cte_f : "f" ;
 
-epsilon : '' ;
+_epsilon : '' ;
 
 !whitespace : ' ' | '\t' | '\n' | '\r' ;
 
 /* Syntax Part */
 
-PROGRAMA ::= "program" id ";" VARS BLOQUE
+PROGRAMA : "program" _id ";" VARS BLOQUE ;
 
-VARS ::= "var" VAR1
-VAR1 ::= id VAR2 ":" TIPO ";" VAR3
-VAR2 ::= "," "id" VAR2 | epsilon
-VAR3 ::= epsilon | VAR1
+VARS : "var" VAR1 ;
+VAR1 : _id VAR2 ":" TIPO ";" VAR3 ;
+VAR2 : "," "_id" VAR2 
+    | _epsilon ;
+VAR3 : _epsilon 
+    | VAR1 ;
 
-BLOQUE ::= "{" BLOQ1 "}"
-BLOQ1 ::= ESTATUTO BLOQ1 | epsilon
+BLOQUE : "{" BLOQ1 "}" ;
+BLOQ1 : ESTATUTO BLOQ1 
+      | _epsilon ;
 
-ESTATUTO ::= ASIGNACION | CONDICION | ESCRITURA
+ESTATUTO : ASIGNACION 
+          | CONDICION 
+          | ESCRITURA ;
 
-ASIGNACION ::= id "=" EXPRESION ";"
+ASIGNACION : _id "=" EXPRESION ";" ;
 
-CONDICION ::= "if" "(" EXPRESION ")" BLOQUE COND1
-COND1 ::= ";" | "else" BLOQUE COND1
+CONDICION : "if" "(" EXPRESION ")" BLOQUE COND1 ;
+COND1 : ";" 
+      | "else" BLOQUE COND1 ;
 
-EXPRESION ::= EXP EXPR1
-EXPR1 ::= epsilon | EXPR2 EXP
-EXPR2 ::= "<" | ">" | "<>"
+EXPRESION : EXP EXPR1 ;
+EXPR1 : _epsilon 
+      | EXPR2 EXP ;
+EXPR2 : "<" 
+      | ">" 
+      | "<>" ;
 
-EXP ::= TERMINO EXP1
-EXP1 ::= epsilon | "+" EXP | "-" EXP
+EXP : TERMINO EXP1 ;
+EXP1 : _epsilon 
+     | "+" EXP 
+     | "-" EXP ;
 
-TERMINO ::= FACTOR TERM1
-TERM1 ::= ["*" | "/"] TERMINO | epsilon
+TERMINO : FACTOR TERM1 ;
+TERM1 : ["*" | "/"] TERMINO 
+      | _epsilon ;
 
-TIPO ::= "int" | "float"
+TIPO : "int" 
+     | "float" ;
 
-ESCRITURA ::= "print" "(" PRINT1 ")" ";" 
-PRINT1 ::= EXPRESION PRINT2 | string PRINT2
-PRINT2 ::= "," PRINT1 | epsilon
+ESCRITURA : "print" "(" PRINT1 ")" ";" ;
+PRINT1 : EXPRESION PRINT2 
+       | _string PRINT2 ;
+PRINT2 : "," PRINT1 
+       | _epsilon ;
 
-FACTOR ::= "(" EXPRESIÓN ")" | VAR_CTE | ["*" | "/"] VAR_CTE
+FACTOR : "(" EXPRESIÓN ")" 
+       | VAR_CTE 
+       | ["*" | "/"] VAR_CTE ;
 
-VAR_CTE ::= id | cte_i | cte_f
+VAR_CTE : _id 
+        | cte_i 
+        | cte_f ;
