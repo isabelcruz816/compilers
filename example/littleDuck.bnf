@@ -6,13 +6,13 @@ _digits : _digit+
 
 _id : 'a'-'z' {'a'-'z' | 'A'-'Z' | _digit } ;
 
-_number : _digits ["."_digits]["E"['+' | '-']_digits]
+_number : _digits ['.'_digits]['E'['+' | '-']_digits]
 
 _string : '"' {.} '"' ;
 
-cte_i : "i" ;
+cte_i : 'i' ;
 
-cte_f : "f" ;
+cte_f : 'f' ;
 
 _epsilon : '' ;
 
@@ -20,16 +20,16 @@ _epsilon : '' ;
 
 /* Syntax Part */
 
-PROGRAMA : "program" _id ";" VARS BLOQUE ;
+PROGRAMA : 'program' _id ';' VARS BLOQUE ;
 
-VARS : "var" VAR1 ;
-VAR1 : _id VAR2 ":" TIPO ";" VAR3 ;
-VAR2 : "," "_id" VAR2 
+VARS : 'var' VAR1 ;
+VAR1 : _id VAR2 ':' TIPO ';' VAR3 ;
+VAR2 : ',' '_id' VAR2 
     | _epsilon ;
 VAR3 : _epsilon 
     | VAR1 ;
 
-BLOQUE : "{" BLOQ1 "}" ;
+BLOQUE : '{' BLOQ1 '}' ;
 BLOQ1 : ESTATUTO BLOQ1 
       | _epsilon ;
 
@@ -37,40 +37,40 @@ ESTATUTO : ASIGNACION
           | CONDICION 
           | ESCRITURA ;
 
-ASIGNACION : _id "=" EXPRESION ";" ;
+ASIGNACION : _id '=' EXPRESION ';' ;
 
-CONDICION : "if" "(" EXPRESION ")" BLOQUE COND1 ;
-COND1 : ";" 
-      | "else" BLOQUE COND1 ;
+CONDICION : 'if' '(' EXPRESION ')' BLOQUE COND1 ;
+COND1 : ';' 
+      | 'else' BLOQUE COND1 ;
 
 EXPRESION : EXP EXPR1 ;
 EXPR1 : _epsilon 
       | EXPR2 EXP ;
-EXPR2 : "<" 
-      | ">" 
-      | "<>" ;
+EXPR2 : '<' 
+      | '>' 
+      | '<>' ;
 
 EXP : TERMINO EXP1 ;
 EXP1 : _epsilon 
-     | "+" EXP 
-     | "-" EXP ;
+     | '+' EXP 
+     | '-' EXP ;
 
 TERMINO : FACTOR TERM1 ;
-TERM1 : ["*" | "/"] TERMINO 
+TERM1 : ['*' | '/'] TERMINO 
       | _epsilon ;
 
-TIPO : "int" 
-     | "float" ;
+TIPO : 'int' 
+     | 'float' ;
 
-ESCRITURA : "print" "(" PRINT1 ")" ";" ;
+ESCRITURA : 'print' '(' PRINT1 ')' ';' ;
 PRINT1 : EXPRESION PRINT2 
        | _string PRINT2 ;
-PRINT2 : "," PRINT1 
+PRINT2 : ',' PRINT1 
        | _epsilon ;
 
-FACTOR : "(" EXPRESIÓN ")" 
+FACTOR : '(' EXPRESIÓN ')' 
        | VAR_CTE 
-       | ["*" | "/"] VAR_CTE ;
+       | ['*' | '/'] VAR_CTE ;
 
 VAR_CTE : _id 
         | cte_i 

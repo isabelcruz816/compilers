@@ -4,58 +4,56 @@ grammar LittleDuck;
 
 program : 'program' ID ';' vars bloque ;
 
-vars : "var" var1 ;
-var1 : ID var2 ":" TIPO ";" var3 ;
-var2 : "," "ID" var2 | EPSILON ;
-var3 : epsilon | var1 ;
+vars : 'var' var1 ;
+var1 : ID var2 ':' tipo ';' var3 ;
+var2 : ',' 'ID' var2 | EPSILON ;
+var3 : EPSILON | var1 ;
 
-bloque : "{" bloq1 "}" ;
-bloq1 : estatuto bloq1 | epsilon ;
+bloque : '{' bloq1 '}' ;
+bloq1 : estatuto bloq1 | EPSILON ;
 
-estatuo : asignacion | condicion | escritura ;
+estatuto : asignacion | condicion | escritura ;
 
-asignacion : ID "=" expresion ";" ;
+asignacion : ID '=' expresion ';' ;
 
-condicion : "if" "(" expresion ")" bloque cond1 ;
-cond1 : ";" | "else" bloque cond1 ;
+condicion : 'if' '(' expresion ')' bloque cond1 ;
+cond1 : ';' | 'else' bloque cond1 ;
 
 expresion : exp expr1 ;
-expr1 : epsilon | expr2 exp ;
-expr2 : "<" | ">" | "<>" ;
+expr1 : EPSILON | expr2 exp ;
+expr2 : '<' | '>' | '<>' ;
 
 exp : termino exp1 ;
-exp1 : epsilon | "+" exp | "-" exp ;
+exp1 : EPSILON | '+' exp | '-' exp ;
 
 termino : factor term1 ;
-term1 : ["*" | "/"] termino | epsilon ;
+term1 : ('*' | '/') termino | EPSILON ;
 
-tipo : "int" | "float" ;
+tipo : 'int' | 'float' ;
 
-escritura : "print" "(" prin1 ")" ";" ;
-print1 : expresion print2 | string print2 ;
-print2 : "," print1 | epsilon ;
+escritura : 'print' '(' print1 ')' ';' ;
+print1 : expresion print2 
+      | STRING print2 ;
+print2 : ',' print1 | EPSILON ;
 
-factor : "(" expresion ")" | var_cte | ["*" | "/"] var_cte ;
+factor : '(' expresion ')' | var_cte | ('*' | '/') var_cte ;
 
 var_cte : ID | CTE_I | CTE_F ;
 
+// digits : DIGIT+ ;
 
 /* Lexer Rules */
 
-DIGIT : ['0'-'9']+ ;
+// DIGIT : ['0'-'9']+ ;
 
-digits : DIGIT+ ;
+ID : [a-zA-Z][a-zA-Z0-9]* ;
 
-ID : 'a'-'z' ['a'-'z' | 'A'-'Z' | DIGIT ] ;
+STRING : '"' .*? '"';
 
-number : DIGITS ["."DIGITS]["E"['+' | '-']DIGITS]
+CTE_I : 'i' ;
 
-STRING : '"' .*? '"' ;
-
-CTE_I : "i" ;
-
-CTE_F : "f" ;
+CTE_F : 'f' ;
 
 EPSILON : '' ;
 
-WHITESPACE : [ \t\n\r] -> skip
+WHITESPACE : [ \t\n\r] -> skip ;
