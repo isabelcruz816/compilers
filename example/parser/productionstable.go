@@ -20,7 +20,7 @@ type (
 
 var productionsTable = ProdTab{
 	ProdTabEntry{
-		String: `S' : Hello	<<  >>`,
+		String: `S' : PROGRAMA	<<  >>`,
 		Id:         "S'",
 		NTType:     0,
 		Index:      0,
@@ -30,11 +30,451 @@ var productionsTable = ProdTab{
 		},
 	},
 	ProdTabEntry{
-		String: `Hello : "hello" id	<<  >>`,
-		Id:         "Hello",
+		String: `PROGRAMA : "program" id ":" VARS BLOQUE	<<  >>`,
+		Id:         "PROGRAMA",
 		NTType:     1,
 		Index:      1,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `VARS : "var" VAR1	<<  >>`,
+		Id:         "VARS",
+		NTType:     2,
+		Index:      2,
 		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `VARS : empty	<<  >>`,
+		Id:         "VARS",
+		NTType:     2,
+		Index:      3,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `VAR1 : id VAR2 ":" TIPO ";" VAR3	<<  >>`,
+		Id:         "VAR1",
+		NTType:     3,
+		Index:      4,
+		NumSymbols: 6,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `VAR2 : "," id VAR2	<<  >>`,
+		Id:         "VAR2",
+		NTType:     4,
+		Index:      5,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `VAR2 : empty	<<  >>`,
+		Id:         "VAR2",
+		NTType:     4,
+		Index:      6,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `VAR3 : empty	<<  >>`,
+		Id:         "VAR3",
+		NTType:     5,
+		Index:      7,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `VAR3 : VAR1	<<  >>`,
+		Id:         "VAR3",
+		NTType:     5,
+		Index:      8,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `BLOQUE : "{" BLOQ1 "}"	<<  >>`,
+		Id:         "BLOQUE",
+		NTType:     6,
+		Index:      9,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `BLOQ1 : ESTATUTO BLOQ1	<<  >>`,
+		Id:         "BLOQ1",
+		NTType:     7,
+		Index:      10,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `BLOQ1 : empty	<<  >>`,
+		Id:         "BLOQ1",
+		NTType:     7,
+		Index:      11,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `ESTATUTO : ASIGNACION	<<  >>`,
+		Id:         "ESTATUTO",
+		NTType:     8,
+		Index:      12,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `ESTATUTO : CONDICION	<<  >>`,
+		Id:         "ESTATUTO",
+		NTType:     8,
+		Index:      13,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `ESTATUTO : ESCRITURA	<<  >>`,
+		Id:         "ESTATUTO",
+		NTType:     8,
+		Index:      14,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `ASIGNACION : id "=" EXPRESION ";"	<<  >>`,
+		Id:         "ASIGNACION",
+		NTType:     9,
+		Index:      15,
+		NumSymbols: 4,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `CONDICION : "if" "(" EXPRESION ")" BLOQUE COND1	<<  >>`,
+		Id:         "CONDICION",
+		NTType:     10,
+		Index:      16,
+		NumSymbols: 6,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `COND1 : ";"	<<  >>`,
+		Id:         "COND1",
+		NTType:     11,
+		Index:      17,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `COND1 : "else" BLOQUE COND1	<<  >>`,
+		Id:         "COND1",
+		NTType:     11,
+		Index:      18,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXPRESION : EXP EXPR1	<<  >>`,
+		Id:         "EXPRESION",
+		NTType:     12,
+		Index:      19,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXPR1 : empty	<<  >>`,
+		Id:         "EXPR1",
+		NTType:     13,
+		Index:      20,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXPR1 : EXPR2 EXP	<<  >>`,
+		Id:         "EXPR1",
+		NTType:     13,
+		Index:      21,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXPR2 : "<"	<<  >>`,
+		Id:         "EXPR2",
+		NTType:     14,
+		Index:      22,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXPR2 : ">"	<<  >>`,
+		Id:         "EXPR2",
+		NTType:     14,
+		Index:      23,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXPR2 : "<>"	<<  >>`,
+		Id:         "EXPR2",
+		NTType:     14,
+		Index:      24,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXP : TERMINO EXP1	<<  >>`,
+		Id:         "EXP",
+		NTType:     15,
+		Index:      25,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXP1 : empty	<<  >>`,
+		Id:         "EXP1",
+		NTType:     16,
+		Index:      26,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXP1 : "+" EXP	<<  >>`,
+		Id:         "EXP1",
+		NTType:     16,
+		Index:      27,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `EXP1 : "-" EXP	<<  >>`,
+		Id:         "EXP1",
+		NTType:     16,
+		Index:      28,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `TERMINO : FACTOR TERM1	<<  >>`,
+		Id:         "TERMINO",
+		NTType:     17,
+		Index:      29,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `TERM1 : "*" TERMINO	<<  >>`,
+		Id:         "TERM1",
+		NTType:     18,
+		Index:      30,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `TERM1 : "/" TERMINO	<<  >>`,
+		Id:         "TERM1",
+		NTType:     18,
+		Index:      31,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `TERM1 : empty	<<  >>`,
+		Id:         "TERM1",
+		NTType:     18,
+		Index:      32,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `TIPO : "int"	<<  >>`,
+		Id:         "TIPO",
+		NTType:     19,
+		Index:      33,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `TIPO : "float"	<<  >>`,
+		Id:         "TIPO",
+		NTType:     19,
+		Index:      34,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `ESCRITURA : "print" "(" PRINT1 ")" ";"	<<  >>`,
+		Id:         "ESCRITURA",
+		NTType:     20,
+		Index:      35,
+		NumSymbols: 5,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `PRINT1 : EXPRESION PRINT2	<<  >>`,
+		Id:         "PRINT1",
+		NTType:     21,
+		Index:      36,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `PRINT1 : PRINT2	<<  >>`,
+		Id:         "PRINT1",
+		NTType:     21,
+		Index:      37,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `PRINT2 : "," PRINT1	<<  >>`,
+		Id:         "PRINT2",
+		NTType:     22,
+		Index:      38,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `PRINT2 : empty	<<  >>`,
+		Id:         "PRINT2",
+		NTType:     22,
+		Index:      39,
+		NumSymbols: 0,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return nil, nil
+		},
+	},
+	ProdTabEntry{
+		String: `FACTOR : "(" EXPRESION ")"	<<  >>`,
+		Id:         "FACTOR",
+		NTType:     23,
+		Index:      40,
+		NumSymbols: 3,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `FACTOR : VAR_CTE	<<  >>`,
+		Id:         "FACTOR",
+		NTType:     23,
+		Index:      41,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `FACTOR : "*" VAR_CTE	<<  >>`,
+		Id:         "FACTOR",
+		NTType:     23,
+		Index:      42,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `FACTOR : "/" VAR_CTE	<<  >>`,
+		Id:         "FACTOR",
+		NTType:     23,
+		Index:      43,
+		NumSymbols: 2,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `VAR_CTE : id	<<  >>`,
+		Id:         "VAR_CTE",
+		NTType:     24,
+		Index:      44,
+		NumSymbols: 1,
+		ReduceFunc: func(X []Attrib) (Attrib, error) {
+			return X[0], nil
+		},
+	},
+	ProdTabEntry{
+		String: `VAR_CTE : number	<<  >>`,
+		Id:         "VAR_CTE",
+		NTType:     24,
+		Index:      45,
+		NumSymbols: 1,
 		ReduceFunc: func(X []Attrib) (Attrib, error) {
 			return X[0], nil
 		},

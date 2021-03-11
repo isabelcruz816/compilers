@@ -2,76 +2,73 @@
 
 _digit : '0'-'9' ;
 
-_digits : _digit+
+_digits : _digit {_digit} ;
 
-_id : 'a'-'z' {'a'-'z' | 'A'-'Z' | _digit } ;
+id : 'a'-'z' {'a'-'z' | 'A'-'Z' | _digit } ;
 
-_number : _digits ['.'_digits]['E'['+' | '-']_digits]
+number : _digits ['.'_digits]['E'['+' | '-']_digits] ;
 
 _string : '"' {.} '"' ;
 
-cte_i : 'i' ;
+_cte_f : [0-9]* '.' [0-9]+ ;
 
-cte_f : 'f' ;
-
-_epsilon : '' ;
+_cte_i : [0-9]+ ;
 
 !whitespace : ' ' | '\t' | '\n' | '\r' ;
 
 /* Syntax Part */
 
-PROGRAMA : 'program' _id ';' VARS BLOQUE ;
+PROGRAMA : "program" id ";" VARS BLOQUE ;
 
-VARS : 'var' VAR1 ;
-VAR1 : _id VAR2 ':' TIPO ';' VAR3 ;
-VAR2 : ',' '_id' VAR2 
-    | _epsilon ;
-VAR3 : _epsilon 
+VARS : "var" VAR1 | empty ;
+VAR1 : id VAR2 ":" TIPO ";" VAR3 ;
+VAR2 : "," id VAR2 
+    | empty ;
+VAR3 : empty 
     | VAR1 ;
 
-BLOQUE : '{' BLOQ1 '}' ;
+BLOQUE : "{" BLOQ1 "}" ;
 BLOQ1 : ESTATUTO BLOQ1 
-      | _epsilon ;
+      | empty ;
 
 ESTATUTO : ASIGNACION 
           | CONDICION 
           | ESCRITURA ;
 
-ASIGNACION : _id '=' EXPRESION ';' ;
+ASIGNACION : id "=" EXPRESION ";" ;
 
-CONDICION : 'if' '(' EXPRESION ')' BLOQUE COND1 ;
-COND1 : ';' 
-      | 'else' BLOQUE COND1 ;
+CONDICION : "if" "(" EXPRESION ")" BLOQUE COND1 ;
+COND1 : ";" 
+      | "else" BLOQUE COND1 ;
 
 EXPRESION : EXP EXPR1 ;
-EXPR1 : _epsilon 
+EXPR1 : empty 
       | EXPR2 EXP ;
-EXPR2 : '<' 
-      | '>' 
-      | '<>' ;
+EXPR2 : "<" 
+      | ">" 
+      | "<>" ;
 
 EXP : TERMINO EXP1 ;
-EXP1 : _epsilon 
-     | '+' EXP 
-     | '-' EXP ;
+EXP1 : empty 
+     | "+" EXP 
+     | "-" EXP ;
 
 TERMINO : FACTOR TERM1 ;
-TERM1 : ['*' | '/'] TERMINO 
-      | _epsilon ;
+TERM1 : "*" TERMINO | "/" TERMINO
+      | empty ;
 
-TIPO : 'int' 
-     | 'float' ;
+TIPO : "int" 
+     | "float" ;
 
-ESCRITURA : 'print' '(' PRINT1 ')' ';' ;
+ESCRITURA : "print" "(" PRINT1 ")" ";" ;
 PRINT1 : EXPRESION PRINT2 
        | _string PRINT2 ;
-PRINT2 : ',' PRINT1 
-       | _epsilon ;
+PRINT2 : "," PRINT1 
+       | empty ;
 
-FACTOR : '(' EXPRESIÓN ')' 
+FACTOR : "(" EXPRESION ")" 
        | VAR_CTE 
-       | ['*' | '/'] VAR_CTE ;
+       | "*" VAR_CTE | "/" VAR_CTE ;
 
-VAR_CTE : _id 
-        | cte_i 
-        | cte_f ;
+VAR_CTE : id 
+        | _cte_f | _cte_i ;

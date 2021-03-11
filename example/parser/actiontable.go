@@ -16,8 +16,33 @@ var actionTab = actionTable{
 		actions: [numSymbols]action{
 			nil,      // INVALID
 			nil,      // $
-			shift(2), // hello
+			shift(2), // program
 			nil,      // id
+			nil,      // :
+			nil,      // var
+			nil,      // empty
+			nil,      // ;
+			nil,      // ,
+			nil,      // {
+			nil,      // }
+			nil,      // =
+			nil,      // if
+			nil,      // (
+			nil,      // )
+			nil,      // else
+			nil,      // <
+			nil,      // >
+			nil,      // <>
+			nil,      // +
+			nil,      // -
+			nil,      // *
+			nil,      // /
+			nil,      // int
+			nil,      // float
+			nil,      // print
+			nil,      // number
+			nil,      // cte_f
+			nil,      // cte_i
 		},
 	},
 	actionRow{ // S1
@@ -25,8 +50,33 @@ var actionTab = actionTable{
 		actions: [numSymbols]action{
 			nil,          // INVALID
 			accept(true), // $
-			nil,          // hello
+			nil,          // program
 			nil,          // id
+			nil,          // :
+			nil,          // var
+			nil,          // empty
+			nil,          // ;
+			nil,          // ,
+			nil,          // {
+			nil,          // }
+			nil,          // =
+			nil,          // if
+			nil,          // (
+			nil,          // )
+			nil,          // else
+			nil,          // <
+			nil,          // >
+			nil,          // <>
+			nil,          // +
+			nil,          // -
+			nil,          // *
+			nil,          // /
+			nil,          // int
+			nil,          // float
+			nil,          // print
+			nil,          // number
+			nil,          // cte_f
+			nil,          // cte_i
 		},
 	},
 	actionRow{ // S2
@@ -34,17 +84,6833 @@ var actionTab = actionTable{
 		actions: [numSymbols]action{
 			nil,      // INVALID
 			nil,      // $
-			nil,      // hello
+			nil,      // program
 			shift(3), // id
+			nil,      // :
+			nil,      // var
+			nil,      // empty
+			nil,      // ;
+			nil,      // ,
+			nil,      // {
+			nil,      // }
+			nil,      // =
+			nil,      // if
+			nil,      // (
+			nil,      // )
+			nil,      // else
+			nil,      // <
+			nil,      // >
+			nil,      // <>
+			nil,      // +
+			nil,      // -
+			nil,      // *
+			nil,      // /
+			nil,      // int
+			nil,      // float
+			nil,      // print
+			nil,      // number
+			nil,      // cte_f
+			nil,      // cte_i
 		},
 	},
 	actionRow{ // S3
 		canRecover: false,
 		actions: [numSymbols]action{
+			nil,      // INVALID
+			nil,      // $
+			nil,      // program
+			nil,      // id
+			shift(4), // :
+			nil,      // var
+			nil,      // empty
+			nil,      // ;
+			nil,      // ,
+			nil,      // {
+			nil,      // }
+			nil,      // =
+			nil,      // if
+			nil,      // (
+			nil,      // )
+			nil,      // else
+			nil,      // <
+			nil,      // >
+			nil,      // <>
+			nil,      // +
+			nil,      // -
+			nil,      // *
+			nil,      // /
+			nil,      // int
+			nil,      // float
+			nil,      // print
+			nil,      // number
+			nil,      // cte_f
+			nil,      // cte_i
+		},
+	},
+	actionRow{ // S4
+		canRecover: false,
+		actions: [numSymbols]action{
 			nil,       // INVALID
-			reduce(1), // $, reduce: Hello
-			nil,       // hello
+			nil,       // $
+			nil,       // program
 			nil,       // id
+			nil,       // :
+			shift(6),  // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			reduce(3), // {, reduce: VARS
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S5
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,      // INVALID
+			nil,      // $
+			nil,      // program
+			nil,      // id
+			nil,      // :
+			nil,      // var
+			nil,      // empty
+			nil,      // ;
+			nil,      // ,
+			shift(8), // {
+			nil,      // }
+			nil,      // =
+			nil,      // if
+			nil,      // (
+			nil,      // )
+			nil,      // else
+			nil,      // <
+			nil,      // >
+			nil,      // <>
+			nil,      // +
+			nil,      // -
+			nil,      // *
+			nil,      // /
+			nil,      // int
+			nil,      // float
+			nil,      // print
+			nil,      // number
+			nil,      // cte_f
+			nil,      // cte_i
+		},
+	},
+	actionRow{ // S6
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,      // INVALID
+			nil,      // $
+			nil,      // program
+			shift(9), // id
+			nil,      // :
+			nil,      // var
+			nil,      // empty
+			nil,      // ;
+			nil,      // ,
+			nil,      // {
+			nil,      // }
+			nil,      // =
+			nil,      // if
+			nil,      // (
+			nil,      // )
+			nil,      // else
+			nil,      // <
+			nil,      // >
+			nil,      // <>
+			nil,      // +
+			nil,      // -
+			nil,      // *
+			nil,      // /
+			nil,      // int
+			nil,      // float
+			nil,      // print
+			nil,      // number
+			nil,      // cte_f
+			nil,      // cte_i
+		},
+	},
+	actionRow{ // S7
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			reduce(1), // $, reduce: PROGRAMA
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S8
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(11),  // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(11), // }, reduce: BLOQ1
+			nil,        // =
+			shift(17),  // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			shift(18),  // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S9
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			reduce(6), // :, reduce: VAR2
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			shift(20), // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S10
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			reduce(2), // {, reduce: VARS
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S11
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			shift(21), // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S12
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			shift(22), // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S13
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(11),  // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(11), // }, reduce: BLOQ1
+			nil,        // =
+			shift(17),  // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			shift(18),  // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S14
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(12), // id, reduce: ESTATUTO
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(12), // }, reduce: ESTATUTO
+			nil,        // =
+			reduce(12), // if, reduce: ESTATUTO
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			reduce(12), // print, reduce: ESTATUTO
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S15
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(13), // id, reduce: ESTATUTO
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(13), // }, reduce: ESTATUTO
+			nil,        // =
+			reduce(13), // if, reduce: ESTATUTO
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			reduce(13), // print, reduce: ESTATUTO
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S16
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(14), // id, reduce: ESTATUTO
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(14), // }, reduce: ESTATUTO
+			nil,        // =
+			reduce(14), // if, reduce: ESTATUTO
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			reduce(14), // print, reduce: ESTATUTO
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S17
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(24), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S18
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(25), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S19
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			shift(26), // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S20
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(27), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S21
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(28), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(30), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(34), // *
+			shift(35), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(37), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S22
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			reduce(9), // $, reduce: BLOQUE
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S23
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(10), // }, reduce: BLOQ1
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S24
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S25
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(48),  // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			shift(49),  // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(51),  // (
+			reduce(39), // ), reduce: PRINT2
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(55),  // *
+			shift(56),  // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(60),  // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S26
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			shift(62), // int
+			shift(63), // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S27
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			reduce(6), // :, reduce: VAR2
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			shift(20), // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S28
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(44), // ;, reduce: VAR_CTE
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(44), // <, reduce: VAR_CTE
+			reduce(44), // >, reduce: VAR_CTE
+			reduce(44), // <>, reduce: VAR_CTE
+			reduce(44), // +, reduce: VAR_CTE
+			reduce(44), // -, reduce: VAR_CTE
+			reduce(44), // *, reduce: VAR_CTE
+			reduce(44), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S29
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			shift(65), // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S30
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S31
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(20), // ;, reduce: EXPR1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			shift(69),  // <
+			shift(70),  // >
+			shift(71),  // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S32
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(26), // ;, reduce: EXP1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(26), // <, reduce: EXP1
+			reduce(26), // >, reduce: EXP1
+			reduce(26), // <>, reduce: EXP1
+			shift(73),  // +
+			shift(74),  // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S33
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(32), // ;, reduce: TERM1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(32), // <, reduce: TERM1
+			reduce(32), // >, reduce: TERM1
+			reduce(32), // <>, reduce: TERM1
+			reduce(32), // +, reduce: TERM1
+			reduce(32), // -, reduce: TERM1
+			shift(76),  // *
+			shift(77),  // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S34
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(28), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(37), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S35
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(28), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(37), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S36
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(41), // ;, reduce: FACTOR
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(41), // <, reduce: FACTOR
+			reduce(41), // >, reduce: FACTOR
+			reduce(41), // <>, reduce: FACTOR
+			reduce(41), // +, reduce: FACTOR
+			reduce(41), // -, reduce: FACTOR
+			reduce(41), // *, reduce: FACTOR
+			reduce(41), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S37
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(45), // ;, reduce: VAR_CTE
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(45), // <, reduce: VAR_CTE
+			reduce(45), // >, reduce: VAR_CTE
+			reduce(45), // <>, reduce: VAR_CTE
+			reduce(45), // +, reduce: VAR_CTE
+			reduce(45), // -, reduce: VAR_CTE
+			reduce(45), // *, reduce: VAR_CTE
+			reduce(45), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S38
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(44), // ), reduce: VAR_CTE
+			nil,        // else
+			reduce(44), // <, reduce: VAR_CTE
+			reduce(44), // >, reduce: VAR_CTE
+			reduce(44), // <>, reduce: VAR_CTE
+			reduce(44), // +, reduce: VAR_CTE
+			reduce(44), // -, reduce: VAR_CTE
+			reduce(44), // *, reduce: VAR_CTE
+			reduce(44), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S39
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			shift(80), // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S40
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S41
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(20), // ), reduce: EXPR1
+			nil,        // else
+			shift(69),  // <
+			shift(70),  // >
+			shift(71),  // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S42
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(26), // ), reduce: EXP1
+			nil,        // else
+			reduce(26), // <, reduce: EXP1
+			reduce(26), // >, reduce: EXP1
+			reduce(26), // <>, reduce: EXP1
+			shift(85),  // +
+			shift(86),  // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S43
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(32), // ), reduce: TERM1
+			nil,        // else
+			reduce(32), // <, reduce: TERM1
+			reduce(32), // >, reduce: TERM1
+			reduce(32), // <>, reduce: TERM1
+			reduce(32), // +, reduce: TERM1
+			reduce(32), // -, reduce: TERM1
+			shift(88),  // *
+			shift(89),  // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S44
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S45
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S46
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(41), // ), reduce: FACTOR
+			nil,        // else
+			reduce(41), // <, reduce: FACTOR
+			reduce(41), // >, reduce: FACTOR
+			reduce(41), // <>, reduce: FACTOR
+			reduce(41), // +, reduce: FACTOR
+			reduce(41), // -, reduce: FACTOR
+			reduce(41), // *, reduce: FACTOR
+			reduce(41), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S47
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(45), // ), reduce: VAR_CTE
+			nil,        // else
+			reduce(45), // <, reduce: VAR_CTE
+			reduce(45), // >, reduce: VAR_CTE
+			reduce(45), // <>, reduce: VAR_CTE
+			reduce(45), // +, reduce: VAR_CTE
+			reduce(45), // -, reduce: VAR_CTE
+			reduce(45), // *, reduce: VAR_CTE
+			reduce(45), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S48
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(44), // ,, reduce: VAR_CTE
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(44), // ), reduce: VAR_CTE
+			nil,        // else
+			reduce(44), // <, reduce: VAR_CTE
+			reduce(44), // >, reduce: VAR_CTE
+			reduce(44), // <>, reduce: VAR_CTE
+			reduce(44), // +, reduce: VAR_CTE
+			reduce(44), // -, reduce: VAR_CTE
+			reduce(44), // *, reduce: VAR_CTE
+			reduce(44), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S49
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(48),  // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			shift(49),  // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(51),  // (
+			reduce(39), // ), reduce: PRINT2
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(55),  // *
+			shift(56),  // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(60),  // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S50
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			shift(49),  // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(39), // ), reduce: PRINT2
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S51
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S52
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(20), // ,, reduce: EXPR1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(20), // ), reduce: EXPR1
+			nil,        // else
+			shift(69),  // <
+			shift(70),  // >
+			shift(71),  // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S53
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(26), // ,, reduce: EXP1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(26), // ), reduce: EXP1
+			nil,        // else
+			reduce(26), // <, reduce: EXP1
+			reduce(26), // >, reduce: EXP1
+			reduce(26), // <>, reduce: EXP1
+			shift(98),  // +
+			shift(99),  // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S54
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(32), // ,, reduce: TERM1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(32), // ), reduce: TERM1
+			nil,        // else
+			reduce(32), // <, reduce: TERM1
+			reduce(32), // >, reduce: TERM1
+			reduce(32), // <>, reduce: TERM1
+			reduce(32), // +, reduce: TERM1
+			reduce(32), // -, reduce: TERM1
+			shift(101), // *
+			shift(102), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S55
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(48), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(60), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S56
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(48), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(60), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S57
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			shift(105), // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S58
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(37), // ), reduce: PRINT1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S59
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(41), // ,, reduce: FACTOR
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(41), // ), reduce: FACTOR
+			nil,        // else
+			reduce(41), // <, reduce: FACTOR
+			reduce(41), // >, reduce: FACTOR
+			reduce(41), // <>, reduce: FACTOR
+			reduce(41), // +, reduce: FACTOR
+			reduce(41), // -, reduce: FACTOR
+			reduce(41), // *, reduce: FACTOR
+			reduce(41), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S60
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(45), // ,, reduce: VAR_CTE
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(45), // ), reduce: VAR_CTE
+			nil,        // else
+			reduce(45), // <, reduce: VAR_CTE
+			reduce(45), // >, reduce: VAR_CTE
+			reduce(45), // <>, reduce: VAR_CTE
+			reduce(45), // +, reduce: VAR_CTE
+			reduce(45), // -, reduce: VAR_CTE
+			reduce(45), // *, reduce: VAR_CTE
+			reduce(45), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S61
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			shift(106), // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S62
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(33), // ;, reduce: TIPO
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S63
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(34), // ;, reduce: TIPO
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S64
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			reduce(5), // :, reduce: VAR2
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S65
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(15), // id, reduce: ASIGNACION
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(15), // }, reduce: ASIGNACION
+			nil,        // =
+			reduce(15), // if, reduce: ASIGNACION
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			reduce(15), // print, reduce: ASIGNACION
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S66
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			shift(107), // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S67
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(19), // ;, reduce: EXPRESION
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S68
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(108), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(109), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(113), // *
+			shift(114), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(116), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S69
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(22), // id, reduce: EXPR2
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			reduce(22), // (, reduce: EXPR2
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			reduce(22), // *, reduce: EXPR2
+			reduce(22), // /, reduce: EXPR2
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			reduce(22), // number, reduce: EXPR2
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S70
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(23), // id, reduce: EXPR2
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			reduce(23), // (, reduce: EXPR2
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			reduce(23), // *, reduce: EXPR2
+			reduce(23), // /, reduce: EXPR2
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			reduce(23), // number, reduce: EXPR2
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S71
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(24), // id, reduce: EXPR2
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			reduce(24), // (, reduce: EXPR2
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			reduce(24), // *, reduce: EXPR2
+			reduce(24), // /, reduce: EXPR2
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			reduce(24), // number, reduce: EXPR2
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S72
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(25), // ;, reduce: EXP
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(25), // <, reduce: EXP
+			reduce(25), // >, reduce: EXP
+			reduce(25), // <>, reduce: EXP
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S73
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(28), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(30), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(34), // *
+			shift(35), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(37), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S74
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(28), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(30), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(34), // *
+			shift(35), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(37), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S75
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(29), // ;, reduce: TERMINO
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(29), // <, reduce: TERMINO
+			reduce(29), // >, reduce: TERMINO
+			reduce(29), // <>, reduce: TERMINO
+			reduce(29), // +, reduce: TERMINO
+			reduce(29), // -, reduce: TERMINO
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S76
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(28), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(30), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(34), // *
+			shift(35), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(37), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S77
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(28), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(30), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(34), // *
+			shift(35), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(37), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S78
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(42), // ;, reduce: FACTOR
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(42), // <, reduce: FACTOR
+			reduce(42), // >, reduce: FACTOR
+			reduce(42), // <>, reduce: FACTOR
+			reduce(42), // +, reduce: FACTOR
+			reduce(42), // -, reduce: FACTOR
+			reduce(42), // *, reduce: FACTOR
+			reduce(42), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S79
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(43), // ;, reduce: FACTOR
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(43), // <, reduce: FACTOR
+			reduce(43), // >, reduce: FACTOR
+			reduce(43), // <>, reduce: FACTOR
+			reduce(43), // +, reduce: FACTOR
+			reduce(43), // -, reduce: FACTOR
+			reduce(43), // *, reduce: FACTOR
+			reduce(43), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S80
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			shift(122), // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S81
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			shift(123), // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S82
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(19), // ), reduce: EXPRESION
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S83
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(124), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(125), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(129), // *
+			shift(130), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(132), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S84
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(25), // ), reduce: EXP
+			nil,        // else
+			reduce(25), // <, reduce: EXP
+			reduce(25), // >, reduce: EXP
+			reduce(25), // <>, reduce: EXP
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S85
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S86
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S87
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(29), // ), reduce: TERMINO
+			nil,        // else
+			reduce(29), // <, reduce: TERMINO
+			reduce(29), // >, reduce: TERMINO
+			reduce(29), // <>, reduce: TERMINO
+			reduce(29), // +, reduce: TERMINO
+			reduce(29), // -, reduce: TERMINO
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S88
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S89
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S90
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(42), // ), reduce: FACTOR
+			nil,        // else
+			reduce(42), // <, reduce: FACTOR
+			reduce(42), // >, reduce: FACTOR
+			reduce(42), // <>, reduce: FACTOR
+			reduce(42), // +, reduce: FACTOR
+			reduce(42), // -, reduce: FACTOR
+			reduce(42), // *, reduce: FACTOR
+			reduce(42), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S91
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(43), // ), reduce: FACTOR
+			nil,        // else
+			reduce(43), // <, reduce: FACTOR
+			reduce(43), // >, reduce: FACTOR
+			reduce(43), // <>, reduce: FACTOR
+			reduce(43), // +, reduce: FACTOR
+			reduce(43), // -, reduce: FACTOR
+			reduce(43), // *, reduce: FACTOR
+			reduce(43), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S92
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(38), // ), reduce: PRINT2
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S93
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(36), // ), reduce: PRINT1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S94
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			shift(137), // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S95
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(19), // ,, reduce: EXPRESION
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(19), // ), reduce: EXPRESION
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S96
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(138), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(139), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(143), // *
+			shift(144), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(146), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S97
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(25), // ,, reduce: EXP
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(25), // ), reduce: EXP
+			nil,        // else
+			reduce(25), // <, reduce: EXP
+			reduce(25), // >, reduce: EXP
+			reduce(25), // <>, reduce: EXP
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S98
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(48), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(51), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(55), // *
+			shift(56), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(60), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S99
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(48), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(51), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(55), // *
+			shift(56), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(60), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S100
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(29), // ,, reduce: TERMINO
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(29), // ), reduce: TERMINO
+			nil,        // else
+			reduce(29), // <, reduce: TERMINO
+			reduce(29), // >, reduce: TERMINO
+			reduce(29), // <>, reduce: TERMINO
+			reduce(29), // +, reduce: TERMINO
+			reduce(29), // -, reduce: TERMINO
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S101
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(48), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(51), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(55), // *
+			shift(56), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(60), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S102
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(48), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(51), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(55), // *
+			shift(56), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(60), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S103
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(42), // ,, reduce: FACTOR
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(42), // ), reduce: FACTOR
+			nil,        // else
+			reduce(42), // <, reduce: FACTOR
+			reduce(42), // >, reduce: FACTOR
+			reduce(42), // <>, reduce: FACTOR
+			reduce(42), // +, reduce: FACTOR
+			reduce(42), // -, reduce: FACTOR
+			reduce(42), // *, reduce: FACTOR
+			reduce(42), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S104
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(43), // ,, reduce: FACTOR
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(43), // ), reduce: FACTOR
+			nil,        // else
+			reduce(43), // <, reduce: FACTOR
+			reduce(43), // >, reduce: FACTOR
+			reduce(43), // <>, reduce: FACTOR
+			reduce(43), // +, reduce: FACTOR
+			reduce(43), // -, reduce: FACTOR
+			reduce(43), // *, reduce: FACTOR
+			reduce(43), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S105
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			shift(151), // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S106
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(9),  // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			reduce(7), // {, reduce: VAR3
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S107
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(40), // ;, reduce: FACTOR
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(40), // <, reduce: FACTOR
+			reduce(40), // >, reduce: FACTOR
+			reduce(40), // <>, reduce: FACTOR
+			reduce(40), // +, reduce: FACTOR
+			reduce(40), // -, reduce: FACTOR
+			reduce(40), // *, reduce: FACTOR
+			reduce(40), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S108
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(44), // ;, reduce: VAR_CTE
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(44), // +, reduce: VAR_CTE
+			reduce(44), // -, reduce: VAR_CTE
+			reduce(44), // *, reduce: VAR_CTE
+			reduce(44), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S109
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S110
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(21), // ;, reduce: EXPR1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S111
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(26), // ;, reduce: EXP1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			shift(156), // +
+			shift(157), // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S112
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(32), // ;, reduce: TERM1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(32), // +, reduce: TERM1
+			reduce(32), // -, reduce: TERM1
+			shift(159), // *
+			shift(160), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S113
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(108), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(116), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S114
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(108), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(116), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S115
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(41), // ;, reduce: FACTOR
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(41), // +, reduce: FACTOR
+			reduce(41), // -, reduce: FACTOR
+			reduce(41), // *, reduce: FACTOR
+			reduce(41), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S116
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(45), // ;, reduce: VAR_CTE
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(45), // +, reduce: VAR_CTE
+			reduce(45), // -, reduce: VAR_CTE
+			reduce(45), // *, reduce: VAR_CTE
+			reduce(45), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S117
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(27), // ;, reduce: EXP1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(27), // <, reduce: EXP1
+			reduce(27), // >, reduce: EXP1
+			reduce(27), // <>, reduce: EXP1
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S118
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(28), // ;, reduce: EXP1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(28), // <, reduce: EXP1
+			reduce(28), // >, reduce: EXP1
+			reduce(28), // <>, reduce: EXP1
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S119
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(30), // ;, reduce: TERM1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(30), // <, reduce: TERM1
+			reduce(30), // >, reduce: TERM1
+			reduce(30), // <>, reduce: TERM1
+			reduce(30), // +, reduce: TERM1
+			reduce(30), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S120
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(31), // ;, reduce: TERM1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			reduce(31), // <, reduce: TERM1
+			reduce(31), // >, reduce: TERM1
+			reduce(31), // <>, reduce: TERM1
+			reduce(31), // +, reduce: TERM1
+			reduce(31), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S121
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			shift(163), // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			shift(165), // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S122
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(11),  // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(11), // }, reduce: BLOQ1
+			nil,        // =
+			shift(17),  // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			shift(18),  // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S123
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(40), // ), reduce: FACTOR
+			nil,        // else
+			reduce(40), // <, reduce: FACTOR
+			reduce(40), // >, reduce: FACTOR
+			reduce(40), // <>, reduce: FACTOR
+			reduce(40), // +, reduce: FACTOR
+			reduce(40), // -, reduce: FACTOR
+			reduce(40), // *, reduce: FACTOR
+			reduce(40), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S124
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(44), // ), reduce: VAR_CTE
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(44), // +, reduce: VAR_CTE
+			reduce(44), // -, reduce: VAR_CTE
+			reduce(44), // *, reduce: VAR_CTE
+			reduce(44), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S125
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S126
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(21), // ), reduce: EXPR1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S127
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(26), // ), reduce: EXP1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			shift(169), // +
+			shift(170), // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S128
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(32), // ), reduce: TERM1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(32), // +, reduce: TERM1
+			reduce(32), // -, reduce: TERM1
+			shift(172), // *
+			shift(173), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S129
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(124), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(132), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S130
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(124), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(132), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S131
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(41), // ), reduce: FACTOR
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(41), // +, reduce: FACTOR
+			reduce(41), // -, reduce: FACTOR
+			reduce(41), // *, reduce: FACTOR
+			reduce(41), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S132
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(45), // ), reduce: VAR_CTE
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(45), // +, reduce: VAR_CTE
+			reduce(45), // -, reduce: VAR_CTE
+			reduce(45), // *, reduce: VAR_CTE
+			reduce(45), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S133
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(27), // ), reduce: EXP1
+			nil,        // else
+			reduce(27), // <, reduce: EXP1
+			reduce(27), // >, reduce: EXP1
+			reduce(27), // <>, reduce: EXP1
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S134
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(28), // ), reduce: EXP1
+			nil,        // else
+			reduce(28), // <, reduce: EXP1
+			reduce(28), // >, reduce: EXP1
+			reduce(28), // <>, reduce: EXP1
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S135
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(30), // ), reduce: TERM1
+			nil,        // else
+			reduce(30), // <, reduce: TERM1
+			reduce(30), // >, reduce: TERM1
+			reduce(30), // <>, reduce: TERM1
+			reduce(30), // +, reduce: TERM1
+			reduce(30), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S136
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(31), // ), reduce: TERM1
+			nil,        // else
+			reduce(31), // <, reduce: TERM1
+			reduce(31), // >, reduce: TERM1
+			reduce(31), // <>, reduce: TERM1
+			reduce(31), // +, reduce: TERM1
+			reduce(31), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S137
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(40), // ,, reduce: FACTOR
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(40), // ), reduce: FACTOR
+			nil,        // else
+			reduce(40), // <, reduce: FACTOR
+			reduce(40), // >, reduce: FACTOR
+			reduce(40), // <>, reduce: FACTOR
+			reduce(40), // +, reduce: FACTOR
+			reduce(40), // -, reduce: FACTOR
+			reduce(40), // *, reduce: FACTOR
+			reduce(40), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S138
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(44), // ,, reduce: VAR_CTE
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(44), // ), reduce: VAR_CTE
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(44), // +, reduce: VAR_CTE
+			reduce(44), // -, reduce: VAR_CTE
+			reduce(44), // *, reduce: VAR_CTE
+			reduce(44), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S139
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			shift(38), // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			shift(40), // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			shift(44), // *
+			shift(45), // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			shift(47), // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S140
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(21), // ,, reduce: EXPR1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(21), // ), reduce: EXPR1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S141
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(26), // ,, reduce: EXP1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(26), // ), reduce: EXP1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			shift(178), // +
+			shift(179), // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S142
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(32), // ,, reduce: TERM1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(32), // ), reduce: TERM1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(32), // +, reduce: TERM1
+			reduce(32), // -, reduce: TERM1
+			shift(181), // *
+			shift(182), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S143
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(138), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(146), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S144
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(138), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(146), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S145
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(41), // ,, reduce: FACTOR
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(41), // ), reduce: FACTOR
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(41), // +, reduce: FACTOR
+			reduce(41), // -, reduce: FACTOR
+			reduce(41), // *, reduce: FACTOR
+			reduce(41), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S146
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(45), // ,, reduce: VAR_CTE
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(45), // ), reduce: VAR_CTE
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(45), // +, reduce: VAR_CTE
+			reduce(45), // -, reduce: VAR_CTE
+			reduce(45), // *, reduce: VAR_CTE
+			reduce(45), // /, reduce: VAR_CTE
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S147
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(27), // ,, reduce: EXP1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(27), // ), reduce: EXP1
+			nil,        // else
+			reduce(27), // <, reduce: EXP1
+			reduce(27), // >, reduce: EXP1
+			reduce(27), // <>, reduce: EXP1
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S148
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(28), // ,, reduce: EXP1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(28), // ), reduce: EXP1
+			nil,        // else
+			reduce(28), // <, reduce: EXP1
+			reduce(28), // >, reduce: EXP1
+			reduce(28), // <>, reduce: EXP1
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S149
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(30), // ,, reduce: TERM1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(30), // ), reduce: TERM1
+			nil,        // else
+			reduce(30), // <, reduce: TERM1
+			reduce(30), // >, reduce: TERM1
+			reduce(30), // <>, reduce: TERM1
+			reduce(30), // +, reduce: TERM1
+			reduce(30), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S150
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(31), // ,, reduce: TERM1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(31), // ), reduce: TERM1
+			nil,        // else
+			reduce(31), // <, reduce: TERM1
+			reduce(31), // >, reduce: TERM1
+			reduce(31), // <>, reduce: TERM1
+			reduce(31), // +, reduce: TERM1
+			reduce(31), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S151
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(35), // id, reduce: ESCRITURA
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(35), // }, reduce: ESCRITURA
+			nil,        // =
+			reduce(35), // if, reduce: ESCRITURA
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			reduce(35), // print, reduce: ESCRITURA
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S152
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			reduce(8), // {, reduce: VAR3
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S153
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			nil,       // ;
+			nil,       // ,
+			reduce(4), // {, reduce: VAR1
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			nil,       // else
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S154
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			shift(185), // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S155
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(25), // ;, reduce: EXP
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S156
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(108), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(109), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(113), // *
+			shift(114), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(116), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S157
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(108), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(109), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(113), // *
+			shift(114), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(116), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S158
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(29), // ;, reduce: TERMINO
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(29), // +, reduce: TERMINO
+			reduce(29), // -, reduce: TERMINO
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S159
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(108), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(109), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(113), // *
+			shift(114), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(116), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S160
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(108), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(109), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(113), // *
+			shift(114), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(116), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S161
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(42), // ;, reduce: FACTOR
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(42), // +, reduce: FACTOR
+			reduce(42), // -, reduce: FACTOR
+			reduce(42), // *, reduce: FACTOR
+			reduce(42), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S162
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(43), // ;, reduce: FACTOR
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(43), // +, reduce: FACTOR
+			reduce(43), // -, reduce: FACTOR
+			reduce(43), // *, reduce: FACTOR
+			reduce(43), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S163
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(17), // id, reduce: COND1
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(17), // }, reduce: COND1
+			nil,        // =
+			reduce(17), // if, reduce: COND1
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			reduce(17), // print, reduce: COND1
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S164
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(16), // id, reduce: CONDICION
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(16), // }, reduce: CONDICION
+			nil,        // =
+			reduce(16), // if, reduce: CONDICION
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			reduce(16), // print, reduce: CONDICION
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S165
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			shift(122), // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S166
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			shift(191), // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S167
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			shift(192), // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S168
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(25), // ), reduce: EXP
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S169
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(124), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(125), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(129), // *
+			shift(130), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(132), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S170
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(124), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(125), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(129), // *
+			shift(130), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(132), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S171
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(29), // ), reduce: TERMINO
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(29), // +, reduce: TERMINO
+			reduce(29), // -, reduce: TERMINO
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S172
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(124), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(125), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(129), // *
+			shift(130), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(132), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S173
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(124), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(125), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(129), // *
+			shift(130), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(132), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S174
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(42), // ), reduce: FACTOR
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(42), // +, reduce: FACTOR
+			reduce(42), // -, reduce: FACTOR
+			reduce(42), // *, reduce: FACTOR
+			reduce(42), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S175
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(43), // ), reduce: FACTOR
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(43), // +, reduce: FACTOR
+			reduce(43), // -, reduce: FACTOR
+			reduce(43), // *, reduce: FACTOR
+			reduce(43), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S176
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			shift(197), // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S177
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(25), // ,, reduce: EXP
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(25), // ), reduce: EXP
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S178
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(138), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(139), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(143), // *
+			shift(144), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(146), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S179
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(138), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(139), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(143), // *
+			shift(144), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(146), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S180
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(29), // ,, reduce: TERMINO
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(29), // ), reduce: TERMINO
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(29), // +, reduce: TERMINO
+			reduce(29), // -, reduce: TERMINO
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S181
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(138), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(139), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(143), // *
+			shift(144), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(146), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S182
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			shift(138), // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			shift(139), // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			shift(143), // *
+			shift(144), // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			shift(146), // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S183
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(42), // ,, reduce: FACTOR
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(42), // ), reduce: FACTOR
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(42), // +, reduce: FACTOR
+			reduce(42), // -, reduce: FACTOR
+			reduce(42), // *, reduce: FACTOR
+			reduce(42), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S184
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(43), // ,, reduce: FACTOR
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(43), // ), reduce: FACTOR
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(43), // +, reduce: FACTOR
+			reduce(43), // -, reduce: FACTOR
+			reduce(43), // *, reduce: FACTOR
+			reduce(43), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S185
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(40), // ;, reduce: FACTOR
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(40), // +, reduce: FACTOR
+			reduce(40), // -, reduce: FACTOR
+			reduce(40), // *, reduce: FACTOR
+			reduce(40), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S186
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(27), // ;, reduce: EXP1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S187
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(28), // ;, reduce: EXP1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S188
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(30), // ;, reduce: TERM1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(30), // +, reduce: TERM1
+			reduce(30), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S189
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			reduce(31), // ;, reduce: TERM1
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(31), // +, reduce: TERM1
+			reduce(31), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S190
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			shift(163), // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			nil,        // )
+			shift(165), // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S191
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,       // INVALID
+			nil,       // $
+			nil,       // program
+			nil,       // id
+			nil,       // :
+			nil,       // var
+			nil,       // empty
+			reduce(9), // ;, reduce: BLOQUE
+			nil,       // ,
+			nil,       // {
+			nil,       // }
+			nil,       // =
+			nil,       // if
+			nil,       // (
+			nil,       // )
+			reduce(9), // else, reduce: BLOQUE
+			nil,       // <
+			nil,       // >
+			nil,       // <>
+			nil,       // +
+			nil,       // -
+			nil,       // *
+			nil,       // /
+			nil,       // int
+			nil,       // float
+			nil,       // print
+			nil,       // number
+			nil,       // cte_f
+			nil,       // cte_i
+		},
+	},
+	actionRow{ // S192
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(40), // ), reduce: FACTOR
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(40), // +, reduce: FACTOR
+			reduce(40), // -, reduce: FACTOR
+			reduce(40), // *, reduce: FACTOR
+			reduce(40), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S193
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(27), // ), reduce: EXP1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S194
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(28), // ), reduce: EXP1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S195
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(30), // ), reduce: TERM1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(30), // +, reduce: TERM1
+			reduce(30), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S196
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(31), // ), reduce: TERM1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(31), // +, reduce: TERM1
+			reduce(31), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S197
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(40), // ,, reduce: FACTOR
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(40), // ), reduce: FACTOR
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(40), // +, reduce: FACTOR
+			reduce(40), // -, reduce: FACTOR
+			reduce(40), // *, reduce: FACTOR
+			reduce(40), // /, reduce: FACTOR
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S198
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(27), // ,, reduce: EXP1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(27), // ), reduce: EXP1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S199
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(28), // ,, reduce: EXP1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(28), // ), reduce: EXP1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S200
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(30), // ,, reduce: TERM1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(30), // ), reduce: TERM1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(30), // +, reduce: TERM1
+			reduce(30), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S201
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			nil,        // id
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			reduce(31), // ,, reduce: TERM1
+			nil,        // {
+			nil,        // }
+			nil,        // =
+			nil,        // if
+			nil,        // (
+			reduce(31), // ), reduce: TERM1
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			reduce(31), // +, reduce: TERM1
+			reduce(31), // -, reduce: TERM1
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			nil,        // print
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
+		},
+	},
+	actionRow{ // S202
+		canRecover: false,
+		actions: [numSymbols]action{
+			nil,        // INVALID
+			nil,        // $
+			nil,        // program
+			reduce(18), // id, reduce: COND1
+			nil,        // :
+			nil,        // var
+			nil,        // empty
+			nil,        // ;
+			nil,        // ,
+			nil,        // {
+			reduce(18), // }, reduce: COND1
+			nil,        // =
+			reduce(18), // if, reduce: COND1
+			nil,        // (
+			nil,        // )
+			nil,        // else
+			nil,        // <
+			nil,        // >
+			nil,        // <>
+			nil,        // +
+			nil,        // -
+			nil,        // *
+			nil,        // /
+			nil,        // int
+			nil,        // float
+			reduce(18), // print, reduce: COND1
+			nil,        // number
+			nil,        // cte_f
+			nil,        // cte_i
 		},
 	},
 }

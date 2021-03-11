@@ -1,6 +1,1 @@
-program a :
-{
-  if ( 3 > -2) {
-      a = c - 1 * 4.5e2;
-  };
-}
+program a : { }

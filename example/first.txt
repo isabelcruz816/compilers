@@ -1,6 +1,118 @@
 S': {
-	hello
+	program
 }
-Hello: {
-	hello
+PROGRAMA: {
+	program
+}
+VARS: {
+	empty
+	var
+}
+VAR1: {
+	id
+}
+VAR2: {
+	,
+	empty
+}
+VAR3: {
+	empty
+	id
+}
+BLOQUE: {
+	{
+}
+BLOQ1: {
+	empty
+	id
+	if
+	print
+}
+ESTATUTO: {
+	id
+	if
+	print
+}
+ASIGNACION: {
+	id
+}
+CONDICION: {
+	if
+}
+COND1: {
+	;
+	else
+}
+EXPRESION: {
+	(
+	*
+	/
+	id
+	number
+}
+EXPR1: {
+	<
+	<>
+	>
+	empty
+}
+EXPR2: {
+	<
+	<>
+	>
+}
+EXP: {
+	(
+	*
+	/
+	id
+	number
+}
+EXP1: {
+	+
+	-
+	empty
+}
+TERMINO: {
+	(
+	*
+	/
+	id
+	number
+}
+TERM1: {
+	*
+	/
+	empty
+}
+TIPO: {
+	float
+	int
+}
+ESCRITURA: {
+	print
+}
+PRINT1: {
+	(
+	*
+	,
+	/
+	empty
+	id
+	number
+}
+PRINT2: {
+	,
+	empty
+}
+FACTOR: {
+	(
+	*
+	/
+	id
+	number
+}
+VAR_CTE: {
+	id
+	number
 }

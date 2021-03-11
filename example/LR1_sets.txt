@@ -1,27 +1,4683 @@
 S0{
-	S' : •Hello «$»
-	Hello : •hello id «$»
+	S' : •PROGRAMA «$»
+	PROGRAMA : •program id : VARS BLOQUE «$»
 }
 Transitions:
-	Hello -> 1
-	hello -> 2
+	PROGRAMA -> 1
+	program -> 2
 
 
 S1{
-	S' : Hello• «$»
+	S' : PROGRAMA• «$»
 }
 Transitions:
 
 
 S2{
-	Hello : hello •id «$»
+	PROGRAMA : program •id : VARS BLOQUE «$»
 }
 Transitions:
 	id -> 3
 
 
 S3{
-	Hello : hello id• «$»
+	PROGRAMA : program id •: VARS BLOQUE «$»
+}
+Transitions:
+	: -> 4
+
+
+S4{
+	PROGRAMA : program id : •VARS BLOQUE «$»
+	VARS : •var VAR1 «{»
+	VARS : empty• «{»
+}
+Transitions:
+	VARS -> 5
+	var -> 6
+
+
+S5{
+	PROGRAMA : program id : VARS •BLOQUE «$»
+	BLOQUE : •{ BLOQ1 } «$»
+}
+Transitions:
+	BLOQUE -> 7
+	{ -> 8
+
+
+S6{
+	VARS : var •VAR1 «{»
+	VAR1 : •id VAR2 : TIPO ; VAR3 «{»
+}
+Transitions:
+	id -> 9
+	VAR1 -> 10
+
+
+S7{
+	PROGRAMA : program id : VARS BLOQUE• «$»
+}
+Transitions:
+
+
+S8{
+	BLOQUE : { •BLOQ1 } «$»
+	BLOQ1 : •ESTATUTO BLOQ1 «}»
+	BLOQ1 : empty• «}»
+	ESTATUTO : •ASIGNACION «id»
+	ESTATUTO : •ASIGNACION «if»
+	ESTATUTO : •ASIGNACION «print»
+	ESTATUTO : •ASIGNACION «}»
+	ESTATUTO : •CONDICION «id»
+	ESTATUTO : •CONDICION «if»
+	ESTATUTO : •CONDICION «print»
+	ESTATUTO : •CONDICION «}»
+	ESTATUTO : •ESCRITURA «id»
+	ESTATUTO : •ESCRITURA «if»
+	ESTATUTO : •ESCRITURA «print»
+	ESTATUTO : •ESCRITURA «}»
+	ASIGNACION : •id = EXPRESION ; «id»
+	ASIGNACION : •id = EXPRESION ; «if»
+	ASIGNACION : •id = EXPRESION ; «print»
+	ASIGNACION : •id = EXPRESION ; «}»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «id»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «if»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «print»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «}»
+	ESCRITURA : •print ( PRINT1 ) ; «id»
+	ESCRITURA : •print ( PRINT1 ) ; «if»
+	ESCRITURA : •print ( PRINT1 ) ; «print»
+	ESCRITURA : •print ( PRINT1 ) ; «}»
+}
+Transitions:
+	id -> 11
+	BLOQ1 -> 12
+	ESTATUTO -> 13
+	ASIGNACION -> 14
+	CONDICION -> 15
+	ESCRITURA -> 16
+	if -> 17
+	print -> 18
+
+
+S9{
+	VAR1 : id •VAR2 : TIPO ; VAR3 «{»
+	VAR2 : •, id VAR2 «:»
+	VAR2 : empty• «:»
+}
+Transitions:
+	VAR2 -> 19
+	, -> 20
+
+
+S10{
+	VARS : var VAR1• «{»
+}
+Transitions:
+
+
+S11{
+	ASIGNACION : id •= EXPRESION ; «id»
+	ASIGNACION : id •= EXPRESION ; «if»
+	ASIGNACION : id •= EXPRESION ; «print»
+	ASIGNACION : id •= EXPRESION ; «}»
+}
+Transitions:
+	= -> 21
+
+
+S12{
+	BLOQUE : { BLOQ1 •} «$»
+}
+Transitions:
+	} -> 22
+
+
+S13{
+	BLOQ1 : ESTATUTO •BLOQ1 «}»
+	BLOQ1 : •ESTATUTO BLOQ1 «}»
+	BLOQ1 : empty• «}»
+	ESTATUTO : •ASIGNACION «id»
+	ESTATUTO : •ASIGNACION «if»
+	ESTATUTO : •ASIGNACION «print»
+	ESTATUTO : •ASIGNACION «}»
+	ESTATUTO : •CONDICION «id»
+	ESTATUTO : •CONDICION «if»
+	ESTATUTO : •CONDICION «print»
+	ESTATUTO : •CONDICION «}»
+	ESTATUTO : •ESCRITURA «id»
+	ESTATUTO : •ESCRITURA «if»
+	ESTATUTO : •ESCRITURA «print»
+	ESTATUTO : •ESCRITURA «}»
+	ASIGNACION : •id = EXPRESION ; «id»
+	ASIGNACION : •id = EXPRESION ; «if»
+	ASIGNACION : •id = EXPRESION ; «print»
+	ASIGNACION : •id = EXPRESION ; «}»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «id»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «if»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «print»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «}»
+	ESCRITURA : •print ( PRINT1 ) ; «id»
+	ESCRITURA : •print ( PRINT1 ) ; «if»
+	ESCRITURA : •print ( PRINT1 ) ; «print»
+	ESCRITURA : •print ( PRINT1 ) ; «}»
+}
+Transitions:
+	id -> 11
+	ESTATUTO -> 13
+	ASIGNACION -> 14
+	CONDICION -> 15
+	ESCRITURA -> 16
+	if -> 17
+	print -> 18
+	BLOQ1 -> 23
+
+
+S14{
+	ESTATUTO : ASIGNACION• «id»
+	ESTATUTO : ASIGNACION• «if»
+	ESTATUTO : ASIGNACION• «print»
+	ESTATUTO : ASIGNACION• «}»
+}
+Transitions:
+
+
+S15{
+	ESTATUTO : CONDICION• «id»
+	ESTATUTO : CONDICION• «if»
+	ESTATUTO : CONDICION• «print»
+	ESTATUTO : CONDICION• «}»
+}
+Transitions:
+
+
+S16{
+	ESTATUTO : ESCRITURA• «id»
+	ESTATUTO : ESCRITURA• «if»
+	ESTATUTO : ESCRITURA• «print»
+	ESTATUTO : ESCRITURA• «}»
+}
+Transitions:
+
+
+S17{
+	CONDICION : if •( EXPRESION ) BLOQUE COND1 «id»
+	CONDICION : if •( EXPRESION ) BLOQUE COND1 «if»
+	CONDICION : if •( EXPRESION ) BLOQUE COND1 «print»
+	CONDICION : if •( EXPRESION ) BLOQUE COND1 «}»
+}
+Transitions:
+	( -> 24
+
+
+S18{
+	ESCRITURA : print •( PRINT1 ) ; «id»
+	ESCRITURA : print •( PRINT1 ) ; «if»
+	ESCRITURA : print •( PRINT1 ) ; «print»
+	ESCRITURA : print •( PRINT1 ) ; «}»
+}
+Transitions:
+	( -> 25
+
+
+S19{
+	VAR1 : id VAR2 •: TIPO ; VAR3 «{»
+}
+Transitions:
+	: -> 26
+
+
+S20{
+	VAR2 : , •id VAR2 «:»
+}
+Transitions:
+	id -> 27
+
+
+S21{
+	ASIGNACION : id = •EXPRESION ; «id»
+	ASIGNACION : id = •EXPRESION ; «if»
+	ASIGNACION : id = •EXPRESION ; «print»
+	ASIGNACION : id = •EXPRESION ; «}»
+	EXPRESION : •EXP EXPR1 «;»
+	EXP : •TERMINO EXP1 «;»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 28
+	EXPRESION -> 29
+	( -> 30
+	EXP -> 31
+	TERMINO -> 32
+	FACTOR -> 33
+	* -> 34
+	/ -> 35
+	VAR_CTE -> 36
+	number -> 37
+
+
+S22{
+	BLOQUE : { BLOQ1 }• «$»
+}
+Transitions:
+
+
+S23{
+	BLOQ1 : ESTATUTO BLOQ1• «}»
+}
+Transitions:
+
+
+S24{
+	CONDICION : if ( •EXPRESION ) BLOQUE COND1 «id»
+	CONDICION : if ( •EXPRESION ) BLOQUE COND1 «if»
+	CONDICION : if ( •EXPRESION ) BLOQUE COND1 «print»
+	CONDICION : if ( •EXPRESION ) BLOQUE COND1 «}»
+	EXPRESION : •EXP EXPR1 «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	EXPRESION -> 39
+	( -> 40
+	EXP -> 41
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+
+
+S25{
+	ESCRITURA : print ( •PRINT1 ) ; «id»
+	ESCRITURA : print ( •PRINT1 ) ; «if»
+	ESCRITURA : print ( •PRINT1 ) ; «print»
+	ESCRITURA : print ( •PRINT1 ) ; «}»
+	PRINT1 : •EXPRESION PRINT2 «)»
+	PRINT1 : •PRINT2 «)»
+	EXPRESION : •EXP EXPR1 «)»
+	EXPRESION : •EXP EXPR1 «,»
+	PRINT2 : •, PRINT1 «)»
+	PRINT2 : empty• «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	EXP : •TERMINO EXP1 «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 48
+	, -> 49
+	EXPRESION -> 50
+	( -> 51
+	EXP -> 52
+	TERMINO -> 53
+	FACTOR -> 54
+	* -> 55
+	/ -> 56
+	PRINT1 -> 57
+	PRINT2 -> 58
+	VAR_CTE -> 59
+	number -> 60
+
+
+S26{
+	VAR1 : id VAR2 : •TIPO ; VAR3 «{»
+	TIPO : •int «;»
+	TIPO : •float «;»
+}
+Transitions:
+	TIPO -> 61
+	int -> 62
+	float -> 63
+
+
+S27{
+	VAR2 : , id •VAR2 «:»
+	VAR2 : •, id VAR2 «:»
+	VAR2 : empty• «:»
+}
+Transitions:
+	, -> 20
+	VAR2 -> 64
+
+
+S28{
+	VAR_CTE : id• «*»
+	VAR_CTE : id• «+»
+	VAR_CTE : id• «/»
+	VAR_CTE : id• «-»
+	VAR_CTE : id• «;»
+	VAR_CTE : id• «<»
+	VAR_CTE : id• «<>»
+	VAR_CTE : id• «>»
+}
+Transitions:
+
+
+S29{
+	ASIGNACION : id = EXPRESION •; «id»
+	ASIGNACION : id = EXPRESION •; «if»
+	ASIGNACION : id = EXPRESION •; «print»
+	ASIGNACION : id = EXPRESION •; «}»
+}
+Transitions:
+	; -> 65
+
+
+S30{
+	FACTOR : ( •EXPRESION ) «*»
+	FACTOR : ( •EXPRESION ) «+»
+	FACTOR : ( •EXPRESION ) «/»
+	FACTOR : ( •EXPRESION ) «-»
+	FACTOR : ( •EXPRESION ) «;»
+	FACTOR : ( •EXPRESION ) «<»
+	FACTOR : ( •EXPRESION ) «<>»
+	FACTOR : ( •EXPRESION ) «>»
+	EXPRESION : •EXP EXPR1 «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	EXP -> 41
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	EXPRESION -> 66
+
+
+S31{
+	EXPRESION : EXP •EXPR1 «;»
+	EXPR1 : empty• «;»
+	EXPR1 : •EXPR2 EXP «;»
+	EXPR2 : •< «(»
+	EXPR2 : •< «*»
+	EXPR2 : •< «/»
+	EXPR2 : •< «id»
+	EXPR2 : •< «number»
+	EXPR2 : •> «(»
+	EXPR2 : •> «*»
+	EXPR2 : •> «/»
+	EXPR2 : •> «id»
+	EXPR2 : •> «number»
+	EXPR2 : •<> «(»
+	EXPR2 : •<> «*»
+	EXPR2 : •<> «/»
+	EXPR2 : •<> «id»
+	EXPR2 : •<> «number»
+}
+Transitions:
+	EXPR1 -> 67
+	EXPR2 -> 68
+	< -> 69
+	> -> 70
+	<> -> 71
+
+
+S32{
+	EXP : TERMINO •EXP1 «;»
+	EXP : TERMINO •EXP1 «<»
+	EXP : TERMINO •EXP1 «<>»
+	EXP : TERMINO •EXP1 «>»
+	EXP1 : empty• «;»
+	EXP1 : •+ EXP «;»
+	EXP1 : •- EXP «;»
+	EXP1 : empty• «<»
+	EXP1 : •+ EXP «<»
+	EXP1 : •- EXP «<»
+	EXP1 : empty• «<>»
+	EXP1 : •+ EXP «<>»
+	EXP1 : •- EXP «<>»
+	EXP1 : empty• «>»
+	EXP1 : •+ EXP «>»
+	EXP1 : •- EXP «>»
+}
+Transitions:
+	EXP1 -> 72
+	+ -> 73
+	- -> 74
+
+
+S33{
+	TERMINO : FACTOR •TERM1 «+»
+	TERMINO : FACTOR •TERM1 «-»
+	TERMINO : FACTOR •TERM1 «;»
+	TERMINO : FACTOR •TERM1 «<»
+	TERMINO : FACTOR •TERM1 «<>»
+	TERMINO : FACTOR •TERM1 «>»
+	TERM1 : •* TERMINO «+»
+	TERM1 : •/ TERMINO «+»
+	TERM1 : empty• «+»
+	TERM1 : •* TERMINO «-»
+	TERM1 : •/ TERMINO «-»
+	TERM1 : empty• «-»
+	TERM1 : •* TERMINO «;»
+	TERM1 : •/ TERMINO «;»
+	TERM1 : empty• «;»
+	TERM1 : •* TERMINO «<»
+	TERM1 : •/ TERMINO «<»
+	TERM1 : empty• «<»
+	TERM1 : •* TERMINO «<>»
+	TERM1 : •/ TERMINO «<>»
+	TERM1 : empty• «<>»
+	TERM1 : •* TERMINO «>»
+	TERM1 : •/ TERMINO «>»
+	TERM1 : empty• «>»
+}
+Transitions:
+	TERM1 -> 75
+	* -> 76
+	/ -> 77
+
+
+S34{
+	FACTOR : * •VAR_CTE «*»
+	FACTOR : * •VAR_CTE «+»
+	FACTOR : * •VAR_CTE «/»
+	FACTOR : * •VAR_CTE «-»
+	FACTOR : * •VAR_CTE «;»
+	FACTOR : * •VAR_CTE «<»
+	FACTOR : * •VAR_CTE «<>»
+	FACTOR : * •VAR_CTE «>»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 28
+	number -> 37
+	VAR_CTE -> 78
+
+
+S35{
+	FACTOR : / •VAR_CTE «*»
+	FACTOR : / •VAR_CTE «+»
+	FACTOR : / •VAR_CTE «/»
+	FACTOR : / •VAR_CTE «-»
+	FACTOR : / •VAR_CTE «;»
+	FACTOR : / •VAR_CTE «<»
+	FACTOR : / •VAR_CTE «<>»
+	FACTOR : / •VAR_CTE «>»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 28
+	number -> 37
+	VAR_CTE -> 79
+
+
+S36{
+	FACTOR : VAR_CTE• «*»
+	FACTOR : VAR_CTE• «+»
+	FACTOR : VAR_CTE• «/»
+	FACTOR : VAR_CTE• «-»
+	FACTOR : VAR_CTE• «;»
+	FACTOR : VAR_CTE• «<»
+	FACTOR : VAR_CTE• «<>»
+	FACTOR : VAR_CTE• «>»
+}
+Transitions:
+
+
+S37{
+	VAR_CTE : number• «*»
+	VAR_CTE : number• «+»
+	VAR_CTE : number• «/»
+	VAR_CTE : number• «-»
+	VAR_CTE : number• «;»
+	VAR_CTE : number• «<»
+	VAR_CTE : number• «<>»
+	VAR_CTE : number• «>»
+}
+Transitions:
+
+
+S38{
+	VAR_CTE : id• «)»
+	VAR_CTE : id• «*»
+	VAR_CTE : id• «/»
+	VAR_CTE : id• «+»
+	VAR_CTE : id• «-»
+	VAR_CTE : id• «<»
+	VAR_CTE : id• «<>»
+	VAR_CTE : id• «>»
+}
+Transitions:
+
+
+S39{
+	CONDICION : if ( EXPRESION •) BLOQUE COND1 «id»
+	CONDICION : if ( EXPRESION •) BLOQUE COND1 «if»
+	CONDICION : if ( EXPRESION •) BLOQUE COND1 «print»
+	CONDICION : if ( EXPRESION •) BLOQUE COND1 «}»
+}
+Transitions:
+	) -> 80
+
+
+S40{
+	FACTOR : ( •EXPRESION ) «)»
+	FACTOR : ( •EXPRESION ) «*»
+	FACTOR : ( •EXPRESION ) «/»
+	FACTOR : ( •EXPRESION ) «+»
+	FACTOR : ( •EXPRESION ) «-»
+	FACTOR : ( •EXPRESION ) «<»
+	FACTOR : ( •EXPRESION ) «<>»
+	FACTOR : ( •EXPRESION ) «>»
+	EXPRESION : •EXP EXPR1 «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	EXP -> 41
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	EXPRESION -> 81
+
+
+S41{
+	EXPRESION : EXP •EXPR1 «)»
+	EXPR1 : empty• «)»
+	EXPR1 : •EXPR2 EXP «)»
+	EXPR2 : •< «(»
+	EXPR2 : •< «*»
+	EXPR2 : •< «/»
+	EXPR2 : •< «id»
+	EXPR2 : •< «number»
+	EXPR2 : •> «(»
+	EXPR2 : •> «*»
+	EXPR2 : •> «/»
+	EXPR2 : •> «id»
+	EXPR2 : •> «number»
+	EXPR2 : •<> «(»
+	EXPR2 : •<> «*»
+	EXPR2 : •<> «/»
+	EXPR2 : •<> «id»
+	EXPR2 : •<> «number»
+}
+Transitions:
+	< -> 69
+	> -> 70
+	<> -> 71
+	EXPR1 -> 82
+	EXPR2 -> 83
+
+
+S42{
+	EXP : TERMINO •EXP1 «)»
+	EXP : TERMINO •EXP1 «<»
+	EXP : TERMINO •EXP1 «<>»
+	EXP : TERMINO •EXP1 «>»
+	EXP1 : empty• «)»
+	EXP1 : •+ EXP «)»
+	EXP1 : •- EXP «)»
+	EXP1 : empty• «<»
+	EXP1 : •+ EXP «<»
+	EXP1 : •- EXP «<»
+	EXP1 : empty• «<>»
+	EXP1 : •+ EXP «<>»
+	EXP1 : •- EXP «<>»
+	EXP1 : empty• «>»
+	EXP1 : •+ EXP «>»
+	EXP1 : •- EXP «>»
+}
+Transitions:
+	EXP1 -> 84
+	+ -> 85
+	- -> 86
+
+
+S43{
+	TERMINO : FACTOR •TERM1 «)»
+	TERMINO : FACTOR •TERM1 «+»
+	TERMINO : FACTOR •TERM1 «-»
+	TERMINO : FACTOR •TERM1 «<»
+	TERMINO : FACTOR •TERM1 «<>»
+	TERMINO : FACTOR •TERM1 «>»
+	TERM1 : •* TERMINO «)»
+	TERM1 : •/ TERMINO «)»
+	TERM1 : empty• «)»
+	TERM1 : •* TERMINO «+»
+	TERM1 : •/ TERMINO «+»
+	TERM1 : empty• «+»
+	TERM1 : •* TERMINO «-»
+	TERM1 : •/ TERMINO «-»
+	TERM1 : empty• «-»
+	TERM1 : •* TERMINO «<»
+	TERM1 : •/ TERMINO «<»
+	TERM1 : empty• «<»
+	TERM1 : •* TERMINO «<>»
+	TERM1 : •/ TERMINO «<>»
+	TERM1 : empty• «<>»
+	TERM1 : •* TERMINO «>»
+	TERM1 : •/ TERMINO «>»
+	TERM1 : empty• «>»
+}
+Transitions:
+	TERM1 -> 87
+	* -> 88
+	/ -> 89
+
+
+S44{
+	FACTOR : * •VAR_CTE «)»
+	FACTOR : * •VAR_CTE «*»
+	FACTOR : * •VAR_CTE «/»
+	FACTOR : * •VAR_CTE «+»
+	FACTOR : * •VAR_CTE «-»
+	FACTOR : * •VAR_CTE «<»
+	FACTOR : * •VAR_CTE «<>»
+	FACTOR : * •VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	number -> 47
+	VAR_CTE -> 90
+
+
+S45{
+	FACTOR : / •VAR_CTE «)»
+	FACTOR : / •VAR_CTE «*»
+	FACTOR : / •VAR_CTE «/»
+	FACTOR : / •VAR_CTE «+»
+	FACTOR : / •VAR_CTE «-»
+	FACTOR : / •VAR_CTE «<»
+	FACTOR : / •VAR_CTE «<>»
+	FACTOR : / •VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	number -> 47
+	VAR_CTE -> 91
+
+
+S46{
+	FACTOR : VAR_CTE• «)»
+	FACTOR : VAR_CTE• «*»
+	FACTOR : VAR_CTE• «/»
+	FACTOR : VAR_CTE• «+»
+	FACTOR : VAR_CTE• «-»
+	FACTOR : VAR_CTE• «<»
+	FACTOR : VAR_CTE• «<>»
+	FACTOR : VAR_CTE• «>»
+}
+Transitions:
+
+
+S47{
+	VAR_CTE : number• «)»
+	VAR_CTE : number• «*»
+	VAR_CTE : number• «/»
+	VAR_CTE : number• «+»
+	VAR_CTE : number• «-»
+	VAR_CTE : number• «<»
+	VAR_CTE : number• «<>»
+	VAR_CTE : number• «>»
+}
+Transitions:
+
+
+S48{
+	VAR_CTE : id• «)»
+	VAR_CTE : id• «*»
+	VAR_CTE : id• «/»
+	VAR_CTE : id• «+»
+	VAR_CTE : id• «-»
+	VAR_CTE : id• «<»
+	VAR_CTE : id• «<>»
+	VAR_CTE : id• «>»
+	VAR_CTE : id• «,»
+}
+Transitions:
+
+
+S49{
+	PRINT2 : , •PRINT1 «)»
+	PRINT1 : •EXPRESION PRINT2 «)»
+	PRINT1 : •PRINT2 «)»
+	EXPRESION : •EXP EXPR1 «)»
+	EXPRESION : •EXP EXPR1 «,»
+	PRINT2 : •, PRINT1 «)»
+	PRINT2 : empty• «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	EXP : •TERMINO EXP1 «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 48
+	, -> 49
+	EXPRESION -> 50
+	( -> 51
+	EXP -> 52
+	TERMINO -> 53
+	FACTOR -> 54
+	* -> 55
+	/ -> 56
+	PRINT2 -> 58
+	VAR_CTE -> 59
+	number -> 60
+	PRINT1 -> 92
+
+
+S50{
+	PRINT1 : EXPRESION •PRINT2 «)»
+	PRINT2 : •, PRINT1 «)»
+	PRINT2 : empty• «)»
+}
+Transitions:
+	, -> 49
+	PRINT2 -> 93
+
+
+S51{
+	FACTOR : ( •EXPRESION ) «)»
+	FACTOR : ( •EXPRESION ) «*»
+	FACTOR : ( •EXPRESION ) «/»
+	FACTOR : ( •EXPRESION ) «+»
+	FACTOR : ( •EXPRESION ) «-»
+	FACTOR : ( •EXPRESION ) «<»
+	FACTOR : ( •EXPRESION ) «<>»
+	FACTOR : ( •EXPRESION ) «>»
+	FACTOR : ( •EXPRESION ) «,»
+	EXPRESION : •EXP EXPR1 «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	EXP -> 41
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	EXPRESION -> 94
+
+
+S52{
+	EXPRESION : EXP •EXPR1 «)»
+	EXPRESION : EXP •EXPR1 «,»
+	EXPR1 : empty• «)»
+	EXPR1 : •EXPR2 EXP «)»
+	EXPR1 : empty• «,»
+	EXPR1 : •EXPR2 EXP «,»
+	EXPR2 : •< «(»
+	EXPR2 : •< «*»
+	EXPR2 : •< «/»
+	EXPR2 : •< «id»
+	EXPR2 : •< «number»
+	EXPR2 : •> «(»
+	EXPR2 : •> «*»
+	EXPR2 : •> «/»
+	EXPR2 : •> «id»
+	EXPR2 : •> «number»
+	EXPR2 : •<> «(»
+	EXPR2 : •<> «*»
+	EXPR2 : •<> «/»
+	EXPR2 : •<> «id»
+	EXPR2 : •<> «number»
+}
+Transitions:
+	< -> 69
+	> -> 70
+	<> -> 71
+	EXPR1 -> 95
+	EXPR2 -> 96
+
+
+S53{
+	EXP : TERMINO •EXP1 «)»
+	EXP : TERMINO •EXP1 «<»
+	EXP : TERMINO •EXP1 «<>»
+	EXP : TERMINO •EXP1 «>»
+	EXP : TERMINO •EXP1 «,»
+	EXP1 : empty• «)»
+	EXP1 : •+ EXP «)»
+	EXP1 : •- EXP «)»
+	EXP1 : empty• «<»
+	EXP1 : •+ EXP «<»
+	EXP1 : •- EXP «<»
+	EXP1 : empty• «<>»
+	EXP1 : •+ EXP «<>»
+	EXP1 : •- EXP «<>»
+	EXP1 : empty• «>»
+	EXP1 : •+ EXP «>»
+	EXP1 : •- EXP «>»
+	EXP1 : empty• «,»
+	EXP1 : •+ EXP «,»
+	EXP1 : •- EXP «,»
+}
+Transitions:
+	EXP1 -> 97
+	+ -> 98
+	- -> 99
+
+
+S54{
+	TERMINO : FACTOR •TERM1 «)»
+	TERMINO : FACTOR •TERM1 «+»
+	TERMINO : FACTOR •TERM1 «-»
+	TERMINO : FACTOR •TERM1 «<»
+	TERMINO : FACTOR •TERM1 «<>»
+	TERMINO : FACTOR •TERM1 «>»
+	TERMINO : FACTOR •TERM1 «,»
+	TERM1 : •* TERMINO «)»
+	TERM1 : •/ TERMINO «)»
+	TERM1 : empty• «)»
+	TERM1 : •* TERMINO «+»
+	TERM1 : •/ TERMINO «+»
+	TERM1 : empty• «+»
+	TERM1 : •* TERMINO «-»
+	TERM1 : •/ TERMINO «-»
+	TERM1 : empty• «-»
+	TERM1 : •* TERMINO «<»
+	TERM1 : •/ TERMINO «<»
+	TERM1 : empty• «<»
+	TERM1 : •* TERMINO «<>»
+	TERM1 : •/ TERMINO «<>»
+	TERM1 : empty• «<>»
+	TERM1 : •* TERMINO «>»
+	TERM1 : •/ TERMINO «>»
+	TERM1 : empty• «>»
+	TERM1 : •* TERMINO «,»
+	TERM1 : •/ TERMINO «,»
+	TERM1 : empty• «,»
+}
+Transitions:
+	TERM1 -> 100
+	* -> 101
+	/ -> 102
+
+
+S55{
+	FACTOR : * •VAR_CTE «)»
+	FACTOR : * •VAR_CTE «*»
+	FACTOR : * •VAR_CTE «/»
+	FACTOR : * •VAR_CTE «+»
+	FACTOR : * •VAR_CTE «-»
+	FACTOR : * •VAR_CTE «<»
+	FACTOR : * •VAR_CTE «<>»
+	FACTOR : * •VAR_CTE «>»
+	FACTOR : * •VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 48
+	number -> 60
+	VAR_CTE -> 103
+
+
+S56{
+	FACTOR : / •VAR_CTE «)»
+	FACTOR : / •VAR_CTE «*»
+	FACTOR : / •VAR_CTE «/»
+	FACTOR : / •VAR_CTE «+»
+	FACTOR : / •VAR_CTE «-»
+	FACTOR : / •VAR_CTE «<»
+	FACTOR : / •VAR_CTE «<>»
+	FACTOR : / •VAR_CTE «>»
+	FACTOR : / •VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 48
+	number -> 60
+	VAR_CTE -> 104
+
+
+S57{
+	ESCRITURA : print ( PRINT1 •) ; «id»
+	ESCRITURA : print ( PRINT1 •) ; «if»
+	ESCRITURA : print ( PRINT1 •) ; «print»
+	ESCRITURA : print ( PRINT1 •) ; «}»
+}
+Transitions:
+	) -> 105
+
+
+S58{
+	PRINT1 : PRINT2• «)»
+}
+Transitions:
+
+
+S59{
+	FACTOR : VAR_CTE• «)»
+	FACTOR : VAR_CTE• «*»
+	FACTOR : VAR_CTE• «/»
+	FACTOR : VAR_CTE• «+»
+	FACTOR : VAR_CTE• «-»
+	FACTOR : VAR_CTE• «<»
+	FACTOR : VAR_CTE• «<>»
+	FACTOR : VAR_CTE• «>»
+	FACTOR : VAR_CTE• «,»
+}
+Transitions:
+
+
+S60{
+	VAR_CTE : number• «)»
+	VAR_CTE : number• «*»
+	VAR_CTE : number• «/»
+	VAR_CTE : number• «+»
+	VAR_CTE : number• «-»
+	VAR_CTE : number• «<»
+	VAR_CTE : number• «<>»
+	VAR_CTE : number• «>»
+	VAR_CTE : number• «,»
+}
+Transitions:
+
+
+S61{
+	VAR1 : id VAR2 : TIPO •; VAR3 «{»
+}
+Transitions:
+	; -> 106
+
+
+S62{
+	TIPO : int• «;»
+}
+Transitions:
+
+
+S63{
+	TIPO : float• «;»
+}
+Transitions:
+
+
+S64{
+	VAR2 : , id VAR2• «:»
+}
+Transitions:
+
+
+S65{
+	ASIGNACION : id = EXPRESION ;• «id»
+	ASIGNACION : id = EXPRESION ;• «if»
+	ASIGNACION : id = EXPRESION ;• «print»
+	ASIGNACION : id = EXPRESION ;• «}»
+}
+Transitions:
+
+
+S66{
+	FACTOR : ( EXPRESION •) «*»
+	FACTOR : ( EXPRESION •) «+»
+	FACTOR : ( EXPRESION •) «/»
+	FACTOR : ( EXPRESION •) «-»
+	FACTOR : ( EXPRESION •) «;»
+	FACTOR : ( EXPRESION •) «<»
+	FACTOR : ( EXPRESION •) «<>»
+	FACTOR : ( EXPRESION •) «>»
+}
+Transitions:
+	) -> 107
+
+
+S67{
+	EXPRESION : EXP EXPR1• «;»
+}
+Transitions:
+
+
+S68{
+	EXPR1 : EXPR2 •EXP «;»
+	EXP : •TERMINO EXP1 «;»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+}
+Transitions:
+	id -> 108
+	( -> 109
+	EXP -> 110
+	TERMINO -> 111
+	FACTOR -> 112
+	* -> 113
+	/ -> 114
+	VAR_CTE -> 115
+	number -> 116
+
+
+S69{
+	EXPR2 : <• «(»
+	EXPR2 : <• «*»
+	EXPR2 : <• «/»
+	EXPR2 : <• «id»
+	EXPR2 : <• «number»
+}
+Transitions:
+
+
+S70{
+	EXPR2 : >• «(»
+	EXPR2 : >• «*»
+	EXPR2 : >• «/»
+	EXPR2 : >• «id»
+	EXPR2 : >• «number»
+}
+Transitions:
+
+
+S71{
+	EXPR2 : <>• «(»
+	EXPR2 : <>• «*»
+	EXPR2 : <>• «/»
+	EXPR2 : <>• «id»
+	EXPR2 : <>• «number»
+}
+Transitions:
+
+
+S72{
+	EXP : TERMINO EXP1• «;»
+	EXP : TERMINO EXP1• «<»
+	EXP : TERMINO EXP1• «<>»
+	EXP : TERMINO EXP1• «>»
+}
+Transitions:
+
+
+S73{
+	EXP1 : + •EXP «;»
+	EXP1 : + •EXP «<»
+	EXP1 : + •EXP «<>»
+	EXP1 : + •EXP «>»
+	EXP : •TERMINO EXP1 «;»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 28
+	( -> 30
+	TERMINO -> 32
+	FACTOR -> 33
+	* -> 34
+	/ -> 35
+	VAR_CTE -> 36
+	number -> 37
+	EXP -> 117
+
+
+S74{
+	EXP1 : - •EXP «;»
+	EXP1 : - •EXP «<»
+	EXP1 : - •EXP «<>»
+	EXP1 : - •EXP «>»
+	EXP : •TERMINO EXP1 «;»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 28
+	( -> 30
+	TERMINO -> 32
+	FACTOR -> 33
+	* -> 34
+	/ -> 35
+	VAR_CTE -> 36
+	number -> 37
+	EXP -> 118
+
+
+S75{
+	TERMINO : FACTOR TERM1• «+»
+	TERMINO : FACTOR TERM1• «-»
+	TERMINO : FACTOR TERM1• «;»
+	TERMINO : FACTOR TERM1• «<»
+	TERMINO : FACTOR TERM1• «<>»
+	TERMINO : FACTOR TERM1• «>»
+}
+Transitions:
+
+
+S76{
+	TERM1 : * •TERMINO «+»
+	TERM1 : * •TERMINO «-»
+	TERM1 : * •TERMINO «;»
+	TERM1 : * •TERMINO «<»
+	TERM1 : * •TERMINO «<>»
+	TERM1 : * •TERMINO «>»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 28
+	( -> 30
+	FACTOR -> 33
+	* -> 34
+	/ -> 35
+	VAR_CTE -> 36
+	number -> 37
+	TERMINO -> 119
+
+
+S77{
+	TERM1 : / •TERMINO «+»
+	TERM1 : / •TERMINO «-»
+	TERM1 : / •TERMINO «;»
+	TERM1 : / •TERMINO «<»
+	TERM1 : / •TERMINO «<>»
+	TERM1 : / •TERMINO «>»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 28
+	( -> 30
+	FACTOR -> 33
+	* -> 34
+	/ -> 35
+	VAR_CTE -> 36
+	number -> 37
+	TERMINO -> 120
+
+
+S78{
+	FACTOR : * VAR_CTE• «*»
+	FACTOR : * VAR_CTE• «+»
+	FACTOR : * VAR_CTE• «/»
+	FACTOR : * VAR_CTE• «-»
+	FACTOR : * VAR_CTE• «;»
+	FACTOR : * VAR_CTE• «<»
+	FACTOR : * VAR_CTE• «<>»
+	FACTOR : * VAR_CTE• «>»
+}
+Transitions:
+
+
+S79{
+	FACTOR : / VAR_CTE• «*»
+	FACTOR : / VAR_CTE• «+»
+	FACTOR : / VAR_CTE• «/»
+	FACTOR : / VAR_CTE• «-»
+	FACTOR : / VAR_CTE• «;»
+	FACTOR : / VAR_CTE• «<»
+	FACTOR : / VAR_CTE• «<>»
+	FACTOR : / VAR_CTE• «>»
+}
+Transitions:
+
+
+S80{
+	CONDICION : if ( EXPRESION ) •BLOQUE COND1 «id»
+	CONDICION : if ( EXPRESION ) •BLOQUE COND1 «if»
+	CONDICION : if ( EXPRESION ) •BLOQUE COND1 «print»
+	CONDICION : if ( EXPRESION ) •BLOQUE COND1 «}»
+	BLOQUE : •{ BLOQ1 } «;»
+	BLOQUE : •{ BLOQ1 } «else»
+}
+Transitions:
+	BLOQUE -> 121
+	{ -> 122
+
+
+S81{
+	FACTOR : ( EXPRESION •) «)»
+	FACTOR : ( EXPRESION •) «*»
+	FACTOR : ( EXPRESION •) «/»
+	FACTOR : ( EXPRESION •) «+»
+	FACTOR : ( EXPRESION •) «-»
+	FACTOR : ( EXPRESION •) «<»
+	FACTOR : ( EXPRESION •) «<>»
+	FACTOR : ( EXPRESION •) «>»
+}
+Transitions:
+	) -> 123
+
+
+S82{
+	EXPRESION : EXP EXPR1• «)»
+}
+Transitions:
+
+
+S83{
+	EXPR1 : EXPR2 •EXP «)»
+	EXP : •TERMINO EXP1 «)»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+}
+Transitions:
+	id -> 124
+	( -> 125
+	EXP -> 126
+	TERMINO -> 127
+	FACTOR -> 128
+	* -> 129
+	/ -> 130
+	VAR_CTE -> 131
+	number -> 132
+
+
+S84{
+	EXP : TERMINO EXP1• «)»
+	EXP : TERMINO EXP1• «<»
+	EXP : TERMINO EXP1• «<>»
+	EXP : TERMINO EXP1• «>»
+}
+Transitions:
+
+
+S85{
+	EXP1 : + •EXP «)»
+	EXP1 : + •EXP «<»
+	EXP1 : + •EXP «<>»
+	EXP1 : + •EXP «>»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	EXP -> 133
+
+
+S86{
+	EXP1 : - •EXP «)»
+	EXP1 : - •EXP «<»
+	EXP1 : - •EXP «<>»
+	EXP1 : - •EXP «>»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	EXP -> 134
+
+
+S87{
+	TERMINO : FACTOR TERM1• «)»
+	TERMINO : FACTOR TERM1• «+»
+	TERMINO : FACTOR TERM1• «-»
+	TERMINO : FACTOR TERM1• «<»
+	TERMINO : FACTOR TERM1• «<>»
+	TERMINO : FACTOR TERM1• «>»
+}
+Transitions:
+
+
+S88{
+	TERM1 : * •TERMINO «)»
+	TERM1 : * •TERMINO «+»
+	TERM1 : * •TERMINO «-»
+	TERM1 : * •TERMINO «<»
+	TERM1 : * •TERMINO «<>»
+	TERM1 : * •TERMINO «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	TERMINO -> 135
+
+
+S89{
+	TERM1 : / •TERMINO «)»
+	TERM1 : / •TERMINO «+»
+	TERM1 : / •TERMINO «-»
+	TERM1 : / •TERMINO «<»
+	TERM1 : / •TERMINO «<>»
+	TERM1 : / •TERMINO «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	TERMINO -> 136
+
+
+S90{
+	FACTOR : * VAR_CTE• «)»
+	FACTOR : * VAR_CTE• «*»
+	FACTOR : * VAR_CTE• «/»
+	FACTOR : * VAR_CTE• «+»
+	FACTOR : * VAR_CTE• «-»
+	FACTOR : * VAR_CTE• «<»
+	FACTOR : * VAR_CTE• «<>»
+	FACTOR : * VAR_CTE• «>»
+}
+Transitions:
+
+
+S91{
+	FACTOR : / VAR_CTE• «)»
+	FACTOR : / VAR_CTE• «*»
+	FACTOR : / VAR_CTE• «/»
+	FACTOR : / VAR_CTE• «+»
+	FACTOR : / VAR_CTE• «-»
+	FACTOR : / VAR_CTE• «<»
+	FACTOR : / VAR_CTE• «<>»
+	FACTOR : / VAR_CTE• «>»
+}
+Transitions:
+
+
+S92{
+	PRINT2 : , PRINT1• «)»
+}
+Transitions:
+
+
+S93{
+	PRINT1 : EXPRESION PRINT2• «)»
+}
+Transitions:
+
+
+S94{
+	FACTOR : ( EXPRESION •) «)»
+	FACTOR : ( EXPRESION •) «*»
+	FACTOR : ( EXPRESION •) «/»
+	FACTOR : ( EXPRESION •) «+»
+	FACTOR : ( EXPRESION •) «-»
+	FACTOR : ( EXPRESION •) «<»
+	FACTOR : ( EXPRESION •) «<>»
+	FACTOR : ( EXPRESION •) «>»
+	FACTOR : ( EXPRESION •) «,»
+}
+Transitions:
+	) -> 137
+
+
+S95{
+	EXPRESION : EXP EXPR1• «)»
+	EXPRESION : EXP EXPR1• «,»
+}
+Transitions:
+
+
+S96{
+	EXPR1 : EXPR2 •EXP «)»
+	EXPR1 : EXPR2 •EXP «,»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 138
+	( -> 139
+	EXP -> 140
+	TERMINO -> 141
+	FACTOR -> 142
+	* -> 143
+	/ -> 144
+	VAR_CTE -> 145
+	number -> 146
+
+
+S97{
+	EXP : TERMINO EXP1• «)»
+	EXP : TERMINO EXP1• «<»
+	EXP : TERMINO EXP1• «<>»
+	EXP : TERMINO EXP1• «>»
+	EXP : TERMINO EXP1• «,»
+}
+Transitions:
+
+
+S98{
+	EXP1 : + •EXP «)»
+	EXP1 : + •EXP «<»
+	EXP1 : + •EXP «<>»
+	EXP1 : + •EXP «>»
+	EXP1 : + •EXP «,»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	EXP : •TERMINO EXP1 «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 48
+	( -> 51
+	TERMINO -> 53
+	FACTOR -> 54
+	* -> 55
+	/ -> 56
+	VAR_CTE -> 59
+	number -> 60
+	EXP -> 147
+
+
+S99{
+	EXP1 : - •EXP «)»
+	EXP1 : - •EXP «<»
+	EXP1 : - •EXP «<>»
+	EXP1 : - •EXP «>»
+	EXP1 : - •EXP «,»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	EXP : •TERMINO EXP1 «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 48
+	( -> 51
+	TERMINO -> 53
+	FACTOR -> 54
+	* -> 55
+	/ -> 56
+	VAR_CTE -> 59
+	number -> 60
+	EXP -> 148
+
+
+S100{
+	TERMINO : FACTOR TERM1• «)»
+	TERMINO : FACTOR TERM1• «+»
+	TERMINO : FACTOR TERM1• «-»
+	TERMINO : FACTOR TERM1• «<»
+	TERMINO : FACTOR TERM1• «<>»
+	TERMINO : FACTOR TERM1• «>»
+	TERMINO : FACTOR TERM1• «,»
+}
+Transitions:
+
+
+S101{
+	TERM1 : * •TERMINO «)»
+	TERM1 : * •TERMINO «+»
+	TERM1 : * •TERMINO «-»
+	TERM1 : * •TERMINO «<»
+	TERM1 : * •TERMINO «<>»
+	TERM1 : * •TERMINO «>»
+	TERM1 : * •TERMINO «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 48
+	( -> 51
+	FACTOR -> 54
+	* -> 55
+	/ -> 56
+	VAR_CTE -> 59
+	number -> 60
+	TERMINO -> 149
+
+
+S102{
+	TERM1 : / •TERMINO «)»
+	TERM1 : / •TERMINO «+»
+	TERM1 : / •TERMINO «-»
+	TERM1 : / •TERMINO «<»
+	TERM1 : / •TERMINO «<>»
+	TERM1 : / •TERMINO «>»
+	TERM1 : / •TERMINO «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 48
+	( -> 51
+	FACTOR -> 54
+	* -> 55
+	/ -> 56
+	VAR_CTE -> 59
+	number -> 60
+	TERMINO -> 150
+
+
+S103{
+	FACTOR : * VAR_CTE• «)»
+	FACTOR : * VAR_CTE• «*»
+	FACTOR : * VAR_CTE• «/»
+	FACTOR : * VAR_CTE• «+»
+	FACTOR : * VAR_CTE• «-»
+	FACTOR : * VAR_CTE• «<»
+	FACTOR : * VAR_CTE• «<>»
+	FACTOR : * VAR_CTE• «>»
+	FACTOR : * VAR_CTE• «,»
+}
+Transitions:
+
+
+S104{
+	FACTOR : / VAR_CTE• «)»
+	FACTOR : / VAR_CTE• «*»
+	FACTOR : / VAR_CTE• «/»
+	FACTOR : / VAR_CTE• «+»
+	FACTOR : / VAR_CTE• «-»
+	FACTOR : / VAR_CTE• «<»
+	FACTOR : / VAR_CTE• «<>»
+	FACTOR : / VAR_CTE• «>»
+	FACTOR : / VAR_CTE• «,»
+}
+Transitions:
+
+
+S105{
+	ESCRITURA : print ( PRINT1 ) •; «id»
+	ESCRITURA : print ( PRINT1 ) •; «if»
+	ESCRITURA : print ( PRINT1 ) •; «print»
+	ESCRITURA : print ( PRINT1 ) •; «}»
+}
+Transitions:
+	; -> 151
+
+
+S106{
+	VAR1 : id VAR2 : TIPO ; •VAR3 «{»
+	VAR3 : empty• «{»
+	VAR3 : •VAR1 «{»
+	VAR1 : •id VAR2 : TIPO ; VAR3 «{»
+}
+Transitions:
+	id -> 9
+	VAR1 -> 152
+	VAR3 -> 153
+
+
+S107{
+	FACTOR : ( EXPRESION )• «*»
+	FACTOR : ( EXPRESION )• «+»
+	FACTOR : ( EXPRESION )• «/»
+	FACTOR : ( EXPRESION )• «-»
+	FACTOR : ( EXPRESION )• «;»
+	FACTOR : ( EXPRESION )• «<»
+	FACTOR : ( EXPRESION )• «<>»
+	FACTOR : ( EXPRESION )• «>»
+}
+Transitions:
+
+
+S108{
+	VAR_CTE : id• «*»
+	VAR_CTE : id• «+»
+	VAR_CTE : id• «/»
+	VAR_CTE : id• «-»
+	VAR_CTE : id• «;»
+}
+Transitions:
+
+
+S109{
+	FACTOR : ( •EXPRESION ) «*»
+	FACTOR : ( •EXPRESION ) «+»
+	FACTOR : ( •EXPRESION ) «/»
+	FACTOR : ( •EXPRESION ) «-»
+	FACTOR : ( •EXPRESION ) «;»
+	EXPRESION : •EXP EXPR1 «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	EXP -> 41
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	EXPRESION -> 154
+
+
+S110{
+	EXPR1 : EXPR2 EXP• «;»
+}
+Transitions:
+
+
+S111{
+	EXP : TERMINO •EXP1 «;»
+	EXP1 : empty• «;»
+	EXP1 : •+ EXP «;»
+	EXP1 : •- EXP «;»
+}
+Transitions:
+	EXP1 -> 155
+	+ -> 156
+	- -> 157
+
+
+S112{
+	TERMINO : FACTOR •TERM1 «+»
+	TERMINO : FACTOR •TERM1 «-»
+	TERMINO : FACTOR •TERM1 «;»
+	TERM1 : •* TERMINO «+»
+	TERM1 : •/ TERMINO «+»
+	TERM1 : empty• «+»
+	TERM1 : •* TERMINO «-»
+	TERM1 : •/ TERMINO «-»
+	TERM1 : empty• «-»
+	TERM1 : •* TERMINO «;»
+	TERM1 : •/ TERMINO «;»
+	TERM1 : empty• «;»
+}
+Transitions:
+	TERM1 -> 158
+	* -> 159
+	/ -> 160
+
+
+S113{
+	FACTOR : * •VAR_CTE «*»
+	FACTOR : * •VAR_CTE «+»
+	FACTOR : * •VAR_CTE «/»
+	FACTOR : * •VAR_CTE «-»
+	FACTOR : * •VAR_CTE «;»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+}
+Transitions:
+	id -> 108
+	number -> 116
+	VAR_CTE -> 161
+
+
+S114{
+	FACTOR : / •VAR_CTE «*»
+	FACTOR : / •VAR_CTE «+»
+	FACTOR : / •VAR_CTE «/»
+	FACTOR : / •VAR_CTE «-»
+	FACTOR : / •VAR_CTE «;»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+}
+Transitions:
+	id -> 108
+	number -> 116
+	VAR_CTE -> 162
+
+
+S115{
+	FACTOR : VAR_CTE• «*»
+	FACTOR : VAR_CTE• «+»
+	FACTOR : VAR_CTE• «/»
+	FACTOR : VAR_CTE• «-»
+	FACTOR : VAR_CTE• «;»
+}
+Transitions:
+
+
+S116{
+	VAR_CTE : number• «*»
+	VAR_CTE : number• «+»
+	VAR_CTE : number• «/»
+	VAR_CTE : number• «-»
+	VAR_CTE : number• «;»
+}
+Transitions:
+
+
+S117{
+	EXP1 : + EXP• «;»
+	EXP1 : + EXP• «<»
+	EXP1 : + EXP• «<>»
+	EXP1 : + EXP• «>»
+}
+Transitions:
+
+
+S118{
+	EXP1 : - EXP• «;»
+	EXP1 : - EXP• «<»
+	EXP1 : - EXP• «<>»
+	EXP1 : - EXP• «>»
+}
+Transitions:
+
+
+S119{
+	TERM1 : * TERMINO• «+»
+	TERM1 : * TERMINO• «-»
+	TERM1 : * TERMINO• «;»
+	TERM1 : * TERMINO• «<»
+	TERM1 : * TERMINO• «<>»
+	TERM1 : * TERMINO• «>»
+}
+Transitions:
+
+
+S120{
+	TERM1 : / TERMINO• «+»
+	TERM1 : / TERMINO• «-»
+	TERM1 : / TERMINO• «;»
+	TERM1 : / TERMINO• «<»
+	TERM1 : / TERMINO• «<>»
+	TERM1 : / TERMINO• «>»
+}
+Transitions:
+
+
+S121{
+	CONDICION : if ( EXPRESION ) BLOQUE •COND1 «id»
+	CONDICION : if ( EXPRESION ) BLOQUE •COND1 «if»
+	CONDICION : if ( EXPRESION ) BLOQUE •COND1 «print»
+	CONDICION : if ( EXPRESION ) BLOQUE •COND1 «}»
+	COND1 : •; «id»
+	COND1 : •else BLOQUE COND1 «id»
+	COND1 : •; «if»
+	COND1 : •else BLOQUE COND1 «if»
+	COND1 : •; «print»
+	COND1 : •else BLOQUE COND1 «print»
+	COND1 : •; «}»
+	COND1 : •else BLOQUE COND1 «}»
+}
+Transitions:
+	; -> 163
+	COND1 -> 164
+	else -> 165
+
+
+S122{
+	BLOQUE : { •BLOQ1 } «;»
+	BLOQUE : { •BLOQ1 } «else»
+	BLOQ1 : •ESTATUTO BLOQ1 «}»
+	BLOQ1 : empty• «}»
+	ESTATUTO : •ASIGNACION «id»
+	ESTATUTO : •ASIGNACION «if»
+	ESTATUTO : •ASIGNACION «print»
+	ESTATUTO : •ASIGNACION «}»
+	ESTATUTO : •CONDICION «id»
+	ESTATUTO : •CONDICION «if»
+	ESTATUTO : •CONDICION «print»
+	ESTATUTO : •CONDICION «}»
+	ESTATUTO : •ESCRITURA «id»
+	ESTATUTO : •ESCRITURA «if»
+	ESTATUTO : •ESCRITURA «print»
+	ESTATUTO : •ESCRITURA «}»
+	ASIGNACION : •id = EXPRESION ; «id»
+	ASIGNACION : •id = EXPRESION ; «if»
+	ASIGNACION : •id = EXPRESION ; «print»
+	ASIGNACION : •id = EXPRESION ; «}»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «id»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «if»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «print»
+	CONDICION : •if ( EXPRESION ) BLOQUE COND1 «}»
+	ESCRITURA : •print ( PRINT1 ) ; «id»
+	ESCRITURA : •print ( PRINT1 ) ; «if»
+	ESCRITURA : •print ( PRINT1 ) ; «print»
+	ESCRITURA : •print ( PRINT1 ) ; «}»
+}
+Transitions:
+	id -> 11
+	ESTATUTO -> 13
+	ASIGNACION -> 14
+	CONDICION -> 15
+	ESCRITURA -> 16
+	if -> 17
+	print -> 18
+	BLOQ1 -> 166
+
+
+S123{
+	FACTOR : ( EXPRESION )• «)»
+	FACTOR : ( EXPRESION )• «*»
+	FACTOR : ( EXPRESION )• «/»
+	FACTOR : ( EXPRESION )• «+»
+	FACTOR : ( EXPRESION )• «-»
+	FACTOR : ( EXPRESION )• «<»
+	FACTOR : ( EXPRESION )• «<>»
+	FACTOR : ( EXPRESION )• «>»
+}
+Transitions:
+
+
+S124{
+	VAR_CTE : id• «)»
+	VAR_CTE : id• «*»
+	VAR_CTE : id• «/»
+	VAR_CTE : id• «+»
+	VAR_CTE : id• «-»
+}
+Transitions:
+
+
+S125{
+	FACTOR : ( •EXPRESION ) «)»
+	FACTOR : ( •EXPRESION ) «*»
+	FACTOR : ( •EXPRESION ) «/»
+	FACTOR : ( •EXPRESION ) «+»
+	FACTOR : ( •EXPRESION ) «-»
+	EXPRESION : •EXP EXPR1 «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	EXP -> 41
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	EXPRESION -> 167
+
+
+S126{
+	EXPR1 : EXPR2 EXP• «)»
+}
+Transitions:
+
+
+S127{
+	EXP : TERMINO •EXP1 «)»
+	EXP1 : empty• «)»
+	EXP1 : •+ EXP «)»
+	EXP1 : •- EXP «)»
+}
+Transitions:
+	EXP1 -> 168
+	+ -> 169
+	- -> 170
+
+
+S128{
+	TERMINO : FACTOR •TERM1 «)»
+	TERMINO : FACTOR •TERM1 «+»
+	TERMINO : FACTOR •TERM1 «-»
+	TERM1 : •* TERMINO «)»
+	TERM1 : •/ TERMINO «)»
+	TERM1 : empty• «)»
+	TERM1 : •* TERMINO «+»
+	TERM1 : •/ TERMINO «+»
+	TERM1 : empty• «+»
+	TERM1 : •* TERMINO «-»
+	TERM1 : •/ TERMINO «-»
+	TERM1 : empty• «-»
+}
+Transitions:
+	TERM1 -> 171
+	* -> 172
+	/ -> 173
+
+
+S129{
+	FACTOR : * •VAR_CTE «)»
+	FACTOR : * •VAR_CTE «*»
+	FACTOR : * •VAR_CTE «/»
+	FACTOR : * •VAR_CTE «+»
+	FACTOR : * •VAR_CTE «-»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+}
+Transitions:
+	id -> 124
+	number -> 132
+	VAR_CTE -> 174
+
+
+S130{
+	FACTOR : / •VAR_CTE «)»
+	FACTOR : / •VAR_CTE «*»
+	FACTOR : / •VAR_CTE «/»
+	FACTOR : / •VAR_CTE «+»
+	FACTOR : / •VAR_CTE «-»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+}
+Transitions:
+	id -> 124
+	number -> 132
+	VAR_CTE -> 175
+
+
+S131{
+	FACTOR : VAR_CTE• «)»
+	FACTOR : VAR_CTE• «*»
+	FACTOR : VAR_CTE• «/»
+	FACTOR : VAR_CTE• «+»
+	FACTOR : VAR_CTE• «-»
+}
+Transitions:
+
+
+S132{
+	VAR_CTE : number• «)»
+	VAR_CTE : number• «*»
+	VAR_CTE : number• «/»
+	VAR_CTE : number• «+»
+	VAR_CTE : number• «-»
+}
+Transitions:
+
+
+S133{
+	EXP1 : + EXP• «)»
+	EXP1 : + EXP• «<»
+	EXP1 : + EXP• «<>»
+	EXP1 : + EXP• «>»
+}
+Transitions:
+
+
+S134{
+	EXP1 : - EXP• «)»
+	EXP1 : - EXP• «<»
+	EXP1 : - EXP• «<>»
+	EXP1 : - EXP• «>»
+}
+Transitions:
+
+
+S135{
+	TERM1 : * TERMINO• «)»
+	TERM1 : * TERMINO• «+»
+	TERM1 : * TERMINO• «-»
+	TERM1 : * TERMINO• «<»
+	TERM1 : * TERMINO• «<>»
+	TERM1 : * TERMINO• «>»
+}
+Transitions:
+
+
+S136{
+	TERM1 : / TERMINO• «)»
+	TERM1 : / TERMINO• «+»
+	TERM1 : / TERMINO• «-»
+	TERM1 : / TERMINO• «<»
+	TERM1 : / TERMINO• «<>»
+	TERM1 : / TERMINO• «>»
+}
+Transitions:
+
+
+S137{
+	FACTOR : ( EXPRESION )• «)»
+	FACTOR : ( EXPRESION )• «*»
+	FACTOR : ( EXPRESION )• «/»
+	FACTOR : ( EXPRESION )• «+»
+	FACTOR : ( EXPRESION )• «-»
+	FACTOR : ( EXPRESION )• «<»
+	FACTOR : ( EXPRESION )• «<>»
+	FACTOR : ( EXPRESION )• «>»
+	FACTOR : ( EXPRESION )• «,»
+}
+Transitions:
+
+
+S138{
+	VAR_CTE : id• «)»
+	VAR_CTE : id• «*»
+	VAR_CTE : id• «/»
+	VAR_CTE : id• «+»
+	VAR_CTE : id• «-»
+	VAR_CTE : id• «,»
+}
+Transitions:
+
+
+S139{
+	FACTOR : ( •EXPRESION ) «)»
+	FACTOR : ( •EXPRESION ) «*»
+	FACTOR : ( •EXPRESION ) «/»
+	FACTOR : ( •EXPRESION ) «+»
+	FACTOR : ( •EXPRESION ) «-»
+	FACTOR : ( •EXPRESION ) «,»
+	EXPRESION : •EXP EXPR1 «)»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «<»
+	EXP : •TERMINO EXP1 «<>»
+	EXP : •TERMINO EXP1 «>»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «<»
+	TERMINO : •FACTOR TERM1 «<>»
+	TERMINO : •FACTOR TERM1 «>»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «<»
+	FACTOR : •VAR_CTE «<»
+	FACTOR : •* VAR_CTE «<»
+	FACTOR : •/ VAR_CTE «<»
+	FACTOR : •( EXPRESION ) «<>»
+	FACTOR : •VAR_CTE «<>»
+	FACTOR : •* VAR_CTE «<>»
+	FACTOR : •/ VAR_CTE «<>»
+	FACTOR : •( EXPRESION ) «>»
+	FACTOR : •VAR_CTE «>»
+	FACTOR : •* VAR_CTE «>»
+	FACTOR : •/ VAR_CTE «>»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «<»
+	VAR_CTE : •number «<»
+	VAR_CTE : •id «<>»
+	VAR_CTE : •number «<>»
+	VAR_CTE : •id «>»
+	VAR_CTE : •number «>»
+}
+Transitions:
+	id -> 38
+	( -> 40
+	EXP -> 41
+	TERMINO -> 42
+	FACTOR -> 43
+	* -> 44
+	/ -> 45
+	VAR_CTE -> 46
+	number -> 47
+	EXPRESION -> 176
+
+
+S140{
+	EXPR1 : EXPR2 EXP• «)»
+	EXPR1 : EXPR2 EXP• «,»
+}
+Transitions:
+
+
+S141{
+	EXP : TERMINO •EXP1 «)»
+	EXP : TERMINO •EXP1 «,»
+	EXP1 : empty• «)»
+	EXP1 : •+ EXP «)»
+	EXP1 : •- EXP «)»
+	EXP1 : empty• «,»
+	EXP1 : •+ EXP «,»
+	EXP1 : •- EXP «,»
+}
+Transitions:
+	EXP1 -> 177
+	+ -> 178
+	- -> 179
+
+
+S142{
+	TERMINO : FACTOR •TERM1 «)»
+	TERMINO : FACTOR •TERM1 «+»
+	TERMINO : FACTOR •TERM1 «-»
+	TERMINO : FACTOR •TERM1 «,»
+	TERM1 : •* TERMINO «)»
+	TERM1 : •/ TERMINO «)»
+	TERM1 : empty• «)»
+	TERM1 : •* TERMINO «+»
+	TERM1 : •/ TERMINO «+»
+	TERM1 : empty• «+»
+	TERM1 : •* TERMINO «-»
+	TERM1 : •/ TERMINO «-»
+	TERM1 : empty• «-»
+	TERM1 : •* TERMINO «,»
+	TERM1 : •/ TERMINO «,»
+	TERM1 : empty• «,»
+}
+Transitions:
+	TERM1 -> 180
+	* -> 181
+	/ -> 182
+
+
+S143{
+	FACTOR : * •VAR_CTE «)»
+	FACTOR : * •VAR_CTE «*»
+	FACTOR : * •VAR_CTE «/»
+	FACTOR : * •VAR_CTE «+»
+	FACTOR : * •VAR_CTE «-»
+	FACTOR : * •VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 138
+	number -> 146
+	VAR_CTE -> 183
+
+
+S144{
+	FACTOR : / •VAR_CTE «)»
+	FACTOR : / •VAR_CTE «*»
+	FACTOR : / •VAR_CTE «/»
+	FACTOR : / •VAR_CTE «+»
+	FACTOR : / •VAR_CTE «-»
+	FACTOR : / •VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 138
+	number -> 146
+	VAR_CTE -> 184
+
+
+S145{
+	FACTOR : VAR_CTE• «)»
+	FACTOR : VAR_CTE• «*»
+	FACTOR : VAR_CTE• «/»
+	FACTOR : VAR_CTE• «+»
+	FACTOR : VAR_CTE• «-»
+	FACTOR : VAR_CTE• «,»
+}
+Transitions:
+
+
+S146{
+	VAR_CTE : number• «)»
+	VAR_CTE : number• «*»
+	VAR_CTE : number• «/»
+	VAR_CTE : number• «+»
+	VAR_CTE : number• «-»
+	VAR_CTE : number• «,»
+}
+Transitions:
+
+
+S147{
+	EXP1 : + EXP• «)»
+	EXP1 : + EXP• «<»
+	EXP1 : + EXP• «<>»
+	EXP1 : + EXP• «>»
+	EXP1 : + EXP• «,»
+}
+Transitions:
+
+
+S148{
+	EXP1 : - EXP• «)»
+	EXP1 : - EXP• «<»
+	EXP1 : - EXP• «<>»
+	EXP1 : - EXP• «>»
+	EXP1 : - EXP• «,»
+}
+Transitions:
+
+
+S149{
+	TERM1 : * TERMINO• «)»
+	TERM1 : * TERMINO• «+»
+	TERM1 : * TERMINO• «-»
+	TERM1 : * TERMINO• «<»
+	TERM1 : * TERMINO• «<>»
+	TERM1 : * TERMINO• «>»
+	TERM1 : * TERMINO• «,»
+}
+Transitions:
+
+
+S150{
+	TERM1 : / TERMINO• «)»
+	TERM1 : / TERMINO• «+»
+	TERM1 : / TERMINO• «-»
+	TERM1 : / TERMINO• «<»
+	TERM1 : / TERMINO• «<>»
+	TERM1 : / TERMINO• «>»
+	TERM1 : / TERMINO• «,»
+}
+Transitions:
+
+
+S151{
+	ESCRITURA : print ( PRINT1 ) ;• «id»
+	ESCRITURA : print ( PRINT1 ) ;• «if»
+	ESCRITURA : print ( PRINT1 ) ;• «print»
+	ESCRITURA : print ( PRINT1 ) ;• «}»
+}
+Transitions:
+
+
+S152{
+	VAR3 : VAR1• «{»
+}
+Transitions:
+
+
+S153{
+	VAR1 : id VAR2 : TIPO ; VAR3• «{»
+}
+Transitions:
+
+
+S154{
+	FACTOR : ( EXPRESION •) «*»
+	FACTOR : ( EXPRESION •) «+»
+	FACTOR : ( EXPRESION •) «/»
+	FACTOR : ( EXPRESION •) «-»
+	FACTOR : ( EXPRESION •) «;»
+}
+Transitions:
+	) -> 185
+
+
+S155{
+	EXP : TERMINO EXP1• «;»
+}
+Transitions:
+
+
+S156{
+	EXP1 : + •EXP «;»
+	EXP : •TERMINO EXP1 «;»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+}
+Transitions:
+	id -> 108
+	( -> 109
+	TERMINO -> 111
+	FACTOR -> 112
+	* -> 113
+	/ -> 114
+	VAR_CTE -> 115
+	number -> 116
+	EXP -> 186
+
+
+S157{
+	EXP1 : - •EXP «;»
+	EXP : •TERMINO EXP1 «;»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+}
+Transitions:
+	id -> 108
+	( -> 109
+	TERMINO -> 111
+	FACTOR -> 112
+	* -> 113
+	/ -> 114
+	VAR_CTE -> 115
+	number -> 116
+	EXP -> 187
+
+
+S158{
+	TERMINO : FACTOR TERM1• «+»
+	TERMINO : FACTOR TERM1• «-»
+	TERMINO : FACTOR TERM1• «;»
+}
+Transitions:
+
+
+S159{
+	TERM1 : * •TERMINO «+»
+	TERM1 : * •TERMINO «-»
+	TERM1 : * •TERMINO «;»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+}
+Transitions:
+	id -> 108
+	( -> 109
+	FACTOR -> 112
+	* -> 113
+	/ -> 114
+	VAR_CTE -> 115
+	number -> 116
+	TERMINO -> 188
+
+
+S160{
+	TERM1 : / •TERMINO «+»
+	TERM1 : / •TERMINO «-»
+	TERM1 : / •TERMINO «;»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «;»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «;»
+	FACTOR : •VAR_CTE «;»
+	FACTOR : •* VAR_CTE «;»
+	FACTOR : •/ VAR_CTE «;»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «;»
+	VAR_CTE : •number «;»
+}
+Transitions:
+	id -> 108
+	( -> 109
+	FACTOR -> 112
+	* -> 113
+	/ -> 114
+	VAR_CTE -> 115
+	number -> 116
+	TERMINO -> 189
+
+
+S161{
+	FACTOR : * VAR_CTE• «*»
+	FACTOR : * VAR_CTE• «+»
+	FACTOR : * VAR_CTE• «/»
+	FACTOR : * VAR_CTE• «-»
+	FACTOR : * VAR_CTE• «;»
+}
+Transitions:
+
+
+S162{
+	FACTOR : / VAR_CTE• «*»
+	FACTOR : / VAR_CTE• «+»
+	FACTOR : / VAR_CTE• «/»
+	FACTOR : / VAR_CTE• «-»
+	FACTOR : / VAR_CTE• «;»
+}
+Transitions:
+
+
+S163{
+	COND1 : ;• «id»
+	COND1 : ;• «if»
+	COND1 : ;• «print»
+	COND1 : ;• «}»
+}
+Transitions:
+
+
+S164{
+	CONDICION : if ( EXPRESION ) BLOQUE COND1• «id»
+	CONDICION : if ( EXPRESION ) BLOQUE COND1• «if»
+	CONDICION : if ( EXPRESION ) BLOQUE COND1• «print»
+	CONDICION : if ( EXPRESION ) BLOQUE COND1• «}»
+}
+Transitions:
+
+
+S165{
+	COND1 : else •BLOQUE COND1 «id»
+	COND1 : else •BLOQUE COND1 «if»
+	COND1 : else •BLOQUE COND1 «print»
+	COND1 : else •BLOQUE COND1 «}»
+	BLOQUE : •{ BLOQ1 } «;»
+	BLOQUE : •{ BLOQ1 } «else»
+}
+Transitions:
+	{ -> 122
+	BLOQUE -> 190
+
+
+S166{
+	BLOQUE : { BLOQ1 •} «;»
+	BLOQUE : { BLOQ1 •} «else»
+}
+Transitions:
+	} -> 191
+
+
+S167{
+	FACTOR : ( EXPRESION •) «)»
+	FACTOR : ( EXPRESION •) «*»
+	FACTOR : ( EXPRESION •) «/»
+	FACTOR : ( EXPRESION •) «+»
+	FACTOR : ( EXPRESION •) «-»
+}
+Transitions:
+	) -> 192
+
+
+S168{
+	EXP : TERMINO EXP1• «)»
+}
+Transitions:
+
+
+S169{
+	EXP1 : + •EXP «)»
+	EXP : •TERMINO EXP1 «)»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+}
+Transitions:
+	id -> 124
+	( -> 125
+	TERMINO -> 127
+	FACTOR -> 128
+	* -> 129
+	/ -> 130
+	VAR_CTE -> 131
+	number -> 132
+	EXP -> 193
+
+
+S170{
+	EXP1 : - •EXP «)»
+	EXP : •TERMINO EXP1 «)»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+}
+Transitions:
+	id -> 124
+	( -> 125
+	TERMINO -> 127
+	FACTOR -> 128
+	* -> 129
+	/ -> 130
+	VAR_CTE -> 131
+	number -> 132
+	EXP -> 194
+
+
+S171{
+	TERMINO : FACTOR TERM1• «)»
+	TERMINO : FACTOR TERM1• «+»
+	TERMINO : FACTOR TERM1• «-»
+}
+Transitions:
+
+
+S172{
+	TERM1 : * •TERMINO «)»
+	TERM1 : * •TERMINO «+»
+	TERM1 : * •TERMINO «-»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+}
+Transitions:
+	id -> 124
+	( -> 125
+	FACTOR -> 128
+	* -> 129
+	/ -> 130
+	VAR_CTE -> 131
+	number -> 132
+	TERMINO -> 195
+
+
+S173{
+	TERM1 : / •TERMINO «)»
+	TERM1 : / •TERMINO «+»
+	TERM1 : / •TERMINO «-»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+}
+Transitions:
+	id -> 124
+	( -> 125
+	FACTOR -> 128
+	* -> 129
+	/ -> 130
+	VAR_CTE -> 131
+	number -> 132
+	TERMINO -> 196
+
+
+S174{
+	FACTOR : * VAR_CTE• «)»
+	FACTOR : * VAR_CTE• «*»
+	FACTOR : * VAR_CTE• «/»
+	FACTOR : * VAR_CTE• «+»
+	FACTOR : * VAR_CTE• «-»
+}
+Transitions:
+
+
+S175{
+	FACTOR : / VAR_CTE• «)»
+	FACTOR : / VAR_CTE• «*»
+	FACTOR : / VAR_CTE• «/»
+	FACTOR : / VAR_CTE• «+»
+	FACTOR : / VAR_CTE• «-»
+}
+Transitions:
+
+
+S176{
+	FACTOR : ( EXPRESION •) «)»
+	FACTOR : ( EXPRESION •) «*»
+	FACTOR : ( EXPRESION •) «/»
+	FACTOR : ( EXPRESION •) «+»
+	FACTOR : ( EXPRESION •) «-»
+	FACTOR : ( EXPRESION •) «,»
+}
+Transitions:
+	) -> 197
+
+
+S177{
+	EXP : TERMINO EXP1• «)»
+	EXP : TERMINO EXP1• «,»
+}
+Transitions:
+
+
+S178{
+	EXP1 : + •EXP «)»
+	EXP1 : + •EXP «,»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 138
+	( -> 139
+	TERMINO -> 141
+	FACTOR -> 142
+	* -> 143
+	/ -> 144
+	VAR_CTE -> 145
+	number -> 146
+	EXP -> 198
+
+
+S179{
+	EXP1 : - •EXP «)»
+	EXP1 : - •EXP «,»
+	EXP : •TERMINO EXP1 «)»
+	EXP : •TERMINO EXP1 «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 138
+	( -> 139
+	TERMINO -> 141
+	FACTOR -> 142
+	* -> 143
+	/ -> 144
+	VAR_CTE -> 145
+	number -> 146
+	EXP -> 199
+
+
+S180{
+	TERMINO : FACTOR TERM1• «)»
+	TERMINO : FACTOR TERM1• «+»
+	TERMINO : FACTOR TERM1• «-»
+	TERMINO : FACTOR TERM1• «,»
+}
+Transitions:
+
+
+S181{
+	TERM1 : * •TERMINO «)»
+	TERM1 : * •TERMINO «+»
+	TERM1 : * •TERMINO «-»
+	TERM1 : * •TERMINO «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 138
+	( -> 139
+	FACTOR -> 142
+	* -> 143
+	/ -> 144
+	VAR_CTE -> 145
+	number -> 146
+	TERMINO -> 200
+
+
+S182{
+	TERM1 : / •TERMINO «)»
+	TERM1 : / •TERMINO «+»
+	TERM1 : / •TERMINO «-»
+	TERM1 : / •TERMINO «,»
+	TERMINO : •FACTOR TERM1 «)»
+	TERMINO : •FACTOR TERM1 «+»
+	TERMINO : •FACTOR TERM1 «-»
+	TERMINO : •FACTOR TERM1 «,»
+	FACTOR : •( EXPRESION ) «)»
+	FACTOR : •( EXPRESION ) «*»
+	FACTOR : •( EXPRESION ) «/»
+	FACTOR : •VAR_CTE «)»
+	FACTOR : •VAR_CTE «*»
+	FACTOR : •VAR_CTE «/»
+	FACTOR : •* VAR_CTE «)»
+	FACTOR : •* VAR_CTE «*»
+	FACTOR : •* VAR_CTE «/»
+	FACTOR : •/ VAR_CTE «)»
+	FACTOR : •/ VAR_CTE «*»
+	FACTOR : •/ VAR_CTE «/»
+	FACTOR : •( EXPRESION ) «+»
+	FACTOR : •VAR_CTE «+»
+	FACTOR : •* VAR_CTE «+»
+	FACTOR : •/ VAR_CTE «+»
+	FACTOR : •( EXPRESION ) «-»
+	FACTOR : •VAR_CTE «-»
+	FACTOR : •* VAR_CTE «-»
+	FACTOR : •/ VAR_CTE «-»
+	FACTOR : •( EXPRESION ) «,»
+	FACTOR : •VAR_CTE «,»
+	FACTOR : •* VAR_CTE «,»
+	FACTOR : •/ VAR_CTE «,»
+	VAR_CTE : •id «)»
+	VAR_CTE : •number «)»
+	VAR_CTE : •id «*»
+	VAR_CTE : •number «*»
+	VAR_CTE : •id «/»
+	VAR_CTE : •number «/»
+	VAR_CTE : •id «+»
+	VAR_CTE : •number «+»
+	VAR_CTE : •id «-»
+	VAR_CTE : •number «-»
+	VAR_CTE : •id «,»
+	VAR_CTE : •number «,»
+}
+Transitions:
+	id -> 138
+	( -> 139
+	FACTOR -> 142
+	* -> 143
+	/ -> 144
+	VAR_CTE -> 145
+	number -> 146
+	TERMINO -> 201
+
+
+S183{
+	FACTOR : * VAR_CTE• «)»
+	FACTOR : * VAR_CTE• «*»
+	FACTOR : * VAR_CTE• «/»
+	FACTOR : * VAR_CTE• «+»
+	FACTOR : * VAR_CTE• «-»
+	FACTOR : * VAR_CTE• «,»
+}
+Transitions:
+
+
+S184{
+	FACTOR : / VAR_CTE• «)»
+	FACTOR : / VAR_CTE• «*»
+	FACTOR : / VAR_CTE• «/»
+	FACTOR : / VAR_CTE• «+»
+	FACTOR : / VAR_CTE• «-»
+	FACTOR : / VAR_CTE• «,»
+}
+Transitions:
+
+
+S185{
+	FACTOR : ( EXPRESION )• «*»
+	FACTOR : ( EXPRESION )• «+»
+	FACTOR : ( EXPRESION )• «/»
+	FACTOR : ( EXPRESION )• «-»
+	FACTOR : ( EXPRESION )• «;»
+}
+Transitions:
+
+
+S186{
+	EXP1 : + EXP• «;»
+}
+Transitions:
+
+
+S187{
+	EXP1 : - EXP• «;»
+}
+Transitions:
+
+
+S188{
+	TERM1 : * TERMINO• «+»
+	TERM1 : * TERMINO• «-»
+	TERM1 : * TERMINO• «;»
+}
+Transitions:
+
+
+S189{
+	TERM1 : / TERMINO• «+»
+	TERM1 : / TERMINO• «-»
+	TERM1 : / TERMINO• «;»
+}
+Transitions:
+
+
+S190{
+	COND1 : else BLOQUE •COND1 «id»
+	COND1 : else BLOQUE •COND1 «if»
+	COND1 : else BLOQUE •COND1 «print»
+	COND1 : else BLOQUE •COND1 «}»
+	COND1 : •; «id»
+	COND1 : •else BLOQUE COND1 «id»
+	COND1 : •; «if»
+	COND1 : •else BLOQUE COND1 «if»
+	COND1 : •; «print»
+	COND1 : •else BLOQUE COND1 «print»
+	COND1 : •; «}»
+	COND1 : •else BLOQUE COND1 «}»
+}
+Transitions:
+	; -> 163
+	else -> 165
+	COND1 -> 202
+
+
+S191{
+	BLOQUE : { BLOQ1 }• «;»
+	BLOQUE : { BLOQ1 }• «else»
+}
+Transitions:
+
+
+S192{
+	FACTOR : ( EXPRESION )• «)»
+	FACTOR : ( EXPRESION )• «*»
+	FACTOR : ( EXPRESION )• «/»
+	FACTOR : ( EXPRESION )• «+»
+	FACTOR : ( EXPRESION )• «-»
+}
+Transitions:
+
+
+S193{
+	EXP1 : + EXP• «)»
+}
+Transitions:
+
+
+S194{
+	EXP1 : - EXP• «)»
+}
+Transitions:
+
+
+S195{
+	TERM1 : * TERMINO• «)»
+	TERM1 : * TERMINO• «+»
+	TERM1 : * TERMINO• «-»
+}
+Transitions:
+
+
+S196{
+	TERM1 : / TERMINO• «)»
+	TERM1 : / TERMINO• «+»
+	TERM1 : / TERMINO• «-»
+}
+Transitions:
+
+
+S197{
+	FACTOR : ( EXPRESION )• «)»
+	FACTOR : ( EXPRESION )• «*»
+	FACTOR : ( EXPRESION )• «/»
+	FACTOR : ( EXPRESION )• «+»
+	FACTOR : ( EXPRESION )• «-»
+	FACTOR : ( EXPRESION )• «,»
+}
+Transitions:
+
+
+S198{
+	EXP1 : + EXP• «)»
+	EXP1 : + EXP• «,»
+}
+Transitions:
+
+
+S199{
+	EXP1 : - EXP• «)»
+	EXP1 : - EXP• «,»
+}
+Transitions:
+
+
+S200{
+	TERM1 : * TERMINO• «)»
+	TERM1 : * TERMINO• «+»
+	TERM1 : * TERMINO• «-»
+	TERM1 : * TERMINO• «,»
+}
+Transitions:
+
+
+S201{
+	TERM1 : / TERMINO• «)»
+	TERM1 : / TERMINO• «+»
+	TERM1 : / TERMINO• «-»
+	TERM1 : / TERMINO• «,»
+}
+Transitions:
+
+
+S202{
+	COND1 : else BLOQUE COND1• «id»
+	COND1 : else BLOQUE COND1• «if»
+	COND1 : else BLOQUE COND1• «print»
+	COND1 : else BLOQUE COND1• «}»
 }
 Transitions:
 
